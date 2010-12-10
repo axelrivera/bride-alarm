@@ -11,7 +11,7 @@
 		160C0C9112A6A4F600DC0636 /* WeddingCoupleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */; };
 		160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */; };
 		160C0ED612A7196300DC0636 /* WeddingDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */; };
-		160C0ED712A7196300DC0636 /* WeddingDateViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 160C0ED512A7196300DC0636 /* WeddingDateViewController.h */; };
+		1622994812B282D70088261B /* WeddingDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1622994712B282D70088261B /* WeddingDateViewController.xib */; };
 		165839D912A3EE47009365AB /* WeddingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165839D712A3EE47009365AB /* WeddingDetailViewController.m */; };
 		165839DA12A3EE47009365AB /* WeddingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165839D812A3EE47009365AB /* WeddingDetailViewController.xib */; };
 		166711BA12A8770D0067AD93 /* WeddingBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */; };
@@ -47,8 +47,8 @@
 		160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingCoupleViewController.xib; sourceTree = "<group>"; };
 		160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDateViewController.h; sourceTree = "<group>"; };
 		160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDateViewController.m; sourceTree = "<group>"; };
-		160C0ED512A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeddingDateViewController.h; path = Classes/WeddingDateViewController.h; sourceTree = "<group>"; };
 		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1622994712B282D70088261B /* WeddingDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDateViewController.xib; sourceTree = "<group>"; };
 		165839D612A3EE47009365AB /* WeddingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDetailViewController.h; sourceTree = "<group>"; };
 		165839D712A3EE47009365AB /* WeddingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDetailViewController.m; sourceTree = "<group>"; };
 		165839D812A3EE47009365AB /* WeddingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDetailViewController.xib; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1622994712B282D70088261B /* WeddingDateViewController.xib */,
 				166D125312AF1780001749F2 /* background.jpg */,
 				166D125412AF1780001749F2 /* background@2x.jpg */,
 				8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */,
@@ -177,7 +178,6 @@
 				166711C512A877670067AD93 /* WeddingAboutViewController.xib */,
 				166711B912A8770D0067AD93 /* WeddingBackgroundViewController.xib */,
 				160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */,
-				160C0ED512A7196300DC0636 /* WeddingDateViewController.h */,
 				165839D812A3EE47009365AB /* WeddingDetailViewController.xib */,
 				166711BE12A877250067AD93 /* WeddingNotificationViewController.xib */,
 				16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */,
@@ -249,7 +249,6 @@
 				16F81B8112A2F77B00A1A863 /* WeddingViewController.xib in Resources */,
 				165839DA12A3EE47009365AB /* WeddingDetailViewController.xib in Resources */,
 				160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */,
-				160C0ED712A7196300DC0636 /* WeddingDateViewController.h in Resources */,
 				166711BB12A8770D0067AD93 /* WeddingBackgroundViewController.xib in Resources */,
 				166711C012A877250067AD93 /* WeddingNotificationViewController.xib in Resources */,
 				166711C712A877670067AD93 /* WeddingAboutViewController.xib in Resources */,
@@ -258,6 +257,7 @@
 				166D0F9B12AE8DA0001749F2 /* rectangle@2x.png in Resources */,
 				166D125512AF1780001749F2 /* background.jpg in Resources */,
 				166D125612AF1780001749F2 /* background@2x.jpg in Resources */,
+				1622994812B282D70088261B /* WeddingDateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

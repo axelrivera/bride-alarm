@@ -12,13 +12,13 @@
 @interface WeddingViewController : UIViewController {
 	WeddingBoxView *boxView;
 	
-	UIImageView *backgroundImage;
+	UIImageView *backgroundImageView;
 	UIToolbar *toolBar;
 }
 
 @property (nonatomic, retain) WeddingBoxView *boxView;
 
-@property (nonatomic, retain) IBOutlet UIImageView *backgroundImage;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
 
 - (IBAction)showDetails:(id)sender;

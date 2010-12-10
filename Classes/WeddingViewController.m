@@ -13,21 +13,25 @@
 
 @implementation WeddingViewController
 
-@synthesize boxView, backgroundImage, toolBar;
+@synthesize boxView, backgroundImageView, toolBar;
 
 -(void)viewWillAppear:(BOOL)animated {
 	Wedding *wedding = [Wedding sharedWedding];
 	//coupleLabel.text = [wedding displayNameForGroom:wedding.groomName Bride:wedding.brideName];
 	//daysLabel.text = [NSString stringWithFormat:@"%d", [wedding countDaysUntilWeddingDate:wedding.weddingDate]];
-	NSLog(@"%@", [wedding displayNameForGroom:wedding.groomName Bride:wedding.brideName]);
-	NSLog(@"Days Until Wedding: %d", [wedding countDaysUntilWeddingDate:wedding.weddingDate]);
+	NSLog(@"%@", [wedding displayCoupleNames]);
+	NSLog(@"Days Until Wedding: %d", [wedding countDaysUntilWeddingDate]);
 	NSLog(@"%@", wedding.weddingDate);
 	
-	[backgroundImage setImage:[[Wedding sharedWedding] backgroundImage]];
-	
-	boxView.coupleLabel.text = [wedding displayNameForGroom:wedding.groomName Bride:wedding.brideName];
-	boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", [wedding countDaysUntilWeddingDate:wedding.weddingDate]];
+	NSLog(@"One");
+	[backgroundImageView setImage:[wedding backgroundImage]];
+	NSLog(@"Two");
+	boxView.coupleLabel.text = [wedding displayCoupleNames];
+	NSLog(@"Three");
+	boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", [wedding countDaysUntilWeddingDate]];
+	NSLog(@"Four");
 	boxView.detailsLabel.text = @"until we get married...";
+	NSLog(@"Five");
 }
 
 - (void)viewDidLoad {
@@ -45,6 +49,7 @@
 	//[detailViewController setDelegate:self];
 	[self presentModalViewController:navController animated:YES];
 	//[navViewController release];
+	[detailViewController release];
 }
 
 - (void)showActions:(id)sender {
@@ -59,8 +64,8 @@
 }
 
 - (void)viewDidUnload {
-	[backgroundImage release];
-	backgroundImage = nil;
+	[backgroundImageView release];
+	backgroundImageView = nil;
 	[toolBar release];
 	toolBar = nil;
     [super viewDidUnload];
@@ -70,7 +75,7 @@
 
 - (void)dealloc {
 	[boxView release];
-	[backgroundImage release];
+	[backgroundImageView release];
 	[toolBar release];
     [super dealloc];
 }

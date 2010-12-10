@@ -15,11 +15,7 @@
 	NSString *brideName;
 	NSDate *weddingDate;
 	BOOL globalNotification;
-	
-	NSString *backgroundImageKey;
 	UIImage *backgroundImage;
-	NSData *backgroundImageData;
-	
 }
 
 @property (nonatomic, copy) NSString *groomName;
@@ -27,20 +23,30 @@
 
 @property (nonatomic, copy) NSDate *weddingDate;
 
-@property (nonatomic, copy) NSString *backgroundImageKey;
+@property (nonatomic, retain) UIImage *backgroundImage;
 
 @property (nonatomic) BOOL globalNotification;
 
 + (Wedding *)sharedWedding;
 
+- (id)initWithWeddingData:(NSDictionary *)data;
+
 - (void)setWeddingDate;
 
-- (UIImage *)backgroundImage;
+- (NSString *)displayCoupleNames;
 
-- (void)setBackgroundImage:(UIImage *)image;
+- (UIImage *)backgroundImageFromFile;
 
-- (NSString *)displayNameForGroom:(NSString *)groom Bride:(NSString *)bride;
+- (NSInteger)countDaysUntilWeddingDate;
 
-- (NSInteger)countDaysUntilWeddingDate:(NSDate *)date;
+- (NSDictionary *)weddingData;
+
+- (BOOL)archiveWeddingData;
+
+- (NSDictionary *)unarchiveWeddingData;
+
+- (NSString *)weddingFilePath;
+
+- (NSString *)weddingImagePath;
 
 @end
