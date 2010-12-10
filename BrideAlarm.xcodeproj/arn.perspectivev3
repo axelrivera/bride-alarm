@@ -232,8 +232,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -270,10 +268,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>080E96DDFE201D6D7F000001</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -311,7 +312,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>16F81B8312A2F79000A1A863</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Wedding.h</string>
+								<string>ImageCache.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,13 +320,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>16F81B8412A2F79000A1A863</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Wedding.h</string>
+										<string>ImageCache.h</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>163122D912B1AA590010BC37</string>
 										<key>history</key>
 										<array>
-											<string>16BBB09712B19B3200218CE6</string>
-											<string>16BBB0BE12B19B4D00218CE6</string>
-											<string>16BBB0BF12B19B4D00218CE6</string>
-											<string>16BBB0CB12B19B4D00218CE6</string>
+											<string>163122D812B1AA590010BC37</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -339,18 +341,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1111, 460}}</string>
+								<string>{{0, 0}, {1111, 452}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 112 1440 766 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>460pt</string>
+							<string>452pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>260pt</string>
+							<string>268pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -364,7 +366,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 233}}</string>
+										<string>{{10, 27}, {1111, 241}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -386,6 +388,8 @@
 									<string>PBXProjectFindModule</string>
 								</dict>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXCVSModuleFilterTypeKey</key>
@@ -419,7 +423,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 233}}</string>
+										<string>{{10, 27}, {1111, 241}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 112 1440 766 0 0 1440 878 </string>
 									</dict>
@@ -469,11 +473,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>163122A512B1A5300010BC37</string>
+				<string>163122C512B1A8E10010BC37</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>163122A612B1A5300010BC37</string>
+				<string>163122C612B1A8E10010BC37</string>
 				<string>16F81B8312A2F79000A1A863</string>
-				<string>163122A712B1A5300010BC37</string>
+				<string>163122C712B1A8E10010BC37</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -663,7 +667,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/arn/Dropbox/iOS Projects/BrideAlarm/BrideAlarm.xcodeproj</string>
+		<string>/Users/arn/iOS Projects/BrideAlarm/BrideAlarm.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 112 1440 766 0 0 1440 878 </string>
