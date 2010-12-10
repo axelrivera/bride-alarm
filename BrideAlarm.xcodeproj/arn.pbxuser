@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	160C0C5F12A69C8700DC0636 /* Wedding.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 611}}";
+			sepNavSelRange = "{731, 0}";
+			sepNavVisRange = "{164, 770}";
+		};
+	};
+	160C0C6012A69C8700DC0636 /* Wedding.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 2535}}";
+			sepNavSelRange = "{2911, 0}";
+			sepNavVisRange = "{266, 320}";
+		};
+	};
+	160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{689, 0}";
+			sepNavVisRange = "{0, 696}";
+		};
+	};
+	160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2067}}";
+			sepNavSelRange = "{3740, 0}";
+			sepNavVisRange = "{2930, 991}";
+		};
+	};
+	160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{581, 0}";
+			sepNavVisRange = "{0, 769}";
+		};
+	};
+	160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2431}}";
+			sepNavSelRange = "{4227, 0}";
+			sepNavVisRange = "{3849, 969}";
+		};
+	};
+	160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{443, 0}";
+			sepNavVisRange = "{0, 445}";
+			sepNavWindowFrame = "{{107, 149}, {794, 640}}";
+		};
+	};
+	165839D612A3EE47009365AB /* WeddingDetailViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{356, 0}";
+			sepNavVisRange = "{0, 625}";
+			sepNavWindowFrame = "{{38, 212}, {794, 640}}";
+		};
+	};
+	165839D712A3EE47009365AB /* WeddingDetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 3224}}";
+			sepNavSelRange = "{432, 0}";
+			sepNavVisRange = "{146, 898}";
+			sepNavWindowFrame = "{{84, 170}, {794, 640}}";
+		};
+	};
+	166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{475, 0}";
+			sepNavVisRange = "{0, 762}";
+		};
+	};
+	166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1781}}";
+			sepNavSelRange = "{4289, 0}";
+			sepNavVisRange = "{3264, 1030}";
+		};
+	};
+	166711BC12A877250067AD93 /* WeddingNotificationViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 663}}";
+			sepNavSelRange = "{1747, 0}";
+			sepNavVisRange = "{418, 1335}";
+		};
+	};
+	166711BD12A877250067AD93 /* WeddingNotificationViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 3198}}";
+			sepNavSelRange = "{4719, 0}";
+			sepNavVisRange = "{2221, 744}";
+		};
+	};
+	166711C312A877670067AD93 /* WeddingAboutViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{172, 0}";
+			sepNavVisRange = "{0, 241}";
+		};
+	};
+	166711C412A877670067AD93 /* WeddingAboutViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 715}}";
+			sepNavSelRange = "{624, 0}";
+			sepNavVisRange = "{0, 787}";
+		};
+	};
+	166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 507}}";
+			sepNavSelRange = "{427, 0}";
+			sepNavVisRange = "{42, 868}";
+		};
+	};
+	166D0E3012ADADD8001749F2 /* WeddingBoxView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1586}}";
+			sepNavSelRange = "{2572, 0}";
+			sepNavVisRange = "{2098, 1555}";
+		};
+	};
+	16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 218}";
+		};
+	};
+	16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 639}";
+		};
+	};
+	16BBB02E12B1675A00218CE6 /* ImageCache.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{130, 0}";
+			sepNavVisRange = "{0, 380}";
+		};
+	};
+	16BBB02F12B1675A00218CE6 /* ImageCache.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1131}}";
+			sepNavSelRange = "{702, 239}";
+			sepNavVisRange = "{518, 761}";
+		};
+	};
+	16BBB09712B19B3200218CE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */;
+		name = "WeddingDateViewController.m: 145";
+		rLen = 0;
+		rLoc = 4227;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 3849;
+	};
+	16BBB0BE12B19B4D00218CE6 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 166D125312AF1780001749F2 /* background.jpg */;
+	};
+	16BBB0BF12B19B4D00218CE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */;
+		name = "WeddingBackgroundViewController.m: 147";
+		rLen = 0;
+		rLoc = 4289;
+		rType = 0;
+		vrLen = 1030;
+		vrLoc = 3264;
+	};
+	16BBB0C012B19B4D00218CE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C5F12A69C8700DC0636 /* Wedding.h */;
+		name = "Wedding.h: 38";
+		rLen = 0;
+		rLoc = 731;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 188;
+	};
+	16BBB0CB12B19B4D00218CE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C5F12A69C8700DC0636 /* Wedding.h */;
+		name = "Wedding.h: 38";
+		rLen = 0;
+		rLoc = 731;
+		rType = 0;
+		vrLen = 770;
+		vrLoc = 164;
+	};
+	16F81B7512A2F72F00A1A863 /* BrideAlarm */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = BrideAlarm;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+			$lr = 1;
+			$pc = 1;
+			$r0 = 1;
+			$r1 = 1;
+			$r10 = 1;
+			$r11 = 1;
+			$r12 = 1;
+			$r2 = 1;
+			$r3 = 1;
+			$r4 = 1;
+			$r5 = 1;
+			$r6 = 1;
+			$r7 = 1;
+			$r8 = 1;
+			$r9 = 1;
+			$sp = 1;
+		};
+	};
+	16F81B7B12A2F74D00A1A863 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	16F81B7C12A2F74D00A1A863 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{263, 0}";
+			sepNavVisRange = "{0, 592}";
+		};
+	};
+	16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 897}}";
+			sepNavSelRange = "{857, 0}";
+			sepNavVisRange = "{532, 943}";
+			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
+		};
+	};
+	1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{509, 0}";
+			sepNavVisRange = "{0, 547}";
+		};
+	};
+	1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1378}}";
+			sepNavSelRange = "{379, 0}";
+			sepNavVisRange = "{178, 1060}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* BrideAlarm */ = {
+		activeExec = 0;
+		executables = (
+			16F81B7512A2F72F00A1A863 /* BrideAlarm */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 16F81B7512A2F72F00A1A863 /* BrideAlarm */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* BrideAlarm */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* BrideAlarm */,
+		);
+		codeSenseManager = 16F81B7C12A2F74D00A1A863 /* Code sense */;
+		executables = (
+			16F81B7512A2F72F00A1A863 /* BrideAlarm */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					872,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					848,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 313630162;
+			PBXWorkspaceStateSaveDate = 313630162;
+		};
+		perUserProjectItems = {
+			16BBB09712B19B3200218CE6 = 16BBB09712B19B3200218CE6 /* PBXTextBookmark */;
+			16BBB0BE12B19B4D00218CE6 = 16BBB0BE12B19B4D00218CE6 /* PBXBookmark */;
+			16BBB0BF12B19B4D00218CE6 = 16BBB0BF12B19B4D00218CE6 /* PBXTextBookmark */;
+			16BBB0C012B19B4D00218CE6 = 16BBB0C012B19B4D00218CE6 /* PBXTextBookmark */;
+			16BBB0CB12B19B4D00218CE6 = 16BBB0CB12B19B4D00218CE6 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 16F81B7B12A2F74D00A1A863 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{206, 0}";
+			sepNavVisRange = "{0, 214}";
+		};
+	};
+}

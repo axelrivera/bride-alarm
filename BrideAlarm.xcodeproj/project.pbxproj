@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		160C0C6112A69C8700DC0636 /* Wedding.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0C6012A69C8700DC0636 /* Wedding.m */; };
+		160C0C9112A6A4F600DC0636 /* WeddingCoupleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */; };
+		160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */; };
+		160C0ED612A7196300DC0636 /* WeddingDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */; };
+		160C0ED712A7196300DC0636 /* WeddingDateViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 160C0ED512A7196300DC0636 /* WeddingDateViewController.h */; };
+		165839D912A3EE47009365AB /* WeddingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165839D712A3EE47009365AB /* WeddingDetailViewController.m */; };
+		165839DA12A3EE47009365AB /* WeddingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165839D812A3EE47009365AB /* WeddingDetailViewController.xib */; };
+		166711BA12A8770D0067AD93 /* WeddingBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */; };
+		166711BB12A8770D0067AD93 /* WeddingBackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166711B912A8770D0067AD93 /* WeddingBackgroundViewController.xib */; };
+		166711BF12A877250067AD93 /* WeddingNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166711BD12A877250067AD93 /* WeddingNotificationViewController.m */; };
+		166711C012A877250067AD93 /* WeddingNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166711BE12A877250067AD93 /* WeddingNotificationViewController.xib */; };
+		166711C612A877670067AD93 /* WeddingAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166711C412A877670067AD93 /* WeddingAboutViewController.m */; };
+		166711C712A877670067AD93 /* WeddingAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166711C512A877670067AD93 /* WeddingAboutViewController.xib */; };
+		166711F612A882010067AD93 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 166711F512A882010067AD93 /* settings.png */; };
+		166D0E2512ADAC57001749F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166D0E2412ADAC57001749F2 /* QuartzCore.framework */; };
+		166D0E3112ADADD8001749F2 /* WeddingBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */; };
+		166D0F9A12AE8DA0001749F2 /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 166D0F9812AE8DA0001749F2 /* rectangle.png */; };
+		166D0F9B12AE8DA0001749F2 /* rectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 166D0F9912AE8DA0001749F2 /* rectangle@2x.png */; };
+		166D125512AF1780001749F2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166D125312AF1780001749F2 /* background.jpg */; };
+		166D125612AF1780001749F2 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166D125412AF1780001749F2 /* background@2x.jpg */; };
+		16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAFD712B12A0C00218CE6 /* FileHelpers.m */; };
+		16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB02F12B1675A00218CE6 /* ImageCache.m */; };
+		16F81B8012A2F77B00A1A863 /* WeddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */; };
+		16F81B8112A2F77B00A1A863 /* WeddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */; };
+		1D3623260D0F684500981E51 /* BrideAlarmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		160C0C5F12A69C8700DC0636 /* Wedding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wedding.h; sourceTree = "<group>"; };
+		160C0C6012A69C8700DC0636 /* Wedding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wedding.m; sourceTree = "<group>"; };
+		160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingCoupleViewController.h; sourceTree = "<group>"; };
+		160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingCoupleViewController.m; sourceTree = "<group>"; };
+		160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingCoupleViewController.xib; sourceTree = "<group>"; };
+		160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDateViewController.h; sourceTree = "<group>"; };
+		160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDateViewController.m; sourceTree = "<group>"; };
+		160C0ED512A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeddingDateViewController.h; path = Classes/WeddingDateViewController.h; sourceTree = "<group>"; };
+		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		165839D612A3EE47009365AB /* WeddingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDetailViewController.h; sourceTree = "<group>"; };
+		165839D712A3EE47009365AB /* WeddingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDetailViewController.m; sourceTree = "<group>"; };
+		165839D812A3EE47009365AB /* WeddingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDetailViewController.xib; sourceTree = "<group>"; };
+		166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingBackgroundViewController.h; sourceTree = "<group>"; };
+		166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingBackgroundViewController.m; sourceTree = "<group>"; };
+		166711B912A8770D0067AD93 /* WeddingBackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingBackgroundViewController.xib; sourceTree = "<group>"; };
+		166711BC12A877250067AD93 /* WeddingNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingNotificationViewController.h; sourceTree = "<group>"; };
+		166711BD12A877250067AD93 /* WeddingNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingNotificationViewController.m; sourceTree = "<group>"; };
+		166711BE12A877250067AD93 /* WeddingNotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingNotificationViewController.xib; sourceTree = "<group>"; };
+		166711C312A877670067AD93 /* WeddingAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingAboutViewController.h; sourceTree = "<group>"; };
+		166711C412A877670067AD93 /* WeddingAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingAboutViewController.m; sourceTree = "<group>"; };
+		166711C512A877670067AD93 /* WeddingAboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingAboutViewController.xib; sourceTree = "<group>"; };
+		166711F512A882010067AD93 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		166D0E2412ADAC57001749F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingBoxView.h; sourceTree = "<group>"; };
+		166D0E3012ADADD8001749F2 /* WeddingBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingBoxView.m; sourceTree = "<group>"; };
+		166D0F9812AE8DA0001749F2 /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
+		166D0F9912AE8DA0001749F2 /* rectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rectangle@2x.png"; sourceTree = "<group>"; };
+		166D125312AF1780001749F2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		166D125412AF1780001749F2 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
+		16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
+		16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
+		16BBB02E12B1675A00218CE6 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		16BBB02F12B1675A00218CE6 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingViewController.h; sourceTree = "<group>"; };
+		16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingViewController.m; sourceTree = "<group>"; };
+		16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingViewController.xib; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrideAlarmAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrideAlarmAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Bride Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bride Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrideAlarm_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BrideAlarm-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				166D0E2512ADAC57001749F2 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				16BBB02E12B1675A00218CE6 /* ImageCache.h */,
+				16BBB02F12B1675A00218CE6 /* ImageCache.m */,
+				16BBAFD612B12A0C00218CE6 /* FileHelpers.h */,
+				16BBAFD712B12A0C00218CE6 /* FileHelpers.m */,
+				1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */,
+				1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */,
+				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
+				160C0C5F12A69C8700DC0636 /* Wedding.h */,
+				160C0C6012A69C8700DC0636 /* Wedding.m */,
+				166711C312A877670067AD93 /* WeddingAboutViewController.h */,
+				166711C412A877670067AD93 /* WeddingAboutViewController.m */,
+				166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */,
+				166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */,
+				160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */,
+				160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */,
+				160C0ED312A7196300DC0636 /* WeddingDateViewController.h */,
+				160C0ED412A7196300DC0636 /* WeddingDateViewController.m */,
+				165839D612A3EE47009365AB /* WeddingDetailViewController.h */,
+				165839D712A3EE47009365AB /* WeddingDetailViewController.m */,
+				166711BC12A877250067AD93 /* WeddingNotificationViewController.h */,
+				166711BD12A877250067AD93 /* WeddingNotificationViewController.m */,
+				16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */,
+				16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */,
+				166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */,
+				166D0E3012ADADD8001749F2 /* WeddingBoxView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Bride Alarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				166D125312AF1780001749F2 /* background.jpg */,
+				166D125412AF1780001749F2 /* background@2x.jpg */,
+				8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				166D0F9812AE8DA0001749F2 /* rectangle.png */,
+				166D0F9912AE8DA0001749F2 /* rectangle@2x.png */,
+				166711F512A882010067AD93 /* settings.png */,
+				166711C512A877670067AD93 /* WeddingAboutViewController.xib */,
+				166711B912A8770D0067AD93 /* WeddingBackgroundViewController.xib */,
+				160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */,
+				160C0ED512A7196300DC0636 /* WeddingDateViewController.h */,
+				165839D812A3EE47009365AB /* WeddingDetailViewController.xib */,
+				166711BE12A877250067AD93 /* WeddingNotificationViewController.xib */,
+				16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				166D0E2412ADAC57001749F2 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BrideAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BrideAlarm" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrideAlarm;
+			productName = BrideAlarm;
+			productReference = 1D6058910D05DD3D006BFB54 /* Bride Alarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BrideAlarm" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BrideAlarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				16F81B8112A2F77B00A1A863 /* WeddingViewController.xib in Resources */,
+				165839DA12A3EE47009365AB /* WeddingDetailViewController.xib in Resources */,
+				160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */,
+				160C0ED712A7196300DC0636 /* WeddingDateViewController.h in Resources */,
+				166711BB12A8770D0067AD93 /* WeddingBackgroundViewController.xib in Resources */,
+				166711C012A877250067AD93 /* WeddingNotificationViewController.xib in Resources */,
+				166711C712A877670067AD93 /* WeddingAboutViewController.xib in Resources */,
+				166711F612A882010067AD93 /* settings.png in Resources */,
+				166D0F9A12AE8DA0001749F2 /* rectangle.png in Resources */,
+				166D0F9B12AE8DA0001749F2 /* rectangle@2x.png in Resources */,
+				166D125512AF1780001749F2 /* background.jpg in Resources */,
+				166D125612AF1780001749F2 /* background@2x.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* BrideAlarmAppDelegate.m in Sources */,
+				16F81B8012A2F77B00A1A863 /* WeddingViewController.m in Sources */,
+				165839D912A3EE47009365AB /* WeddingDetailViewController.m in Sources */,
+				160C0C6112A69C8700DC0636 /* Wedding.m in Sources */,
+				160C0C9112A6A4F600DC0636 /* WeddingCoupleViewController.m in Sources */,
+				160C0ED612A7196300DC0636 /* WeddingDateViewController.m in Sources */,
+				166711BA12A8770D0067AD93 /* WeddingBackgroundViewController.m in Sources */,
+				166711BF12A877250067AD93 /* WeddingNotificationViewController.m in Sources */,
+				166711C612A877670067AD93 /* WeddingAboutViewController.m in Sources */,
+				166D0E3112ADADD8001749F2 /* WeddingBoxView.m in Sources */,
+				16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */,
+				16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BrideAlarm_Prefix.pch;
+				INFOPLIST_FILE = "BrideAlarm-Info.plist";
+				PRODUCT_NAME = "Bride Alarm";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BrideAlarm_Prefix.pch;
+				INFOPLIST_FILE = "BrideAlarm-Info.plist";
+				PRODUCT_NAME = BrideAlarm;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Bride Alarm";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PRODUCT_NAME = "Bride Alarm";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BrideAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BrideAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
