@@ -41,16 +41,16 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-	self.dataArray = nil;
-	self.dateFormatter = nil;
+	dataArray = nil;
+	dateFormatter = nil;
 }
 
 
 - (void)dealloc {
-	[self.pickerView release];
-	[self.doneButton release];
-	[self.dataArray release];
-	[self.dateFormatter release];
+	[pickerView release];
+	[doneButton release];
+	[dataArray release];
+	[dateFormatter release];
     [super dealloc];
 }
 

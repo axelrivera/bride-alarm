@@ -6,7 +6,7 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class Wedding;
 @class WeddingBoxView;
 
 @interface WeddingViewController : UIViewController {
@@ -14,12 +14,16 @@
 	
 	UIImageView *backgroundImageView;
 	UIToolbar *toolBar;
+	
+	Wedding *wedding;
 }
 
 @property (nonatomic, retain) WeddingBoxView *boxView;
 
 @property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
+
+@property (nonatomic, assign) Wedding *wedding;
 
 - (IBAction)showDetails:(id)sender;
 - (IBAction)showActions:(id)sender;

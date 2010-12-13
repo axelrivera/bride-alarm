@@ -12,10 +12,10 @@ static Wedding *sharedWedding;
 
 @implementation Wedding
 
-@synthesize groomName, brideName;
+@synthesize groomName;
+@synthesize brideName;
 @synthesize weddingDate;
 @synthesize backgroundImage;
-@synthesize globalNotification;
 
 - (id)init {
 	[super init];
@@ -25,31 +25,11 @@ static Wedding *sharedWedding;
 	
 	[self setGroomName:@""];
 	[self setBrideName:@""];
-	[self setGlobalNotification:YES];
-	
 	[self setWeddingDate];
 	
-	backgroundImage = [UIImage imageNamed:@"background.jpg"];
-			
+	[self setBackgroundImageDataFromImage:[UIImage imageNamed:@"background.jpg"]];
+				
 	return self;
-}
-
-- (id)initWithWeddingData:(NSDictionary *)data {
-	[super init];
-	
-	[self setGroomName:[data objectForKey:@"groomName"]];
-	[self setBrideName:[data objectForKey:@"brideName"]];
-	
-	weddingDate = [[data objectForKey:@"weddingDate"] retain];
-	
-	UIImage *image = [self backgroundImageFromFile]; 
-	if (image == nil) {
-		image = [UIImage imageNamed:@"background.jpg"];
-	}
-	
-	[self setBackgroundImage:image];
-	
-	return self;	
 }
 
 #pragma mark Custom Class Methods
@@ -95,13 +75,9 @@ static Wedding *sharedWedding;
 
 - (NSInteger)countDaysUntilWeddingDate{
 	NSDate *today = [[NSDate alloc] init];
-	
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	
 	NSUInteger unitFlags = NSDayCalendarUnit;
-	
 	NSDateComponents *components = [gregorian components:unitFlags fromDate:today toDate:weddingDate options:0];
-	
 	NSInteger days = [components day];
 	
 	[today release];
@@ -110,52 +86,8 @@ static Wedding *sharedWedding;
 	return days;	
 }
 
-- (NSDictionary *)weddingData {
-	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-						  groomName, @"groomName",
-						  brideName, @"brideName",
-						  weddingDate, @"weddingDate",
-						  nil];
-	return data;
-}
-
-- (BOOL)archiveWeddingData {
-	NSString *weddingPath = [self weddingFilePath];
-	if ([self.weddingData writeToFile:weddingPath atomically:YES]) {
-		NSLog(@"Wrote wedding data successfully");
-		return YES;
-	} else {
-		NSLog(@"Could not write to wedding data file");
-		return NO;
-	}
-}
-
-- (NSDictionary *)unarchiveWeddingData {
-	NSString *weddingPath = [self weddingFilePath];
-	return [NSDictionary dictionaryWithContentsOfFile:weddingPath];
-}
-
-- (void)setBackgroundImage:(UIImage *)image {
-	[backgroundImage release];
-	NSString *imagePath = [self weddingImagePath];
-	
-	NSData *d = UIImageJPEGRepresentation(image, 1.0);
-	
-	[d writeToFile:imagePath atomically: YES];
-	backgroundImage = image;
-}
-
-- (UIImage *)backgroundImageFromFile {
-	NSString *imagePath = [self weddingImagePath];
-	return [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
-}
-
 - (NSString *)weddingFilePath {
 	return pathInDocumentDirectory(@"Wedding.data");
-}
-
-- (NSString *)weddingImagePath {
-	return pathInDocumentDirectory(@"weddingImage");
 }
 
 - (NSString *)description {
@@ -164,6 +96,59 @@ static Wedding *sharedWedding;
 			brideName,
 			weddingDate];
 }
+
+#pragma mark NSCoding Methods
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+	[encoder encodeObject:groomName forKey:@"groomName"];
+	[encoder encodeObject:brideName forKey:@"brideName"];
+	[encoder encodeObject:weddingDate forKey:@"weddingDate"];
+	[encoder encodeObject:backgroundImageData forKey:@"backgroundImageData"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+	[super init];
+
+	[self setGroomName:[decoder decodeObjectForKey:@"groomName"]];
+	[self setBrideName:[decoder decodeObjectForKey:@"brideName"]];
+	[self setWeddingDate:[decoder decodeObjectForKey:@"weddingDate"]];
+	
+	backgroundImageData = [[decoder decodeObjectForKey:@"backgroundImageData"] retain];
+		
+	return self;
+}
+
+- (UIImage *)backgroundImage {
+	if (!backgroundImageData)
+		return nil;
+	
+	if (!backgroundImage)
+		backgroundImage = [[UIImage imageWithData:backgroundImageData] retain];
+	
+	return backgroundImage;
+}
+
+- (void)setBackgroundImageDataFromImage:(UIImage *)image {
+	[backgroundImageData release];
+	
+	[backgroundImage release];
+	
+	CGRect imageRect = CGRectMake(0.0, 0.0, 640.0, 960.0);
+	UIGraphicsBeginImageContext(imageRect.size);
+	
+	[image drawInRect: imageRect];
+	
+	backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+	
+	[backgroundImage retain];
+	
+	UIGraphicsEndImageContext();
+	
+	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.5);
+	
+	[backgroundImageData retain];
+}
+
 
 #pragma mark Singleton stuff
 
@@ -198,6 +183,7 @@ static Wedding *sharedWedding;
 	[brideName release];
 	[weddingDate release];
 	[backgroundImage release];
+	[backgroundImageData release];
 	[super dealloc];
 }
 

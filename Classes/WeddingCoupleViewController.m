@@ -146,9 +146,9 @@ static NSString *kPlaceholderKey = @"placeholderKey";
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-	[self.groomTextField release];
+	[groomTextField release];
 	groomTextField = nil;
-	[self.brideTextField release];
+	[brideTextField release];
 	brideTextField = nil;
 	
 	self.dataSourceArray = nil;
@@ -156,8 +156,8 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 
 
 - (void)dealloc {
-	[self.groomTextField release];
-	[self.brideTextField release];
+	[groomTextField release];
+	[brideTextField release];
     [super dealloc];
 }
 

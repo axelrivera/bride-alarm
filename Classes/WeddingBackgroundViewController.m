@@ -140,7 +140,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[editingPossession setThumbnailDataFromImage:image];
 	 */
 
-	[[Wedding sharedWedding] setBackgroundImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+	[[Wedding sharedWedding] setBackgroundImageDataFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
 	[self dismissModalViewControllerAnimated:YES];
 }
 

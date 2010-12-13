@@ -18,13 +18,16 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	NSDictionary *weddingData = [[Wedding sharedWedding] unarchiveWeddingData];
-	if (weddingData != nil) {
-		[[Wedding sharedWedding] initWithWeddingData:weddingData];
-	}
-	[weddingData release];
+	NSString *weddingPath = [self weddingFilePath];
+	
+	Wedding *wedding = [NSKeyedUnarchiver unarchiveObjectWithFile:weddingPath];
+	
+	if (!wedding)
+		wedding = [Wedding sharedWedding];
 	
     weddingViewController = [[WeddingViewController alloc] init];
+	
+	[weddingViewController setWedding:wedding];
 	
 	[[self window] setRootViewController:weddingViewController];
 	[[self window] makeKeyAndVisible];
@@ -46,7 +49,7 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
-	[[Wedding sharedWedding] archiveWeddingData];
+	[self archiveWedding];
 }
 
 
@@ -69,7 +72,18 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
-	[[Wedding sharedWedding] archiveWeddingData];
+	[self archiveWedding];
+}
+
+#pragma mark Header Methods
+
+- (NSString *)weddingFilePath {
+	return pathInDocumentDirectory(@"Wedding.data");
+}
+
+- (void)archiveWedding {
+	NSString *weddingPath = [self weddingFilePath];
+	[NSKeyedArchiver archiveRootObject:[Wedding sharedWedding] toFile:weddingPath];
 }
 
 #pragma mark -

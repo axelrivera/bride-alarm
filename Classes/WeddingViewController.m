@@ -14,24 +14,15 @@
 @implementation WeddingViewController
 
 @synthesize boxView, backgroundImageView, toolBar;
+@synthesize wedding;
 
 -(void)viewWillAppear:(BOOL)animated {
-	Wedding *wedding = [Wedding sharedWedding];
-	//coupleLabel.text = [wedding displayNameForGroom:wedding.groomName Bride:wedding.brideName];
-	//daysLabel.text = [NSString stringWithFormat:@"%d", [wedding countDaysUntilWeddingDate:wedding.weddingDate]];
-	NSLog(@"%@", [wedding displayCoupleNames]);
-	NSLog(@"Days Until Wedding: %d", [wedding countDaysUntilWeddingDate]);
-	NSLog(@"%@", wedding.weddingDate);
+	wedding = [Wedding sharedWedding];
 	
-	NSLog(@"One");
 	[backgroundImageView setImage:[wedding backgroundImage]];
-	NSLog(@"Two");
 	boxView.coupleLabel.text = [wedding displayCoupleNames];
-	NSLog(@"Three");
 	boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", [wedding countDaysUntilWeddingDate]];
-	NSLog(@"Four");
 	boxView.detailsLabel.text = @"until we get married...";
-	NSLog(@"Five");
 }
 
 - (void)viewDidLoad {

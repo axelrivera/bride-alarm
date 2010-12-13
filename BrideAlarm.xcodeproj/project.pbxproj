@@ -135,6 +135,18 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		16F30EAF12B690E6003E7946 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				166D125312AF1780001749F2 /* background.jpg */,
+				166D125412AF1780001749F2 /* background@2x.jpg */,
+				166D0F9812AE8DA0001749F2 /* rectangle.png */,
+				166D0F9912AE8DA0001749F2 /* rectangle@2x.png */,
+				166711F512A882010067AD93 /* settings.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,17 +179,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1622994712B282D70088261B /* WeddingDateViewController.xib */,
-				166D125312AF1780001749F2 /* background.jpg */,
-				166D125412AF1780001749F2 /* background@2x.jpg */,
+				16F30EAF12B690E6003E7946 /* images */,
 				8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				166D0F9812AE8DA0001749F2 /* rectangle.png */,
-				166D0F9912AE8DA0001749F2 /* rectangle@2x.png */,
-				166711F512A882010067AD93 /* settings.png */,
 				166711C512A877670067AD93 /* WeddingAboutViewController.xib */,
 				166711B912A8770D0067AD93 /* WeddingBackgroundViewController.xib */,
 				160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */,
+				1622994712B282D70088261B /* WeddingDateViewController.xib */,
 				165839D812A3EE47009365AB /* WeddingDetailViewController.xib */,
 				166711BE12A877250067AD93 /* WeddingNotificationViewController.xib */,
 				16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */,
