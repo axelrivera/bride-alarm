@@ -17,6 +17,21 @@ static Wedding *sharedWedding;
 @synthesize weddingDate;
 @synthesize backgroundImage;
 
+// Notifications
+@synthesize globalNotification;
+@synthesize twelveMonthNotification;
+@synthesize tenMonthNotification;
+@synthesize eightMonthNotification;
+@synthesize sixMonthNotification;
+@synthesize fourMonthNotification;
+@synthesize twoMonthNotification;
+@synthesize oneMonthNotification;
+@synthesize twoWeekNotification;
+@synthesize oneWeekNotification;
+@synthesize threeDayNotification;
+@synthesize twoDayNotification;
+@synthesize oneDayNotification;
+
 - (id)init {
 	[super init];
 	
@@ -28,6 +43,21 @@ static Wedding *sharedWedding;
 	[self setWeddingDate];
 	
 	[self setBackgroundImageDataFromImage:[UIImage imageNamed:@"background.jpg"]];
+	
+	// Notifications
+	[self setGlobalNotification:YES];
+	[self setTwelveMonthNotification:YES];
+	[self setTenMonthNotification:NO];
+	[self setEightMonthNotification:NO];
+	[self setSixMonthNotification:NO];
+	[self setFourMonthNotification:NO];
+	[self setTwoMonthNotification:NO];
+	[self setOneMonthNotification:NO];
+	[self setTwoWeekNotification:NO];
+	[self setOneWeekNotification:NO];
+	[self setThreeDayNotification:NO];
+	[self setTwoDayNotification:NO];
+	[self setOneDayNotification:YES];
 				
 	return self;
 }
@@ -86,17 +116,6 @@ static Wedding *sharedWedding;
 	return days;	
 }
 
-- (NSString *)weddingFilePath {
-	return pathInDocumentDirectory(@"Wedding.data");
-}
-
-- (NSString *)description {
-	return [NSString stringWithFormat:@"%@ & %@, Wedding Date: %@",
-			groomName,
-			brideName,
-			weddingDate];
-}
-
 #pragma mark NSCoding Methods
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
@@ -104,6 +123,21 @@ static Wedding *sharedWedding;
 	[encoder encodeObject:brideName forKey:@"brideName"];
 	[encoder encodeObject:weddingDate forKey:@"weddingDate"];
 	[encoder encodeObject:backgroundImageData forKey:@"backgroundImageData"];
+	
+	// Notifications
+	[encoder encodeBool:globalNotification forKey:@"globalNotification"];
+	[encoder encodeBool:twelveMonthNotification forKey:@"twelveMonthNotification"];
+	[encoder encodeBool:tenMonthNotification forKey:@"tenMonthNotification"];
+	[encoder encodeBool:eightMonthNotification forKey:@"eightMonthNotification"];
+	[encoder encodeBool:sixMonthNotification forKey:@"sixMonthNotification"];
+	[encoder encodeBool:fourMonthNotification forKey:@"fourMonthNotification"];
+	[encoder encodeBool:twoMonthNotification forKey:@"twoMonthNotification"];
+	[encoder encodeBool:oneMonthNotification forKey:@"oneMonthNotification"];
+	[encoder encodeBool:twoWeekNotification forKey:@"twoWeekNotification"];
+	[encoder encodeBool:oneWeekNotification forKey:@"oneWeekNotification"];
+	[encoder encodeBool:threeDayNotification forKey:@"threeDayNotification"];
+	[encoder encodeBool:twoDayNotification forKey:@"twoDayNotification"];
+	[encoder encodeBool:oneDayNotification forKey:@"oneDayNotification"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -114,6 +148,21 @@ static Wedding *sharedWedding;
 	[self setWeddingDate:[decoder decodeObjectForKey:@"weddingDate"]];
 	
 	backgroundImageData = [[decoder decodeObjectForKey:@"backgroundImageData"] retain];
+	
+	// Notifications
+	[self setGlobalNotification:[decoder decodeBoolForKey:@"globalNotification"]];
+	[self setTwelveMonthNotification:[decoder decodeBoolForKey:@"twelveMonthNotification"]];
+	[self setTenMonthNotification:[decoder decodeBoolForKey:@"tenMonthNotification"]];
+	[self setEightMonthNotification:[decoder decodeBoolForKey:@"eightMonthNotification"]];
+	[self setSixMonthNotification:[decoder decodeBoolForKey:@"sixMonthNotification"]];
+	[self setFourMonthNotification:[decoder decodeBoolForKey:@"fourMonthNotification"]];
+	[self setTwoMonthNotification:[decoder decodeBoolForKey:@"twoMonthNotification"]];
+	[self setOneMonthNotification:[decoder decodeBoolForKey:@"oneMonthNotification"]];
+	[self setTwoWeekNotification:[decoder decodeBoolForKey:@"twoWeekNotification"]];
+	[self setOneWeekNotification:[decoder decodeBoolForKey:@"oneWeekNotification"]];
+	[self setThreeDayNotification:[decoder decodeBoolForKey:@"threeDayNotification"]];
+	[self setTwoDayNotification:[decoder decodeBoolForKey:@"twoDayNotification"]];
+	[self setOneDayNotification:[decoder decodeBoolForKey:@"oneDayNotification"]];
 		
 	return self;
 }

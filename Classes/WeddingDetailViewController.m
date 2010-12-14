@@ -113,6 +113,7 @@ static NSString *kViewKey = @"viewKey";
 	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+	[self.tableView reloadData];
 }
 
 
@@ -153,7 +154,20 @@ static NSString *kViewKey = @"viewKey";
 		else {
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			cell.textLabel.text = [menu objectForKey:kLabelKey];
-			cell.detailTextLabel.text = [menu objectForKey:kDetailKey];
+			
+			NSString *detailText = nil;
+			
+			if (cell.textLabel.text == @"Notifications") {
+				if ([[Wedding sharedWedding] globalNotification] == YES) {
+					detailText = [NSString stringWithFormat:@"On"];
+				} else {
+					detailText = [NSString stringWithFormat:@"Off"];
+				}
+			} else {
+				detailText = [menu objectForKey:kDetailKey];
+			}
+			cell.detailTextLabel.text = detailText;
+			[detailText release];
 		}
 	}
 	return cell;
@@ -198,7 +212,7 @@ static NSString *kViewKey = @"viewKey";
 - (UILabel *)labelCtl:(UILabel *)label {
 	if (label == nil) {
 		CGRect frame = CGRectMake(kLeftMargin, 7.0, kLabelWidth, kLabelHeight);
-		label = [[UILabel alloc] initWithFrame:frame];
+		label = [[[UILabel alloc] initWithFrame:frame] autorelease];
 		label.font = [UIFont boldSystemFontOfSize:17.0];
 		label.textColor = [UIColor blackColor];
 		label.textAlignment = UITextAlignmentCenter; 
@@ -222,7 +236,6 @@ static NSString *kViewKey = @"viewKey";
     // e.g. self.myOutlet = nil;
 	[bannerLabel release];
 	self.bannerLabel = nil;
-	
 	self.menuList = nil;
 }
 

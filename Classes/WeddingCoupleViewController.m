@@ -92,7 +92,7 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.textLabel.text = [data objectForKey:kLabelKey];
-	[data release];
+	
 	return cell;
 }
 
@@ -120,7 +120,7 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 }
 
 - (UITextField *)setupViewForTextField {
-	UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, kTextFieldWidth, kTextFieldHeight)];
+	UITextField *textField = [[[UITextField alloc] initWithFrame:CGRectMake(110, 10, kTextFieldWidth, kTextFieldHeight)] autorelease];
 	textField.adjustsFontSizeToFitWidth = YES;
 	textField.textColor = [UIColor blackColor];
 	textField.backgroundColor = [UIColor whiteColor];

@@ -7,6 +7,7 @@
 //
 
 #import "WeddingNotificationViewController.h"
+#import "Wedding.h"
 
 #define kViewTag 1
 
@@ -30,10 +31,12 @@ static NSString *kViewKey = @"viewKey";
 @synthesize oneDaySwitch;
 
 @synthesize dataSourceArray;
+@synthesize wedding;
 
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
+	wedding = [Wedding sharedWedding];
     [super viewDidLoad];
 	
 	self.title = @"Notifications";
@@ -103,9 +106,7 @@ static NSString *kViewKey = @"viewKey";
 							 @"One Day", kLabelKey,
 							 self.oneDaySwitch, kViewKey,
 							 nil],
-							
 							nil];
-											
 }
 
 #pragma mark Table Data Source Methods
@@ -134,10 +135,10 @@ static NSString *kViewKey = @"viewKey";
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else {
 		// the cell is being recycled, remove old embedded controls
-		//UIView *viewToRemove = nil;
-//		viewToRemove = [cell.contentView viewWithTag:kViewTag];
-//		if (viewToRemove)
-//			[viewToRemove removeFromSuperview];
+		UIView *viewToRemove = nil;
+		viewToRemove = [cell.contentView viewWithTag:kViewTag];
+		if (viewToRemove)
+			[viewToRemove removeFromSuperview];
 	}
 	
 	NSDictionary *data = nil;
@@ -145,37 +146,201 @@ static NSString *kViewKey = @"viewKey";
 	if (indexPath.section == 0) {
 		data = [self.dataSourceArray objectAtIndex:indexPath.section];
 	} else {
+		// The data is stored in a linear array. That's why we use row + 1
 		data = [self.dataSourceArray objectAtIndex:indexPath.row + 1];
 	}
 	
 	cell.textLabel.text = [data valueForKey:kLabelKey];
 	
-	UISwitch *switchCtl = [self getValueForSwitch:[data valueForKey:kViewKey]];
-	[cell.contentView addSubview:switchCtl];
+	UIControl *control = [data objectForKey:kViewKey];
+	
+	[cell.contentView addSubview:control];
 		
 	return cell;
 }
 
 #pragma mark Lazy Creation of Controls
 
-- (UISwitch *)getValueForSwitch:(UISwitch *)name {
-    if (name == nil) 
-    {
-        CGRect frame = CGRectMake(198.0, 8.0, 94.0, 27.0);
-        name = [[UISwitch alloc] initWithFrame:frame];
-        [name addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
-        
-        // in case the parent view draws with a custom color or gradient, use a transparent color
-        name.backgroundColor = [UIColor clearColor];
-				
-		name.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
-    }
-    return name;
+- (UISwitch *)globalSwitch {
+	if (globalSwitch == nil) {
+		globalSwitch =  [self setSwitchControlWithSelector:@selector(globalAction:)];
+		[globalSwitch setOn:[wedding globalNotification] animated:NO];
+	}
+	return globalSwitch;
 }
 
-- (void)switchAction:(id)sender {
-	NSLog(@"%@", sender);
-	return;
+- (UISwitch *)twelveMonthSwitch {
+	if (twelveMonthSwitch == nil) {
+		twelveMonthSwitch = [self setSwitchControlWithSelector:@selector(twelveMonthAction:)];
+		[twelveMonthSwitch setOn:[wedding twelveMonthNotification] animated:NO];
+	}
+	return twelveMonthSwitch;
+}
+
+- (UISwitch *)tenMonthSwitch {
+	if (tenMonthSwitch == nil) {
+		tenMonthSwitch = [self setSwitchControlWithSelector:@selector(tenMonthAction:)];
+		[tenMonthSwitch setOn:[wedding tenMonthNotification] animated:NO];
+	}
+	return tenMonthSwitch;
+}
+
+- (UISwitch *)eightMonthSwitch {
+	if (eightMonthSwitch == nil) {
+		eightMonthSwitch = [self setSwitchControlWithSelector:@selector(eightMonthAction:)];
+		[eightMonthSwitch setOn:[wedding eightMonthNotification] animated:NO];
+	}
+	return eightMonthSwitch;
+}
+
+- (UISwitch *)sixMonthSwitch {
+	if (sixMonthSwitch == nil) {
+		sixMonthSwitch = [self setSwitchControlWithSelector:@selector(sixMonthAction:)];
+		[sixMonthSwitch setOn:[wedding sixMonthNotification] animated:NO];
+	}
+	return sixMonthSwitch;
+}
+
+- (UISwitch *)fourMonthSwitch {
+	if (fourMonthSwitch == nil) {
+		fourMonthSwitch = [self setSwitchControlWithSelector:@selector(fourMonthAction:)];
+		[fourMonthSwitch setOn:[wedding fourMonthNotification] animated:NO];
+	}
+	return fourMonthSwitch;
+}
+
+- (UISwitch *)twoMonthSwitch {
+	if (twoMonthSwitch == nil) {
+		twoMonthSwitch = [self setSwitchControlWithSelector:@selector(twoMonthAction:)];
+		[twoMonthSwitch setOn:[wedding twoMonthNotification] animated:NO];
+	}
+	return twoMonthSwitch;
+}
+
+- (UISwitch *)oneMonthSwitch {
+	if (oneMonthSwitch == nil) {
+		oneMonthSwitch = [self setSwitchControlWithSelector:@selector(oneMonthAction:)];
+		[oneMonthSwitch setOn:[wedding oneMonthNotification] animated:NO];
+	}
+	return oneMonthSwitch;
+}
+
+- (UISwitch *)twoWeekSwitch {
+	if (twoWeekSwitch == nil) {
+		twoWeekSwitch = [self setSwitchControlWithSelector:@selector(twoWeekAction:)];
+		[twoWeekSwitch setOn:[wedding twoWeekNotification] animated:NO];
+	}
+	return twoWeekSwitch;
+}
+
+- (UISwitch *)oneWeekSwitch {
+	if (oneWeekSwitch == nil) {
+		oneWeekSwitch = [self setSwitchControlWithSelector:@selector(oneWeekAction:)];
+		[oneWeekSwitch setOn:[wedding oneWeekNotification] animated:NO];
+	}
+	return oneWeekSwitch;
+}
+
+- (UISwitch *)threeDaySwitch {
+	if (threeDaySwitch == nil) {
+		threeDaySwitch = [self setSwitchControlWithSelector:@selector(threeDayAction:)];
+		[threeDaySwitch setOn:[wedding threeDayNotification] animated:NO];
+	}
+	return threeDaySwitch;
+}
+
+- (UISwitch *)twoDaySwitch {
+	if (twoDaySwitch == nil) {
+		twoDaySwitch = [self setSwitchControlWithSelector:@selector(twoDayAction:)];
+		[twoDaySwitch setOn:[wedding twoDayNotification] animated:NO];
+	}
+	return twoDaySwitch;
+}
+
+- (UISwitch *)oneDaySwitch {
+	if (oneDaySwitch == nil) {
+		oneDaySwitch = [self setSwitchControlWithSelector:@selector(oneDayAction:)];
+		[oneDaySwitch setOn:[wedding oneDayNotification] animated:NO];
+	}
+	return oneDaySwitch;
+}
+
+- (UISwitch *)setSwitchControlWithSelector:(SEL)selector {
+	CGRect frame = CGRectMake(198.0, 12.0, 94.0, 27.0);
+	UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
+	[switchCtl addTarget:self action:selector forControlEvents:UIControlEventValueChanged];
+	
+	// in case the parent view draws with a custom color or gradient, use a transparent color
+	switchCtl.backgroundColor = [UIColor clearColor];
+	[switchCtl setAccessibilityLabel:NSLocalizedString(@"StandardSwitch", @"")];
+	switchCtl.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+	
+    return switchCtl;
+}
+
+- (void)globalAction:(id)sender {
+	NSLog(@"Global: %d", [globalSwitch isOn]);
+	[wedding setGlobalNotification:[globalSwitch isOn]];
+}
+
+- (void)twelveMonthAction:(id)sender {
+	NSLog(@"Twelve Months: %d", [twelveMonthSwitch isOn]);
+	[wedding setTwelveMonthNotification:[twelveMonthSwitch isOn]];
+}
+
+- (void)tenMonthAction:(id)sender {
+	NSLog(@"Ten Months: %d", [tenMonthSwitch isOn]);
+	[wedding setTenMonthNotification:[tenMonthSwitch isOn]];
+}
+
+- (void)eightMonthAction:(id)sender {
+	NSLog(@"Eight Months: %d", [eightMonthSwitch isOn]);
+	[wedding setEightMonthNotification:[eightMonthSwitch isOn]];
+}
+
+- (void)sixMonthAction:(id)sender {
+	NSLog(@"Six Months: %d", [sixMonthSwitch isOn]);
+	[wedding setSixMonthNotification:[sixMonthSwitch isOn]];
+}
+
+- (void)fourMonthAction:(id)sender {
+	NSLog(@"Four Months: %d", [fourMonthSwitch isOn]);
+	[wedding setFourMonthNotification:[fourMonthSwitch isOn]];
+}
+
+- (void)twoMonthAction:(id)sender {
+	NSLog(@"Two Months: %d", [twoMonthSwitch isOn]);
+	[wedding setTwoMonthNotification:[twoMonthSwitch isOn]];
+}
+
+- (void)oneMonthAction:(id)sender {
+	NSLog(@"One Month: %d", [oneMonthSwitch isOn]);
+	[wedding setOneMonthNotification:[oneMonthSwitch isOn]];
+}
+
+- (void)twoWeekAction:(id)sender {
+	NSLog(@"Two Weeks: %d", [twoWeekSwitch isOn]);
+	[wedding setTwoWeekNotification:[twoWeekSwitch isOn]];
+}
+
+- (void)oneWeekAction:(id)sender {
+	NSLog(@"One Week: %d", [oneWeekSwitch isOn]);
+	[wedding setOneWeekNotification:[oneWeekSwitch isOn]];
+}
+
+- (void)threeDayAction:(id)sender {
+	NSLog(@"Three Days: %d", [threeDaySwitch isOn]);
+	[wedding setThreeDayNotification:[threeDaySwitch isOn]];
+}
+
+- (void)twoDayAction:(id)sender {
+	NSLog(@"Two Days: %d", [twoDaySwitch isOn]);
+	[wedding setTwoDayNotification:[twoDaySwitch isOn]];
+}
+
+- (void)oneDayAction:(id)sender {
+	NSLog(@"One Day: %d", [oneDaySwitch isOn]);
+	[wedding setOneDayNotification:[oneDaySwitch isOn]];
 }
 
 #pragma mark Memory Management
