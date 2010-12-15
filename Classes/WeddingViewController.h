@@ -28,4 +28,6 @@
 - (IBAction)showDetails:(id)sender;
 - (IBAction)showActions:(id)sender;
 
+- (void)animatedElements;
+
 @end

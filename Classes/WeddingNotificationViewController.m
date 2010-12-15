@@ -38,7 +38,7 @@ static NSString *kViewKey = @"viewKey";
 - (void)viewDidLoad {
 	wedding = [Wedding sharedWedding];
     [super viewDidLoad];
-	
+		
 	self.title = @"Notifications";
 	
 	self.dataSourceArray = [NSArray arrayWithObjects:
@@ -107,6 +107,17 @@ static NSString *kViewKey = @"viewKey";
 							 self.oneDaySwitch, kViewKey,
 							 nil],
 							nil];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	if (globalSwitch.on == YES) {
+		[self allSwitchesEnabled:YES];
+	} else {
+		[self allSwitchesEnabled:NO];
+	}
+
 }
 
 #pragma mark Table Data Source Methods
@@ -266,8 +277,8 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (UISwitch *)setSwitchControlWithSelector:(SEL)selector {
-	CGRect frame = CGRectMake(198.0, 12.0, 94.0, 27.0);
-	UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
+	CGRect frame = CGRectMake(198.0, 7.0, 94.0, 27.0);
+	UISwitch *switchCtl = [[[UISwitch alloc] initWithFrame:frame] autorelease];
 	[switchCtl addTarget:self action:selector forControlEvents:UIControlEventValueChanged];
 	
 	// in case the parent view draws with a custom color or gradient, use a transparent color
@@ -281,6 +292,12 @@ static NSString *kViewKey = @"viewKey";
 - (void)globalAction:(id)sender {
 	NSLog(@"Global: %d", [globalSwitch isOn]);
 	[wedding setGlobalNotification:[globalSwitch isOn]];
+	if (globalSwitch.on == YES) {
+		[self allSwitchesEnabled:YES];
+	} else {
+		[self allSwitchesEnabled:NO];
+	}
+
 }
 
 - (void)twelveMonthAction:(id)sender {
@@ -341,6 +358,36 @@ static NSString *kViewKey = @"viewKey";
 - (void)oneDayAction:(id)sender {
 	NSLog(@"One Day: %d", [oneDaySwitch isOn]);
 	[wedding setOneDayNotification:[oneDaySwitch isOn]];
+}
+
+- (void)allSwitchesEnabled:(BOOL)enabled {
+	if (enabled == NO) {
+		twelveMonthSwitch.enabled = NO;
+		tenMonthSwitch.enabled = NO;
+		eightMonthSwitch.enabled = NO;
+		sixMonthSwitch.enabled = NO;
+		fourMonthSwitch.enabled = NO;
+		twoMonthSwitch.enabled = NO;
+		oneMonthSwitch.enabled = NO;
+		twoWeekSwitch.enabled = NO;
+		oneWeekSwitch.enabled = NO;
+		threeDaySwitch.enabled = NO;
+		twoDaySwitch.enabled = NO;
+		oneDaySwitch.enabled = NO;
+	} else {
+		twelveMonthSwitch.enabled = YES;
+		tenMonthSwitch.enabled = YES;
+		eightMonthSwitch.enabled = YES;
+		sixMonthSwitch.enabled = YES;
+		fourMonthSwitch.enabled = YES;
+		twoMonthSwitch.enabled = YES;
+		oneMonthSwitch.enabled = YES;
+		twoWeekSwitch.enabled = YES;
+		oneWeekSwitch.enabled = YES;
+		threeDaySwitch.enabled = YES;
+		twoDaySwitch.enabled = YES;
+		oneDaySwitch.enabled = YES;
+	}
 }
 
 #pragma mark Memory Management

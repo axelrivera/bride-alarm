@@ -60,5 +60,7 @@
 - (void)twoDayAction:(id)sender;
 - (void)oneDayAction:(id)sender;
 
+- (void)allSwitchesEnabled:(BOOL)enabled;
+
 
 @end

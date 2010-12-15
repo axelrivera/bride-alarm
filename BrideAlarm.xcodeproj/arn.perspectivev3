@@ -271,17 +271,17 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
 									<integer>30</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 128}, {307, 707}}</string>
+							<string>{{0, 156}, {307, 707}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>16F81B8312A2F79000A1A863</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>WeddingNotificationViewController.m</string>
+								<string>WeddingViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,15 +324,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>16F81B8412A2F79000A1A863</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>WeddingNotificationViewController.m</string>
+										<string>WeddingViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>16F3102E12B7B5E9003E7946</string>
+										<string>169E1DBF12B93854008ECBE2</string>
 										<key>history</key>
 										<array>
-											<string>16F30ED812B6989E003E7946</string>
-											<string>16F30ED912B6989E003E7946</string>
 											<string>16F30EE112B69FBB003E7946</string>
 											<string>16F30EEB12B6A2F0003E7946</string>
 											<string>1631230912B26D770010BC37</string>
@@ -347,12 +345,15 @@
 											<string>1605857C12B55C1C00B2166D</string>
 											<string>1605859512B563A200B2166D</string>
 											<string>1605859612B563A200B2166D</string>
-											<string>16F30F0812B6A997003E7946</string>
 											<string>16F30F2F12B6B0B5003E7946</string>
 											<string>16F30F3912B6B2A3003E7946</string>
 											<string>16F30FFC12B7A7F6003E7946</string>
-											<string>16F3102812B7B58C003E7946</string>
-											<string>16F3102B12B7B5C4003E7946</string>
+											<string>16F3105D12B7FC6D003E7946</string>
+											<string>16F3105E12B7FC6D003E7946</string>
+											<string>16F3105F12B7FC6D003E7946</string>
+											<string>169E1D8C12B9313C008ECBE2</string>
+											<string>169E1D8D12B9313C008ECBE2</string>
+											<string>169E1DBC12B93828008ECBE2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -366,18 +367,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1111, 531}}</string>
+								<string>{{0, 0}, {1111, 525}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 112 1440 766 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>531pt</string>
+							<string>525pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>189pt</string>
+							<string>195pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -391,7 +392,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 162}}</string>
+										<string>{{10, 27}, {1111, 168}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -446,7 +447,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 157}}</string>
+										<string>{{10, 27}, {1111, 162}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXCVSModule</string>
@@ -466,7 +467,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 162}}</string>
+										<string>{{10, 27}, {1111, 168}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 112 1440 766 0 0 1440 878 </string>
 									</dict>
@@ -496,11 +497,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>16F30FCB12B79FA6003E7946</string>
+				<string>169E1D9012B9313C008ECBE2</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>16F30FCC12B79FA6003E7946</string>
+				<string>169E1D9112B9313C008ECBE2</string>
 				<string>16F81B8312A2F79000A1A863</string>
-				<string>16F30FCD12B79FA6003E7946</string>
+				<string>169E1D9212B9313C008ECBE2</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -649,14 +650,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>16F30FCE12B79FA6003E7946</string>
+				<string>169E1D9312B9313C008ECBE2</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>16F30FCF12B79FA6003E7946</string>
-				<string>16F30FD012B79FA6003E7946</string>
-				<string>16F30FD112B79FA6003E7946</string>
-				<string>16F30FD212B79FA6003E7946</string>
-				<string>16F81B8312A2F79000A1A863</string>
+				<string>169E1D9412B9313C008ECBE2</string>
+				<string>169E1D9512B9313C008ECBE2</string>
+				<string>169E1D9612B9313C008ECBE2</string>
+				<string>169E1D9712B9313C008ECBE2</string>
+				<string>169E1D9812B9313C008ECBE2</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -690,9 +691,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>16F3102F12B7B5E9003E7946</string>
-		<string>16F30FD312B79FA6003E7946</string>
-		<string>16F30FD512B79FA6003E7946</string>
+		<string>169E1D9912B9313C008ECBE2</string>
+		<string>169E1D9A12B9313C008ECBE2</string>
 		<string>/Users/arn/iOS Projects/BrideAlarm/BrideAlarm.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
