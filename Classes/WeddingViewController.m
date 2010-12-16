@@ -37,10 +37,8 @@
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
 
-- (void)viewDidLoad {
-	CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
-	
-	boxView = [[WeddingBoxView alloc] initWithFrame:applicationFrame viewController:self];
+- (void)viewDidLoad {	
+	boxView = [[WeddingBoxView alloc] init];
 	[self.view addSubview:boxView];
 	[self.view bringSubviewToFront:toolBar];
 	[boxView addGestureRecognizersToPiece:boxView];
@@ -49,7 +47,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
     if ([touch tapCount] == 1 && [touch view] == backgroundImageView){
-		NSLog(@"%@", [touch view]);
 		[UIView animateWithDuration:1.0
 						 animations:^{[self animatedElements];}];
 	}
@@ -76,9 +73,7 @@
 - (void)showDetails:(id)sender {
 	WeddingDetailViewController *detailViewController = [[WeddingDetailViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-	//[detailViewController setDelegate:self];
 	[self presentModalViewController:navController animated:YES];
-	//[navViewController release];
 	[detailViewController release];
 }
 

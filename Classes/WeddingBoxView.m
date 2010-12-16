@@ -6,50 +6,49 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "WeddingBoxView.h"
 #import "WeddingViewController.h"
-
+#import "WeddingBoxView.h"
 
 @implementation WeddingBoxView
 
-@synthesize viewController;
 @synthesize boxView;
+@synthesize originX;
+@synthesize originY;
 @synthesize coupleLabel;
 @synthesize daysLabel;
 @synthesize detailsLabel;
 
-- (id)initWithFrame:(CGRect)frame viewController:(WeddingViewController *)aController {
+
+- (id)init {
+	boxView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rectangle.png"]] autorelease];
+	
+	self.originX = ([[UIScreen mainScreen] bounds].size.width - boxView.bounds.size.width) / 2.0;
+	self.originY = 60.0;
+	
+	CGRect frame = CGRectMake(originX, originY, boxView.bounds.size.width, boxView.bounds.size.height);
+	
+	// Set self's frame to encompass the image
+	self = [self initWithFrame:frame];
+	
+	if (self != nil) {
+		self.opaque = NO;
+		[self setupSubviewsWithContent];
+	}
+	return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self != nil) {
-        self.viewController = aController;
-		[self setupSubviewsWithContentFrame:frame];
-    }
     return self;
 }
 
-- (void)setupSubviewsWithContentFrame:(CGRect)frameRect {
-	CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
-	
-	UIImage *image = [UIImage imageNamed:@"rectangle.png"];
-	
-	boxView = [[UIImageView alloc] initWithImage:image];
-	CGRect boxViewRect = [boxView bounds];
-	
-	CGFloat originX = (applicationFrame.size.width - boxViewRect.size.width) / 2.0;
-	CGFloat originY = 60.0;
-	
-	CGSize imageSize = boxViewRect.size;
-	
-	[boxView setFrame:CGRectMake(originX, originY, imageSize.width, imageSize.height)];
-	
-    boxView.opaque = YES;
-	
+- (void)setupSubviewsWithContent {
     // add view in proper order and location
     [self addSubview:boxView];
 	
 	// Add Label Subviews
 	
-	coupleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 5.0, [boxView bounds].size.width - 10.0, 25.0) ];
+	coupleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 5.0, [boxView bounds].size.width - 10.0, 25.0)];
 	coupleLabel.textAlignment =  UITextAlignmentCenter;
 	coupleLabel.textColor = [UIColor whiteColor];
 	coupleLabel.backgroundColor = [UIColor clearColor];
@@ -72,7 +71,7 @@
 	detailsLabel.shadowColor = [UIColor blackColor];
 	detailsLabel.font = [UIFont systemFontOfSize:17.0];
 	[boxView addSubview:detailsLabel];
-    
+    	
     [self setNeedsDisplay];
 }
 
@@ -111,7 +110,6 @@
 }
 
 - (void)dealloc {
-	[viewController release];
 	[boxView release];
 	[coupleLabel release];
 	[daysLabel release];

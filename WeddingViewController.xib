@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="6"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -74,7 +74,7 @@
 							<object class="IBUIBarButtonItem" id="873952364">
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">settings.png</string>
+									<string key="NSResourceName">preferences.png</string>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="320944815"/>
@@ -562,7 +562,7 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">BrideAlarm.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">settings.png</string>
+			<string key="NS.key.0">preferences.png</string>
 			<string key="NS.object.0">{26, 26}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">132</string>
