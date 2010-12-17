@@ -28,6 +28,7 @@
 		166D0F9B12AE8DA0001749F2 /* rectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 166D0F9912AE8DA0001749F2 /* rectangle@2x.png */; };
 		166D125512AF1780001749F2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166D125312AF1780001749F2 /* background.jpg */; };
 		166D125612AF1780001749F2 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166D125412AF1780001749F2 /* background@2x.jpg */; };
+		1676AE3C12BADF9700C4EF30 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */; };
 		16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAFD712B12A0C00218CE6 /* FileHelpers.m */; };
 		16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB02F12B1675A00218CE6 /* ImageCache.m */; };
 		16F81B8012A2F77B00A1A863 /* WeddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */; };
@@ -71,6 +72,8 @@
 		166D0F9912AE8DA0001749F2 /* rectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rectangle@2x.png"; sourceTree = "<group>"; };
 		166D125312AF1780001749F2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		166D125412AF1780001749F2 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
+		1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
 		16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
 		16BBB02E12B1675A00218CE6 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
@@ -108,19 +111,23 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				16BBB02E12B1675A00218CE6 /* ImageCache.h */,
-				16BBB02F12B1675A00218CE6 /* ImageCache.m */,
-				16BBAFD612B12A0C00218CE6 /* FileHelpers.h */,
-				16BBAFD712B12A0C00218CE6 /* FileHelpers.m */,
 				1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */,
 				1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */,
 				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
+				16BBAFD612B12A0C00218CE6 /* FileHelpers.h */,
+				16BBAFD712B12A0C00218CE6 /* FileHelpers.m */,
+				16BBB02E12B1675A00218CE6 /* ImageCache.h */,
+				16BBB02F12B1675A00218CE6 /* ImageCache.m */,
+				1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */,
+				1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */,
 				160C0C5F12A69C8700DC0636 /* Wedding.h */,
 				160C0C6012A69C8700DC0636 /* Wedding.m */,
 				166711C312A877670067AD93 /* WeddingAboutViewController.h */,
 				166711C412A877670067AD93 /* WeddingAboutViewController.m */,
 				166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */,
 				166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */,
+				166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */,
+				166D0E3012ADADD8001749F2 /* WeddingBoxView.m */,
 				160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */,
 				160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */,
 				160C0ED312A7196300DC0636 /* WeddingDateViewController.h */,
@@ -131,8 +138,6 @@
 				166711BD12A877250067AD93 /* WeddingNotificationViewController.m */,
 				16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */,
 				16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */,
-				166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */,
-				166D0E3012ADADD8001749F2 /* WeddingBoxView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				166D0E3112ADADD8001749F2 /* WeddingBoxView.m in Sources */,
 				16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */,
 				16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */,
+				1676AE3C12BADF9700C4EF30 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

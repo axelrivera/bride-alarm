@@ -19,10 +19,11 @@
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	toolBar.alpha = 0.0;
+	self.wantsFullScreenLayout = YES;
+	self.view.clipsToBounds = YES;
 	
+	toolBar.alpha = 0.0;	
 	[UIApplication sharedApplication].statusBarHidden = YES;
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
 	
 	wedding = [Wedding sharedWedding];
 	
@@ -34,7 +35,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+	
+	[UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)viewDidLoad {	
@@ -55,12 +57,6 @@
 - (void)animatedElements {
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	[UIView setAnimationDelegate:self];
-	
-	if ([UIApplication sharedApplication].statusBarHidden == YES) {
-		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
-	} else {
-		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
-	}
 	
 	if (toolBar.alpha == 0.0) {
 		[toolBar setAlpha:1.0];

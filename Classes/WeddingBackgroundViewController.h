@@ -11,11 +11,9 @@ typedef enum { CameraPhotoChoose, RollPhotoChoose, LibraryPhotoChoose, DefaultPh
 @interface WeddingBackgroundViewController : UIViewController
 	<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
 	UIImageView	*imageView;
-	UIBarButtonItem *actionButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *actionButton;
 
 @property (nonatomic, retain) UIImage *backgroundImage;
 

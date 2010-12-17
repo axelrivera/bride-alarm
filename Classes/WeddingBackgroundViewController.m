@@ -12,11 +12,23 @@
 @implementation WeddingBackgroundViewController
 
 @synthesize imageView;
-@synthesize actionButton;
 
 - (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+	
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+	self.navigationController.navigationBar.translucent = YES;
+	
 	[self.imageView setImage:[[Wedding sharedWedding] backgroundImage]];
-	self.navigationItem.rightBarButtonItem = self.actionButton;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+	self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewDidLoad {
@@ -32,7 +44,6 @@
 }
 
 - (void)viewDidUnload {
-	self.actionButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -41,7 +52,6 @@
 
 - (void)dealloc {
 	[imageView release];
-	[actionButton release];
     [super dealloc];
 }
 
@@ -59,8 +69,8 @@
 	
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		[actionSheet addButtonWithTitle:@"New Photo"];
+		[actionSheet addButtonWithTitle:@"Camera Roll"];
 	}
-	[actionSheet addButtonWithTitle:@"Camera Roll"];
 	[actionSheet addButtonWithTitle:@"Albums"];
 	[actionSheet addButtonWithTitle:@"Default"];
 	[actionSheet addButtonWithTitle:@"Cancel"];
@@ -77,20 +87,21 @@
 
 #pragma mark Action Sheet Delegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	// the user clicked one of the OK/Cancel buttons
-	if (buttonIndex == CameraPhotoChoose && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-		[self choosePicture:CameraPhotoChoose];
-	} else if (buttonIndex == RollPhotoChoose) {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	NSString *currentTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+	
+	if (currentTitle == @"New Photo")
+			[self choosePicture:CameraPhotoChoose];
+	else if (currentTitle == @"Camera Roll")
 		[self choosePicture:RollPhotoChoose];
-	} else if (buttonIndex == LibraryPhotoChoose) {
+	else if (currentTitle == @"Albums")
 		[self choosePicture:LibraryPhotoChoose];
-	} else if (buttonIndex == DefaultPhotoChoose) {
+	else if (currentTitle == @"Default")
 		NSLog(@"Default");
-	} else {
+	else
 		NSLog(@"cancel");
-	}
+	
+	[currentTitle release];
 }
 
 #pragma mark Image Pickers
@@ -100,7 +111,7 @@
 	
 	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 	
-	if (chooseType == CameraPhotoChoose && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+	if (chooseType == CameraPhotoChoose) {
 		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
 	} else if (chooseType == RollPhotoChoose) {
 		[imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
@@ -116,30 +127,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	/*
-	NSString *oldKey = [editingPossession imageKey];
-	if (oldKey) {
-		[[ImageCache sharedImageCache] deleteImageForKey:oldKey];
-	}
-	
-	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-	
-	CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
-	
-	CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID);
-	
-	[editingPossession setImageKey:(NSString *)newUniqueIDString];
-	
-	CFRelease(newUniqueIDString);
-	CFRelease(newUniqueID);
-	
-	[[ImageCache sharedImageCache] setImage:image forKey:[editingPossession imageKey]];
-	
-	[imageView setImage:image];
-	
-	[editingPossession setThumbnailDataFromImage:image];
-	 */
-
 	[[Wedding sharedWedding] setBackgroundImageDataFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
 	[self dismissModalViewControllerAnimated:YES];
 }

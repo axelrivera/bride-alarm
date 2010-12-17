@@ -103,7 +103,10 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];	
+	[super viewWillAppear:animated];
+	
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+
 	UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
 																					target:self
 																					action:@selector(done:)];
@@ -167,7 +170,6 @@ static NSString *kViewKey = @"viewKey";
 				detailText = [menu objectForKey:kDetailKey];
 			}
 			cell.detailTextLabel.text = detailText;
-			[detailText release];
 		}
 	}
 	return cell;

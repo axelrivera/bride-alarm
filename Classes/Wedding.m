@@ -7,6 +7,7 @@
 //
 
 #import "Wedding.h"
+#import "UIImage+Resize.h"
 
 static Wedding *sharedWedding;
 
@@ -179,22 +180,16 @@ static Wedding *sharedWedding;
 
 - (void)setBackgroundImageDataFromImage:(UIImage *)image {
 	[backgroundImageData release];
-	
 	[backgroundImage release];
 	
-	CGRect imageRect = CGRectMake(0.0, 0.0, 640.0, 960.0);
-	UIGraphicsBeginImageContext(imageRect.size);
-	
-	[image drawInRect: imageRect];
-	
-	backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-	
+	CGFloat newImageWidth = 640.0;
+	CGFloat newImageHeight = 960.0;
+	CGSize newSize = CGSizeMake(newImageWidth, newImageHeight);
+		
+	backgroundImage = [image resizedImage:newSize interpolationQuality:kCGInterpolationDefault];
 	[backgroundImage retain];
-	
-	UIGraphicsEndImageContext();
-	
+		
 	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.5);
-	
 	[backgroundImageData retain];
 }
 
