@@ -182,17 +182,59 @@ static Wedding *sharedWedding;
 	[backgroundImageData release];
 	[backgroundImage release];
 	
-	CGFloat newImageWidth = 640.0;
-	CGFloat newImageHeight = 960.0;
-	CGSize newSize = CGSizeMake(newImageWidth, newImageHeight);
+	CGFloat currentWidth = image.size.width ;
+	CGFloat currentHeight = image.size.height;
+	
+	CGFloat maxWidth = [[UIScreen mainScreen] bounds].size.width * 1.5;
+	CGFloat maxHeight = [[UIScreen mainScreen] bounds].size.height * 1.5;
 		
-	backgroundImage = [image resizedImage:newSize interpolationQuality:kCGInterpolationDefault];
+	if (currentWidth > currentHeight) {
+		// Image is Landscape
+		backgroundImage = [image scaleProportionalToSize:CGSizeMake(maxWidth, maxHeight)];
+	} else {
+		// Image is Portrait
+		CGFloat newWidth = maxWidth;
+		CGFloat newHeight = maxHeight;
+		
+		CGFloat ratioX;
+		CGFloat ratioY;
+		
+		CGFloat startX;
+		CGFloat startY;
+		
+		if (newWidth > currentWidth)
+			newWidth = currentWidth;
+		
+		ratioX = newWidth / currentWidth;
+		
+		if (newHeight > currentHeight)
+			newHeight = currentHeight;
+		
+		ratioY = newHeight / currentHeight;
+		
+		if (ratioX < ratioY) {
+			startX = round((currentWidth - (newWidth / ratioY)) / 2.0);
+			startY = 0.0;
+			currentWidth  = round(newWidth / ratioY);
+			currentHeight = currentHeight;
+		} else {
+			startX = 0.0;
+			startY = round((currentHeight - (newHeight / ratioX)) / 2.0);
+			currentWidth  = currentWidth;
+			currentHeight = round(newHeight / ratioX);
+		}
+		
+		NSLog(@"Start X: %f, Start Y: %f, Width: %f, Height: %f", startX, startY, currentWidth, currentHeight);
+		
+		backgroundImage = [image cropToRect:CGRectMake(startX, startY, currentWidth, currentHeight)
+							 andScaleToSize:CGSizeMake(newWidth, newHeight)];
+	}
+	
 	[backgroundImage retain];
 		
-	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.5);
+	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.75);
 	[backgroundImageData retain];
 }
-
 
 #pragma mark Singleton stuff
 
