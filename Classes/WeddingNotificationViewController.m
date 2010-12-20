@@ -16,6 +16,8 @@ static NSString *kViewKey = @"viewKey";
 
 @implementation WeddingNotificationViewController
 
+@synthesize notificationLabel;
+
 @synthesize globalSwitch;
 @synthesize twelveMonthSwitch;
 @synthesize tenMonthSwitch;
@@ -43,7 +45,7 @@ static NSString *kViewKey = @"viewKey";
 	
 	self.dataSourceArray = [NSArray arrayWithObjects:
 							[NSDictionary dictionaryWithObjectsAndKeys:
-							 @"Global Notifications", kLabelKey,
+							 @"Notifications", kLabelKey,
 							 self.globalSwitch, kViewKey,
 							 nil],
 							
@@ -168,6 +170,34 @@ static NSString *kViewKey = @"viewKey";
 	[cell.contentView addSubview:control];
 		
 	return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+	if (section == 0) {
+		if (self.notificationLabel == nil) {
+			UILabel *textLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+			textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			textLabel.numberOfLines = 0;
+			textLabel.textAlignment = UITextAlignmentCenter;
+			textLabel.backgroundColor = [UIColor clearColor];
+			textLabel.textColor = [UIColor darkGrayColor];
+			textLabel.font = [UIFont systemFontOfSize:14.0];
+			textLabel.shadowColor = [UIColor whiteColor];
+			textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+			textLabel.text = @"Notifications allow you to receive alerts\nat different dates before your wedding.";
+			textLabel.frame = CGRectMake(40.0, 10.0, 240.0, 50.0);
+			self.notificationLabel = textLabel;
+		}
+		return notificationLabel;
+	}
+	return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	if (section == 0) {
+		return 50.0;
+	}
+	return 0.0;
 }
 
 #pragma mark Lazy Creation of Controls
@@ -400,6 +430,8 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (void)viewDidUnload {
+	[notificationLabel release];
+	notificationLabel = nil;
 	[twelveMonthSwitch release];
 	twelveMonthSwitch = nil;
 	[tenMonthSwitch release];
@@ -433,6 +465,7 @@ static NSString *kViewKey = @"viewKey";
 
 
 - (void)dealloc {
+	[notificationLabel release];
 	[twelveMonthSwitch release];
 	[tenMonthSwitch release];
 	[eightMonthSwitch release];

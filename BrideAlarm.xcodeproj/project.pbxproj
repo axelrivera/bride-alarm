@@ -12,8 +12,8 @@
 		160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */; };
 		160C0ED612A7196300DC0636 /* WeddingDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */; };
 		1622994812B282D70088261B /* WeddingDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1622994712B282D70088261B /* WeddingDateViewController.xib */; };
-		16244E8C12B992B600B8C0A7 /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 16244E8A12B992B600B8C0A7 /* preferences.png */; };
-		16244E8D12B992B600B8C0A7 /* preferences@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16244E8B12B992B600B8C0A7 /* preferences@2x.png */; };
+		1624ECDB12BFB6F300FC0E3A /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 1624ECD912BFB6F300FC0E3A /* preferences.png */; };
+		1624ECDC12BFB6F300FC0E3A /* preferences@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */; };
 		165839D912A3EE47009365AB /* WeddingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165839D712A3EE47009365AB /* WeddingDetailViewController.m */; };
 		165839DA12A3EE47009365AB /* WeddingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165839D812A3EE47009365AB /* WeddingDetailViewController.xib */; };
 		166711BA12A8770D0067AD93 /* WeddingBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */; };
@@ -30,7 +30,6 @@
 		166D125612AF1780001749F2 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166D125412AF1780001749F2 /* background@2x.jpg */; };
 		1676AE3C12BADF9700C4EF30 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */; };
 		16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAFD712B12A0C00218CE6 /* FileHelpers.m */; };
-		16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB02F12B1675A00218CE6 /* ImageCache.m */; };
 		16F81B8012A2F77B00A1A863 /* WeddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */; };
 		16F81B8112A2F77B00A1A863 /* WeddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */; };
 		1D3623260D0F684500981E51 /* BrideAlarmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */; };
@@ -51,8 +50,8 @@
 		160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDateViewController.m; sourceTree = "<group>"; };
 		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		1622994712B282D70088261B /* WeddingDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDateViewController.xib; sourceTree = "<group>"; };
-		16244E8A12B992B600B8C0A7 /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
-		16244E8B12B992B600B8C0A7 /* preferences@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences@2x.png"; sourceTree = "<group>"; };
+		1624ECD912BFB6F300FC0E3A /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
+		1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences@2x.png"; sourceTree = "<group>"; };
 		165839D612A3EE47009365AB /* WeddingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDetailViewController.h; sourceTree = "<group>"; };
 		165839D712A3EE47009365AB /* WeddingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDetailViewController.m; sourceTree = "<group>"; };
 		165839D812A3EE47009365AB /* WeddingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDetailViewController.xib; sourceTree = "<group>"; };
@@ -76,8 +75,6 @@
 		1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
 		16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
-		16BBB02E12B1675A00218CE6 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
-		16BBB02F12B1675A00218CE6 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingViewController.h; sourceTree = "<group>"; };
 		16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingViewController.m; sourceTree = "<group>"; };
 		16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingViewController.xib; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
 				16BBAFD612B12A0C00218CE6 /* FileHelpers.h */,
 				16BBAFD712B12A0C00218CE6 /* FileHelpers.m */,
-				16BBB02E12B1675A00218CE6 /* ImageCache.h */,
-				16BBB02F12B1675A00218CE6 /* ImageCache.m */,
 				1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */,
 				1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */,
 				160C0C5F12A69C8700DC0636 /* Wedding.h */,
@@ -145,8 +140,8 @@
 		16F30EAF12B690E6003E7946 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				16244E8A12B992B600B8C0A7 /* preferences.png */,
-				16244E8B12B992B600B8C0A7 /* preferences@2x.png */,
+				1624ECD912BFB6F300FC0E3A /* preferences.png */,
+				1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */,
 				166D125312AF1780001749F2 /* background.jpg */,
 				166D125412AF1780001749F2 /* background@2x.jpg */,
 				166D0F9812AE8DA0001749F2 /* rectangle.png */,
@@ -273,8 +268,8 @@
 				166D125512AF1780001749F2 /* background.jpg in Resources */,
 				166D125612AF1780001749F2 /* background@2x.jpg in Resources */,
 				1622994812B282D70088261B /* WeddingDateViewController.xib in Resources */,
-				16244E8C12B992B600B8C0A7 /* preferences.png in Resources */,
-				16244E8D12B992B600B8C0A7 /* preferences@2x.png in Resources */,
+				1624ECDB12BFB6F300FC0E3A /* preferences.png in Resources */,
+				1624ECDC12BFB6F300FC0E3A /* preferences@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +292,6 @@
 				166711C612A877670067AD93 /* WeddingAboutViewController.m in Sources */,
 				166D0E3112ADADD8001749F2 /* WeddingBoxView.m in Sources */,
 				16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */,
-				16BBB03012B1675A00218CE6 /* ImageCache.m in Sources */,
 				1676AE3C12BADF9700C4EF30 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

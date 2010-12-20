@@ -9,6 +9,8 @@
 @class Wedding;
 
 @interface WeddingNotificationViewController : UITableViewController {
+	UILabel *notificationLabel;
+	
 	UISwitch *globalSwitch;
 	UISwitch *twelveMonthSwitch;
 	UISwitch *tenMonthSwitch;
@@ -26,6 +28,8 @@
 	NSArray *dataSourceArray;
 	Wedding *wedding;
 }
+
+@property (nonatomic, retain) UILabel *notificationLabel;
 
 @property (nonatomic, retain, readonly) UISwitch *globalSwitch;
 @property (nonatomic, retain, readonly) UISwitch *twelveMonthSwitch;

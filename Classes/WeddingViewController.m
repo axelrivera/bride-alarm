@@ -16,11 +16,10 @@
 @synthesize boxView, backgroundImageView, toolBar;
 @synthesize wedding;
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	self.wantsFullScreenLayout = YES;
-	self.view.clipsToBounds = YES;
+	NSLog(@"Width: %f, Height: %f", self.view.bounds.size.width, self.view.bounds.size.height);
 	
 	toolBar.alpha = 0.0;	
 	[UIApplication sharedApplication].statusBarHidden = YES;
@@ -29,8 +28,17 @@
 	
 	[backgroundImageView setImage:[wedding backgroundImage]];
 	boxView.coupleLabel.text = [wedding displayCoupleNames];
-	boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", [wedding countDaysUntilWeddingDate]];
-	boxView.detailsLabel.text = @"until we get married...";
+	
+	NSInteger weddingDays = [wedding countDaysUntilWeddingDate];
+	
+	if (weddingDays < 0) {
+		weddingDays = abs(weddingDays);
+		boxView.detailsLabel.text = @"since we got married...";
+	} else {
+		boxView.detailsLabel.text = @"until we get married...";
+	}
+	
+	boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", weddingDays];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -39,7 +47,7 @@
 	[UIApplication sharedApplication].statusBarHidden = NO;
 }
 
-- (void)viewDidLoad {	
+- (void)viewDidLoad {
 	boxView = [[WeddingBoxView alloc] init];
 	[self.view addSubview:boxView];
 	[self.view bringSubviewToFront:toolBar];

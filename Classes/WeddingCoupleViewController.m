@@ -32,12 +32,12 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 	self.dataSourceArray = [NSArray arrayWithObjects:
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Groom", kLabelKey,
-							 @"Groom's Name", kPlaceholderKey,
+							 @"Groom's First Name", kPlaceholderKey,
 							 nil],
 							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Bride", kLabelKey,
-							 @"Bride's Name", kPlaceholderKey,
+							 @"Bride's First Name", kPlaceholderKey,
 							 nil],
 							
 							nil];

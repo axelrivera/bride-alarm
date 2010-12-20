@@ -90,16 +90,18 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	NSString *currentTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
 	
-	if (currentTitle == @"New Photo")
+	if (currentTitle == @"New Photo") {
 			[self choosePicture:CameraPhotoChoose];
-	else if (currentTitle == @"Camera Roll")
+	} else if (currentTitle == @"Camera Roll") {
 		[self choosePicture:RollPhotoChoose];
-	else if (currentTitle == @"Albums")
+	} else if (currentTitle == @"Albums") {
 		[self choosePicture:LibraryPhotoChoose];
-	else if (currentTitle == @"Default")
-		NSLog(@"Default");
-	else
+	} else if (currentTitle == @"Default") {
+		[[Wedding sharedWedding] setDefaultImage];
+		[self.imageView setImage:[[Wedding sharedWedding] backgroundImage]];
+	} else {
 		NSLog(@"cancel");
+	}
 	
 	[currentTitle release];
 }

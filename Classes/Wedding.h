@@ -55,8 +55,13 @@
 + (Wedding *)sharedWedding;
 
 - (void)setWeddingDate;
+
 - (NSString *)displayCoupleNames;
+
 - (NSInteger)countDaysUntilWeddingDate;
+
 - (void)setBackgroundImageDataFromImage:(UIImage *)image;
+
+- (void)setDefaultImage;
 
 @end

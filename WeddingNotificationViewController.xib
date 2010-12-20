@@ -169,7 +169,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">7</int>
+			<int key="maxID">11</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -177,112 +177,144 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<object class="IBPartialClassDescription">
 					<string key="className">WeddingNotificationViewController</string>
 					<string key="superclassName">UITableViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>eightMonthAction:</string>
+							<string>fourMonthAction:</string>
+							<string>globalAction:</string>
+							<string>oneDayAction:</string>
+							<string>oneMonthAction:</string>
+							<string>oneWeekAction:</string>
+							<string>sixMonthAction:</string>
+							<string>tenMonthAction:</string>
+							<string>threeDayAction:</string>
+							<string>twelveMonthAction:</string>
+							<string>twoDayAction:</string>
+							<string>twoMonthAction:</string>
+							<string>twoWeekAction:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>eightMonthAction:</string>
+							<string>fourMonthAction:</string>
+							<string>globalAction:</string>
+							<string>oneDayAction:</string>
+							<string>oneMonthAction:</string>
+							<string>oneWeekAction:</string>
+							<string>sixMonthAction:</string>
+							<string>tenMonthAction:</string>
+							<string>threeDayAction:</string>
+							<string>twelveMonthAction:</string>
+							<string>twoDayAction:</string>
+							<string>twoMonthAction:</string>
+							<string>twoWeekAction:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">eightMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">fourMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">globalAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">oneDayAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">oneMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">oneWeekAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">sixMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">tenMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">threeDayAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">twelveMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">twoDayAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">twoMonthAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">twoWeekAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>eightMonthSwitch</string>
-							<string>fourMonthSwitch</string>
-							<string>globalSwitch</string>
-							<string>oneDaySwitch</string>
-							<string>oneMonthSwitch</string>
-							<string>oneWeekSwitch</string>
-							<string>sixMonthSwitch</string>
-							<string>tenMonthSwitch</string>
-							<string>threeDaySwitch</string>
-							<string>twelveMonthSwitch</string>
-							<string>twoDaySwitch</string>
-							<string>twoMonthSwitch</string>
-							<string>twoWeekSwitch</string>
+							<string>globalNotificationLabel</string>
+							<string>notificationLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
-							<string>UISwitch</string>
+							<string>UILabel</string>
+							<string>UILabel</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>eightMonthSwitch</string>
-							<string>fourMonthSwitch</string>
-							<string>globalSwitch</string>
-							<string>oneDaySwitch</string>
-							<string>oneMonthSwitch</string>
-							<string>oneWeekSwitch</string>
-							<string>sixMonthSwitch</string>
-							<string>tenMonthSwitch</string>
-							<string>threeDaySwitch</string>
-							<string>twelveMonthSwitch</string>
-							<string>twoDaySwitch</string>
-							<string>twoMonthSwitch</string>
-							<string>twoWeekSwitch</string>
+							<string>globalNotificationLabel</string>
+							<string>notificationLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">eightMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
+								<string key="name">globalNotificationLabel</string>
+								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">fourMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">globalSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">oneDaySwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">oneMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">oneWeekSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">sixMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">tenMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">threeDaySwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twelveMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twoDaySwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twoMonthSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">twoWeekSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
+								<string key="name">notificationLabel</string>
+								<string key="candidateClassName">UILabel</string>
 							</object>
 						</object>
 					</object>
@@ -368,6 +400,20 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CAAnimation.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CALayer.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UIAccessibility.h</string>
 					</object>
 				</object>
@@ -386,11 +432,11 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">UIControl</string>
+					<string key="className">UILabel</string>
 					<string key="superclassName">UIView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UIControl.h</string>
+						<string key="minorKey">UIKit.framework/Headers/UILabel.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -420,14 +466,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UISearchDisplayController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">UISwitch</string>
-					<string key="superclassName">UIControl</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UISwitch.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -517,7 +555,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<nil key="IBDocument.LastKnownRelativeProjectPath"/>
+		<string key="IBDocument.LastKnownRelativeProjectPath">BrideAlarm.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">132</string>
 	</data>

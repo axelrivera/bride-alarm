@@ -43,7 +43,7 @@ static Wedding *sharedWedding;
 	[self setBrideName:@""];
 	[self setWeddingDate];
 	
-	[self setBackgroundImageDataFromImage:[UIImage imageNamed:@"background.jpg"]];
+	[self setDefaultImage];
 	
 	// Notifications
 	[self setGlobalNotification:YES];
@@ -234,6 +234,10 @@ static Wedding *sharedWedding;
 		
 	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.75);
 	[backgroundImageData retain];
+}
+
+- (void)setDefaultImage {
+	[self setBackgroundImageDataFromImage:[UIImage imageNamed:@"background.jpg"]];
 }
 
 #pragma mark Singleton stuff
