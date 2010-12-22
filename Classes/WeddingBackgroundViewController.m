@@ -101,9 +101,7 @@
 		[self.imageView setImage:[[Wedding sharedWedding] backgroundImage]];
 	} else {
 		NSLog(@"cancel");
-	}
-	
-	[currentTitle release];
+	}	
 }
 
 #pragma mark Image Pickers

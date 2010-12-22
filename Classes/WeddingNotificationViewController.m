@@ -18,20 +18,6 @@ static NSString *kViewKey = @"viewKey";
 
 @synthesize notificationLabel;
 
-@synthesize globalSwitch;
-@synthesize twelveMonthSwitch;
-@synthesize tenMonthSwitch;
-@synthesize eightMonthSwitch;
-@synthesize sixMonthSwitch;
-@synthesize fourMonthSwitch;
-@synthesize twoMonthSwitch;
-@synthesize oneMonthSwitch;
-@synthesize twoWeekSwitch;
-@synthesize oneWeekSwitch;
-@synthesize threeDaySwitch;
-@synthesize twoDaySwitch;
-@synthesize oneDaySwitch;
-
 @synthesize dataSourceArray;
 @synthesize wedding;
 
@@ -48,62 +34,50 @@ static NSString *kViewKey = @"viewKey";
 							 @"Notifications", kLabelKey,
 							 self.globalSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Twelve Months", kLabelKey,
 							 self.twelveMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Ten Months", kLabelKey,
 							 self.tenMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Eight Months", kLabelKey,
 							 self.eightMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Six Months", kLabelKey,
 							 self.sixMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Four Months", kLabelKey,
 							 self.fourMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Two Months", kLabelKey,
 							 self.twoMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"One Month", kLabelKey,
 							 self.oneMonthSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Two Weeks", kLabelKey,
 							 self.twoWeekSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"One Week", kLabelKey,
 							 self.oneWeekSwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Three Days", kLabelKey,
 							 self.threeDaySwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"Two Days", kLabelKey,
 							 self.twoDaySwitch, kViewKey,
 							 nil],
-							
 							[NSDictionary dictionaryWithObjectsAndKeys:
 							 @"One Day", kLabelKey,
 							 self.oneDaySwitch, kViewKey,
@@ -119,7 +93,6 @@ static NSString *kViewKey = @"viewKey";
 	} else {
 		[self allSwitchesEnabled:NO];
 	}
-
 }
 
 #pragma mark Table Data Source Methods
@@ -320,74 +293,110 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (void)globalAction:(id)sender {
-	NSLog(@"Global: %d", [globalSwitch isOn]);
 	[wedding setGlobalNotification:[globalSwitch isOn]];
 	if (globalSwitch.on == YES) {
 		[self allSwitchesEnabled:YES];
+		[wedding scheduleLocalNotificationsIfActive];
 	} else {
 		[self allSwitchesEnabled:NO];
+		[wedding cancelAllLocalNotifications];
 	}
-
 }
 
 - (void)twelveMonthAction:(id)sender {
-	NSLog(@"Twelve Months: %d", [twelveMonthSwitch isOn]);
 	[wedding setTwelveMonthNotification:[twelveMonthSwitch isOn]];
+	if ([twelveMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:TwelveMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:TwelveMonthType];
 }
 
 - (void)tenMonthAction:(id)sender {
-	NSLog(@"Ten Months: %d", [tenMonthSwitch isOn]);
 	[wedding setTenMonthNotification:[tenMonthSwitch isOn]];
+	if ([tenMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:TenMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:TenMonthType];
 }
 
 - (void)eightMonthAction:(id)sender {
-	NSLog(@"Eight Months: %d", [eightMonthSwitch isOn]);
 	[wedding setEightMonthNotification:[eightMonthSwitch isOn]];
+	if ([eightMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:EightMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:EightMonthType];
 }
 
 - (void)sixMonthAction:(id)sender {
-	NSLog(@"Six Months: %d", [sixMonthSwitch isOn]);
 	[wedding setSixMonthNotification:[sixMonthSwitch isOn]];
+	if ([sixMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:SixMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:SixMonthType];
 }
 
 - (void)fourMonthAction:(id)sender {
-	NSLog(@"Four Months: %d", [fourMonthSwitch isOn]);
 	[wedding setFourMonthNotification:[fourMonthSwitch isOn]];
+	if ([fourMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:FourMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:FourMonthType];
 }
 
 - (void)twoMonthAction:(id)sender {
-	NSLog(@"Two Months: %d", [twoMonthSwitch isOn]);
 	[wedding setTwoMonthNotification:[twoMonthSwitch isOn]];
+	if ([twoMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:TwoMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:TwoMonthType];
 }
 
 - (void)oneMonthAction:(id)sender {
-	NSLog(@"One Month: %d", [oneMonthSwitch isOn]);
 	[wedding setOneMonthNotification:[oneMonthSwitch isOn]];
+	if ([oneMonthSwitch isOn] == YES)
+		[wedding localNotificationForInterval:OneMonthType];
+	else
+		[wedding cancelLocalNotificationForInterval:OneMonthType];
 }
 
 - (void)twoWeekAction:(id)sender {
-	NSLog(@"Two Weeks: %d", [twoWeekSwitch isOn]);
 	[wedding setTwoWeekNotification:[twoWeekSwitch isOn]];
+	if ([twoWeekSwitch isOn] == YES)
+		[wedding localNotificationForInterval:TwoWeekType];
+	else
+		[wedding cancelLocalNotificationForInterval:TwoWeekType];
 }
 
 - (void)oneWeekAction:(id)sender {
-	NSLog(@"One Week: %d", [oneWeekSwitch isOn]);
 	[wedding setOneWeekNotification:[oneWeekSwitch isOn]];
+	if ([oneWeekSwitch isOn] == YES)
+		[wedding localNotificationForInterval:OneWeekType];
+	else
+		[wedding cancelLocalNotificationForInterval:OneWeekType];
 }
 
 - (void)threeDayAction:(id)sender {
-	NSLog(@"Three Days: %d", [threeDaySwitch isOn]);
 	[wedding setThreeDayNotification:[threeDaySwitch isOn]];
+	if ([threeDaySwitch isOn] == YES)
+		[wedding localNotificationForInterval:ThreeDayType];
+	else
+		[wedding cancelLocalNotificationForInterval:ThreeDayType];
 }
 
 - (void)twoDayAction:(id)sender {
-	NSLog(@"Two Days: %d", [twoDaySwitch isOn]);
 	[wedding setTwoDayNotification:[twoDaySwitch isOn]];
+	if ([twoDaySwitch isOn] == YES)
+		[wedding localNotificationForInterval:TwoDayType];
+	else
+		[wedding cancelLocalNotificationForInterval:TwoDayType];
 }
 
 - (void)oneDayAction:(id)sender {
-	NSLog(@"One Day: %d", [oneDaySwitch isOn]);
 	[wedding setOneDayNotification:[oneDaySwitch isOn]];
+	if ([oneDaySwitch isOn] == YES)
+		[wedding localNotificationForInterval:OneDayType];
+	else
+		[wedding cancelLocalNotificationForInterval:OneDayType];
 }
 
 - (void)allSwitchesEnabled:(BOOL)enabled {
@@ -463,7 +472,6 @@ static NSString *kViewKey = @"viewKey";
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
 	[notificationLabel release];
 	[twelveMonthSwitch release];
@@ -481,6 +489,5 @@ static NSString *kViewKey = @"viewKey";
 	[dataSourceArray release];
     [super dealloc];
 }
-
 
 @end

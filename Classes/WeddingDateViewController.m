@@ -9,6 +9,8 @@
 #import "WeddingDateViewController.h"
 #import "Wedding.h"
 
+BOOL NotificationFlag = NO;
+
 @implementation WeddingDateViewController
 
 @synthesize pickerView;
@@ -67,7 +69,7 @@
 		self.pickerView.datePickerMode = UIDatePickerModeDate;
 	} else {
 		self.pickerView.datePickerMode = UIDatePickerModeTime;
-		self.pickerView.minuteInterval = 15;
+		self.pickerView.minuteInterval = 1;  // Default should be every 15 minutes
 	}
 
 	
@@ -141,7 +143,6 @@
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
 
-	// ToDo: Possible memory Leak. Check Later
 	[[Wedding sharedWedding] setWeddingDate:self.pickerView.date];
 	
 	if (indexPath.row == 0) {
@@ -151,6 +152,8 @@
 	}	
 	
 	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:[[Wedding sharedWedding] weddingDate]];
+	
+	NotificationFlag = YES;
 }
 
 - (IBAction)doneAction:(id)sender {
@@ -180,6 +183,17 @@
 	// deselect the current table row
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	// Reset Values for Local Notification because the date has changed
+	
+	if (NotificationFlag == YES) {
+		if ([[Wedding sharedWedding] globalNotification] == YES)
+			[[Wedding sharedWedding] scheduleLocalNotificationsIfActive];
+		
+		NotificationFlag = NO;
+		
+		NSLog(@"Notifications setup");
+	}
 }
 
 #pragma mark Custom Lazy Methods

@@ -15,8 +15,6 @@ typedef enum { CameraPhotoChoose, RollPhotoChoose, LibraryPhotoChoose, DefaultPh
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
-@property (nonatomic, retain) UIImage *backgroundImage;
-
 - (IBAction)showActions:(id)sender;
 
 - (void)choosePicture:(PhotoChooseType)chooseType;

@@ -20,6 +20,7 @@
 
 
 - (id)init {
+	[super init];
 	boxView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rectangle.png"]] autorelease];
 	
 	self.originX = ([[UIScreen mainScreen] bounds].size.width - boxView.bounds.size.width) / 2.0;

@@ -19,7 +19,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	NSLog(@"Width: %f, Height: %f", self.view.bounds.size.width, self.view.bounds.size.height);
+	NSLog(@"Notifications:\n %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 	
 	toolBar.alpha = 0.0;	
 	[UIApplication sharedApplication].statusBarHidden = YES;

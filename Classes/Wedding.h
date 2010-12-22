@@ -8,6 +8,22 @@
 
 #define D_YEAR 31556926
 
+#define TWELVE_MONTHS 12
+#define TEN_MONTHS 10
+#define EIGHT_MONTHS 8
+#define SIX_MONTHS 6
+#define FOUR_MONTHS 4
+#define TWO_MONTHS 2
+#define ONE_MONTH 1
+#define TWO_WEEKS 2
+#define ONE_WEEK 1
+#define THREE_DAYS 3
+#define TWO_DAYS 2
+#define ONE_DAY 1
+
+typedef enum { TwelveMonthType, TenMonthType, EightMonthType, SixMonthType, FourMonthType, TwoMonthType, OneMonthType,
+	TwoWeekType, OneWeekType, ThreeDayType, TwoDayType, OneDayType} IntervalNotificationType;
+
 @interface Wedding : NSObject <NSCoding> {
 	NSString *groomName;
 	NSString *brideName;
@@ -30,6 +46,9 @@
 	BOOL threeDayNotification;
 	BOOL twoDayNotification;
 	BOOL oneDayNotification;
+	
+	// Local Notifications
+	NSMutableDictionary *localNotifications;
 }
 
 @property (nonatomic, copy) NSString *groomName;
@@ -52,6 +71,9 @@
 @property (nonatomic) BOOL twoDayNotification;
 @property (nonatomic) BOOL oneDayNotification;
 
+// Local Notifications
+@property (nonatomic, retain) NSMutableDictionary *localNotifications;
+
 + (Wedding *)sharedWedding;
 
 - (void)setWeddingDate;
@@ -63,5 +85,19 @@
 - (void)setBackgroundImageDataFromImage:(UIImage *)image;
 
 - (void)setDefaultImage;
+
+- (NSDate *)dateForInterval:(IntervalNotificationType)interval;
+
+- (void)localNotificationForInterval:(IntervalNotificationType)interval;
+
+- (NSDictionary *)valuesInLocalNotificationForInterval:(IntervalNotificationType)interval;
+
+- (void)cancelLocalNotificationForInterval:(IntervalNotificationType)interval;
+
+- (void)scheduleLocalNotificationsIfActive;
+
+- (void)cancelAllLocalNotifications;
+
+- (NSString *)toStringFromNotification:(IntervalNotificationType)interval;
 
 @end

@@ -18,6 +18,7 @@
 @property (nonatomic, retain) IBOutlet WeddingViewController *weddingViewController;
 
 - (NSString *)weddingFilePath;
+
 - (void)archiveWedding;
 
 @end
