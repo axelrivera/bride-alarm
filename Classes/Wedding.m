@@ -119,6 +119,11 @@ static Wedding *sharedWedding;
 	NSDateComponents *components = [gregorian components:unitFlags fromDate:today toDate:weddingDate options:0];
 	NSInteger days = [components day];
 	
+	// Check if Date is was within the past 24 hours
+	if ([today compare:weddingDate] == NSOrderedDescending && days == 0) {
+		days = -1;
+	}
+	
 	[today release];
 	[gregorian release];
 	
@@ -236,9 +241,7 @@ static Wedding *sharedWedding;
 			currentWidth  = currentWidth;
 			currentHeight = round(newHeight / ratioX);
 		}
-		
-		NSLog(@"Start X: %f, Start Y: %f, Width: %f, Height: %f", startX, startY, currentWidth, currentHeight);
-		
+				
 		backgroundImage = [image cropToRect:CGRectMake(startX, startY, currentWidth, currentHeight)
 							 andScaleToSize:CGSizeMake(newWidth, newHeight)];
 	}
@@ -483,6 +486,13 @@ static Wedding *sharedWedding;
 			break;
 	}
 	return value;
+}
+
+- (NSString *)weddingDateToString {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	return [dateFormatter stringFromDate:weddingDate];
 }
 
 #pragma mark Singleton stuff

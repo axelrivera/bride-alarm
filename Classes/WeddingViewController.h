@@ -6,10 +6,14 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
 @class Wedding;
 @class WeddingBoxView;
 
-@interface WeddingViewController : UIViewController {
+@interface WeddingViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
 	WeddingBoxView *boxView;
 	
 	UIImageView *backgroundImageView;
@@ -29,5 +33,9 @@
 - (IBAction)showActions:(id)sender;
 
 - (void)animatedElements;
+- (UIImage *)viewToImage;
+- (void)saveScreenshotToAlbums;
+
+- (void)displayComposerSheet;
 
 @end

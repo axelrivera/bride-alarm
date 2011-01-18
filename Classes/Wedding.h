@@ -100,4 +100,6 @@ typedef enum { TwelveMonthType, TenMonthType, EightMonthType, SixMonthType, Four
 
 - (NSString *)toStringFromNotification:(IntervalNotificationType)interval;
 
+- (NSString *)weddingDateToString;
+
 @end

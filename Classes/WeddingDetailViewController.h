@@ -9,7 +9,7 @@
 @class Wedding;
 @class WeddingCoupleViewController;
 
-@interface WeddingDetailViewController : UITableViewController <UIAlertViewDelegate> {
+@interface WeddingDetailViewController : UITableViewController {
 	UILabel *bannerLabel;
 	Wedding *wedding;
 	NSMutableArray *menuList;
@@ -22,7 +22,5 @@
 - (IBAction)done:(id)sender;
 
 - (UILabel *)labelCtl:(UILabel *)label;
-
-- (void)alertOKCancelAction;
 
 @end

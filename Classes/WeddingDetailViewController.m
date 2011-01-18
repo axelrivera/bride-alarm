@@ -16,18 +16,15 @@
 #import "Wedding.h"
 
 #define kViewTag		1		// for tagging our embedded controls for removal at cell recycle time
-
 #define kLabelWidth		260.0
 
 // Cell Types
 static NSString *cellDefault = @"defaultCell";
-static NSString *cellAction = @"actionCell";
 
 static NSString *kCellTypeKey = @"cellTypeKey";
 static NSString *kLabelKey = @"labelKey";
 static NSString *kDetailKey = @"detailKey";
 static NSString *kViewControllerKey = @"viewControllerKey";
-static NSString *kViewKey = @"viewKey";
 
 @implementation WeddingDetailViewController
 
@@ -43,13 +40,6 @@ static NSString *kViewKey = @"viewKey";
 	[self setTitle:@"Settings"];
 	
 	self.menuList = [NSMutableArray array];
-	
-	[self.menuList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-							  cellAction, kCellTypeKey,
-							  @"Remove Banner Ad", kLabelKey,
-							  @"", kDetailKey,
-							  [self labelCtl:bannerLabel], kViewKey,
-							  nil]];
 	
 	WeddingCoupleViewController *coupleViewController = [[WeddingCoupleViewController alloc]
 														 initWithNibName:@"WeddingCoupleViewController" bundle:nil];
@@ -149,28 +139,22 @@ static NSString *kViewKey = @"viewKey";
 		}
 		
 		NSDictionary *menu = [self.menuList objectAtIndex:indexPath.section];
-		if ([menu objectForKey:kCellTypeKey] == cellAction) {
-			UILabel *label = [menu valueForKey:kViewKey];
-			label.text = [menu valueForKey:kLabelKey];
-			[cell.contentView addSubview:label];
-		}
-		else {
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			cell.textLabel.text = [menu objectForKey:kLabelKey];
-			
-			NSString *detailText = nil;
-			
-			if (cell.textLabel.text == @"Notifications") {
-				if ([[Wedding sharedWedding] globalNotification] == YES) {
-					detailText = [NSString stringWithFormat:@"On"];
-				} else {
-					detailText = [NSString stringWithFormat:@"Off"];
-				}
+
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		cell.textLabel.text = [menu objectForKey:kLabelKey];
+		
+		NSString *detailText = nil;
+		
+		if (cell.textLabel.text == @"Notifications") {
+			if ([[Wedding sharedWedding] globalNotification] == YES) {
+				detailText = [NSString stringWithFormat:@"On"];
 			} else {
-				detailText = [menu objectForKey:kDetailKey];
+				detailText = [NSString stringWithFormat:@"Off"];
 			}
-			cell.detailTextLabel.text = detailText;
+		} else {
+			detailText = [menu objectForKey:kDetailKey];
 		}
+		cell.detailTextLabel.text = detailText;
 	}
 	return cell;
 }
@@ -179,34 +163,14 @@ static NSString *kViewKey = @"viewKey";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
-	if (indexPath.section > 0) {
-		UIViewController *targetViewController = [[self.menuList objectAtIndex:indexPath.section] objectForKey:kViewControllerKey];
-		[[self navigationController] pushViewController:targetViewController animated:YES];
-	} else {
-		[self alertOKCancelAction];
-	}
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	// use "buttonIndex" to decide your action
-	//
+	UIViewController *targetViewController = [[self.menuList objectAtIndex:indexPath.section] objectForKey:kViewControllerKey];
+	[[self navigationController] pushViewController:targetViewController animated:YES];
 }
 
 #pragma mark Action Methods
 
 - (IBAction)done:(id)sender {
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-}
-
-- (void)alertOKCancelAction {
-	// open a alert with an OK and cancel button
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UIAlertView" message:@"<Alert message>"
-												   delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-	[alert show];
-	[alert release];
 }
 
 # pragma mark Custom Controls

@@ -49,14 +49,6 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 	[[Wedding sharedWedding] setBrideName:[[self brideTextField] text]];
 }
 
-
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad {
- [super viewDidLoad];
- }
- */
-
 #pragma mark Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -122,13 +114,13 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 - (UITextField *)setupViewForTextField {
 	UITextField *textField = [[[UITextField alloc] initWithFrame:CGRectMake(110, 10, kTextFieldWidth, kTextFieldHeight)] autorelease];
 	textField.adjustsFontSizeToFitWidth = YES;
-	textField.textColor = [UIColor blackColor];
-	textField.backgroundColor = [UIColor whiteColor];
+	textField.textColor = [UIColor darkGrayColor];
+	textField.backgroundColor = [UIColor clearColor];
 	textField.textAlignment = UITextAlignmentLeft;
 	textField.returnKeyType = UIReturnKeyDone;
 	textField.tag = kViewTag;
 	textField.delegate = self;
-	textField.clearButtonMode = UITextFieldViewModeNever; // no clear 'x' button to the right
+	textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 	[textField setEnabled: YES];
 	return textField;
 }

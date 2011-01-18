@@ -11,13 +11,14 @@
 		160C0C9112A6A4F600DC0636 /* WeddingCoupleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */; };
 		160C0C9212A6A4F600DC0636 /* WeddingCoupleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */; };
 		160C0ED612A7196300DC0636 /* WeddingDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */; };
+		1618AD4E12DE37400011050D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1618AD4D12DE37400011050D /* MessageUI.framework */; };
 		162242E712BFE8E100558DEF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E012BFE8E100558DEF /* Icon-72.png */; };
 		162242E812BFE8E100558DEF /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E112BFE8E100558DEF /* Icon-Small-50.png */; };
 		162242E912BFE8E100558DEF /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E212BFE8E100558DEF /* Icon-Small.png */; };
 		162242EA12BFE8E100558DEF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E312BFE8E100558DEF /* Icon-Small@2x.png */; };
 		162242EB12BFE8E100558DEF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E412BFE8E100558DEF /* Icon.png */; };
 		162242EC12BFE8E100558DEF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E512BFE8E100558DEF /* Icon@2x.png */; };
-		162242ED12BFE8E100558DEF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 162242E612BFE8E100558DEF /* iTunesArtwork.png */; };
+		162242ED12BFE8E100558DEF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 162242E612BFE8E100558DEF /* iTunesArtwork */; };
 		1622994812B282D70088261B /* WeddingDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1622994712B282D70088261B /* WeddingDateViewController.xib */; };
 		1624ECDB12BFB6F300FC0E3A /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 1624ECD912BFB6F300FC0E3A /* preferences.png */; };
 		1624ECDC12BFB6F300FC0E3A /* preferences@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */; };
@@ -31,11 +32,13 @@
 		166711C712A877670067AD93 /* WeddingAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166711C512A877670067AD93 /* WeddingAboutViewController.xib */; };
 		166981B412C237C000512D55 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166981B212C237C000512D55 /* background.jpg */; };
 		166981B512C237C000512D55 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 166981B312C237C000512D55 /* background@2x.jpg */; };
-		1669831E12C2C2D900512D55 /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669831C12C2C2D900512D55 /* rectangle.png */; };
-		1669831F12C2C2D900512D55 /* rectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669831D12C2C2D900512D55 /* rectangle@2x.png */; };
 		166D0E2512ADAC57001749F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166D0E2412ADAC57001749F2 /* QuartzCore.framework */; };
 		166D0E3112ADADD8001749F2 /* WeddingBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */; };
 		1676AE3C12BADF9700C4EF30 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */; };
+		16AAD28C12E4AB9700871383 /* about_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AAD28812E4AB9700871383 /* about_icon.png */; };
+		16AAD28D12E4AB9700871383 /* about_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AAD28912E4AB9700871383 /* about_icon@2x.png */; };
+		16AAD28E12E4AB9700871383 /* riveralabs_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AAD28A12E4AB9700871383 /* riveralabs_logo.png */; };
+		16AAD28F12E4AB9700871383 /* riveralabs_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AAD28B12E4AB9700871383 /* riveralabs_logo@2x.png */; };
 		16BBAFDA12B12A0C00218CE6 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAFD712B12A0C00218CE6 /* FileHelpers.m */; };
 		16F81B8012A2F77B00A1A863 /* WeddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */; };
 		16F81B8112A2F77B00A1A863 /* WeddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F81B7F12A2F77B00A1A863 /* WeddingViewController.xib */; };
@@ -56,13 +59,14 @@
 		160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDateViewController.h; sourceTree = "<group>"; };
 		160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDateViewController.m; sourceTree = "<group>"; };
 		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1618AD4D12DE37400011050D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		162242E012BFE8E100558DEF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		162242E112BFE8E100558DEF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		162242E212BFE8E100558DEF /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		162242E312BFE8E100558DEF /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		162242E412BFE8E100558DEF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		162242E512BFE8E100558DEF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		162242E612BFE8E100558DEF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		162242E612BFE8E100558DEF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		1622994712B282D70088261B /* WeddingDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingDateViewController.xib; sourceTree = "<group>"; };
 		1624ECD912BFB6F300FC0E3A /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
 		1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences@2x.png"; sourceTree = "<group>"; };
@@ -80,13 +84,15 @@
 		166711C512A877670067AD93 /* WeddingAboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingAboutViewController.xib; sourceTree = "<group>"; };
 		166981B212C237C000512D55 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		166981B312C237C000512D55 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
-		1669831C12C2C2D900512D55 /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
-		1669831D12C2C2D900512D55 /* rectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rectangle@2x.png"; sourceTree = "<group>"; };
 		166D0E2412ADAC57001749F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingBoxView.h; sourceTree = "<group>"; };
 		166D0E3012ADADD8001749F2 /* WeddingBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingBoxView.m; sourceTree = "<group>"; };
 		1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		16AAD28812E4AB9700871383 /* about_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_icon.png; sourceTree = "<group>"; };
+		16AAD28912E4AB9700871383 /* about_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_icon@2x.png"; sourceTree = "<group>"; };
+		16AAD28A12E4AB9700871383 /* riveralabs_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = riveralabs_logo.png; sourceTree = "<group>"; };
+		16AAD28B12E4AB9700871383 /* riveralabs_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "riveralabs_logo@2x.png"; sourceTree = "<group>"; };
 		16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
 		16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
 		16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingViewController.h; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				166D0E2512ADAC57001749F2 /* QuartzCore.framework in Frameworks */,
+				1618AD4E12DE37400011050D /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,17 +161,12 @@
 		16F30EAF12B690E6003E7946 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				1669831C12C2C2D900512D55 /* rectangle.png */,
-				1669831D12C2C2D900512D55 /* rectangle@2x.png */,
+				16AAD28812E4AB9700871383 /* about_icon.png */,
+				16AAD28912E4AB9700871383 /* about_icon@2x.png */,
+				16AAD28A12E4AB9700871383 /* riveralabs_logo.png */,
+				16AAD28B12E4AB9700871383 /* riveralabs_logo@2x.png */,
 				166981B212C237C000512D55 /* background.jpg */,
 				166981B312C237C000512D55 /* background@2x.jpg */,
-				162242E012BFE8E100558DEF /* Icon-72.png */,
-				162242E112BFE8E100558DEF /* Icon-Small-50.png */,
-				162242E212BFE8E100558DEF /* Icon-Small.png */,
-				162242E312BFE8E100558DEF /* Icon-Small@2x.png */,
-				162242E412BFE8E100558DEF /* Icon.png */,
-				162242E512BFE8E100558DEF /* Icon@2x.png */,
-				162242E612BFE8E100558DEF /* iTunesArtwork.png */,
 				1624ECD912BFB6F300FC0E3A /* preferences.png */,
 				1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */,
 			);
@@ -203,6 +205,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				162242E012BFE8E100558DEF /* Icon-72.png */,
+				162242E112BFE8E100558DEF /* Icon-Small-50.png */,
+				162242E212BFE8E100558DEF /* Icon-Small.png */,
+				162242E312BFE8E100558DEF /* Icon-Small@2x.png */,
+				162242E412BFE8E100558DEF /* Icon.png */,
+				162242E512BFE8E100558DEF /* Icon@2x.png */,
+				162242E612BFE8E100558DEF /* iTunesArtwork */,
 				16F30EAF12B690E6003E7946 /* images */,
 				8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -224,6 +233,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				166D0E2412ADAC57001749F2 /* QuartzCore.framework */,
+				1618AD4D12DE37400011050D /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,11 +303,13 @@
 				162242EA12BFE8E100558DEF /* Icon-Small@2x.png in Resources */,
 				162242EB12BFE8E100558DEF /* Icon.png in Resources */,
 				162242EC12BFE8E100558DEF /* Icon@2x.png in Resources */,
-				162242ED12BFE8E100558DEF /* iTunesArtwork.png in Resources */,
+				162242ED12BFE8E100558DEF /* iTunesArtwork in Resources */,
 				166981B412C237C000512D55 /* background.jpg in Resources */,
 				166981B512C237C000512D55 /* background@2x.jpg in Resources */,
-				1669831E12C2C2D900512D55 /* rectangle.png in Resources */,
-				1669831F12C2C2D900512D55 /* rectangle@2x.png in Resources */,
+				16AAD28C12E4AB9700871383 /* about_icon.png in Resources */,
+				16AAD28D12E4AB9700871383 /* about_icon@2x.png in Resources */,
+				16AAD28E12E4AB9700871383 /* riveralabs_logo.png in Resources */,
+				16AAD28F12E4AB9700871383 /* riveralabs_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,12 +370,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Axel Rivera (7GJQFAYSB9)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				PRODUCT_NAME = "Bride Alarm";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EE56018-8858-48D2-A755-3B38468E471A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

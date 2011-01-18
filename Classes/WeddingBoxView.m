@@ -11,28 +11,40 @@
 
 @implementation WeddingBoxView
 
-@synthesize boxView;
 @synthesize originX;
 @synthesize originY;
 @synthesize coupleLabel;
+@synthesize dateLabel;
 @synthesize daysLabel;
 @synthesize detailsLabel;
 
+- (id)initWithStartX:(CGFloat)sX startY:(CGFloat)sY {
+	self.originX = sX;
+	self.originY = sY;
+	
+	CGRect frame = CGRectMake(sX, sY, BOX_WIDTH, BOX_HEIGHT);
 
-- (id)init {
-	[super init];
-	boxView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rectangle.png"]] autorelease];
-	
-	self.originX = ([[UIScreen mainScreen] bounds].size.width - boxView.bounds.size.width) / 2.0;
-	self.originY = 60.0;
-	
-	CGRect frame = CGRectMake(originX, originY, boxView.bounds.size.width, boxView.bounds.size.height);
-	
 	// Set self's frame to encompass the image
 	self = [self initWithFrame:frame];
 	
 	if (self != nil) {
-		self.opaque = NO;
+		self.opaque = YES;
+		
+		// Background Color is Black and Transparent
+		self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:BOX_ALPHA];
+		
+		// Border Color is White and Transparent
+		self.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:BOX_ALPHA].CGColor;
+		self.layer.borderWidth = 2.0;
+		self.layer.cornerRadius = 10.0;
+		
+		self.layer.shadowColor = [UIColor blackColor].CGColor;
+		self.layer.shadowOpacity = 1.0;
+		self.layer.shadowRadius = 3.0;
+		self.layer.shadowOffset = CGSizeMake(0.0, 2.0);
+		
+		self.clipsToBounds = NO;
+		
 		[self setupSubviewsWithContent];
 	}
 	return self;
@@ -43,35 +55,60 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+	[encoder encodeFloat:(float)originX forKey:@"originX"];
+	[encoder encodeFloat:(float)originY forKey:@"originY"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+	CGFloat startX = (CGFloat)[decoder decodeFloatForKey:@"originX"];
+	CGFloat startY = (CGFloat)[decoder decodeFloatForKey:@"originY"];
+	
+	self = [self initWithStartX:startX startY:startY];
+	return self;
+}
+
 - (void)setupSubviewsWithContent {
     // add view in proper order and location
-    [self addSubview:boxView];
+    //[self addSubview:boxView];
 	
 	// Add Label Subviews
 	
-	coupleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 5.0, [boxView bounds].size.width - 10.0, 25.0)];
-	coupleLabel.textAlignment =  UITextAlignmentCenter;
+	coupleLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOX_PADDING_HORIZONTAL, COUPLE_TOP, LABEL_WIDTH, COUPLE_HEIGHT)];
+	coupleLabel.textAlignment = UITextAlignmentCenter;
+	coupleLabel.adjustsFontSizeToFitWidth = YES;
+	coupleLabel.minimumFontSize = 14.0;
+	coupleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 	coupleLabel.textColor = [UIColor whiteColor];
 	coupleLabel.backgroundColor = [UIColor clearColor];
-	coupleLabel.shadowColor = [UIColor blackColor];
-	coupleLabel.font = [UIFont systemFontOfSize:20.0];
-	[boxView addSubview:coupleLabel];
+	coupleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:COUPLE_FONT];
+	[self addSubview:coupleLabel];
 	
-	daysLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, [boxView bounds].size.height / 3.5, [boxView bounds].size.width - 10.0, 40.0) ];
-	daysLabel.textAlignment =  UITextAlignmentCenter;
+	dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOX_PADDING_HORIZONTAL, DATE_TOP, LABEL_WIDTH, DATE_HEIGHT)];
+	dateLabel.textAlignment = UITextAlignmentCenter;
+	dateLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+	dateLabel.textColor = [UIColor whiteColor];
+	dateLabel.backgroundColor = [UIColor clearColor];
+	dateLabel.font = [UIFont fontWithName:@"Helvetica" size:DATE_FONT];
+	[self addSubview:dateLabel];	
+	
+	daysLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOX_PADDING_HORIZONTAL, DAYS_TOP, LABEL_WIDTH, DAYS_HEIGHT)];
+	daysLabel.textAlignment = UITextAlignmentCenter;
+	daysLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+	daysLabel.adjustsFontSizeToFitWidth = YES;
+	daysLabel.minimumFontSize = 12.0;
 	daysLabel.textColor = [UIColor whiteColor];
 	daysLabel.backgroundColor = [UIColor clearColor];
-	daysLabel.shadowColor = [UIColor blackColor];
-	daysLabel.font = [UIFont boldSystemFontOfSize:24.0];
-	[boxView addSubview:daysLabel];
+	daysLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:DAYS_FONT];
+	[self addSubview:daysLabel];
 	
-	detailsLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, [boxView bounds].size.height - 30.0, [boxView bounds].size.width - 10.0, 25.0) ];
-	detailsLabel.textAlignment =  UITextAlignmentCenter;
+	detailsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOX_PADDING_HORIZONTAL, DETAILS_TOP, LABEL_WIDTH, DETAILS_HEIGHT)];
+	detailsLabel.textAlignment = UITextAlignmentCenter;
+	detailsLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 	detailsLabel.textColor = [UIColor whiteColor];
 	detailsLabel.backgroundColor = [UIColor clearColor];
-	detailsLabel.shadowColor = [UIColor blackColor];
-	detailsLabel.font = [UIFont systemFontOfSize:17.0];
-	[boxView addSubview:detailsLabel];
+	detailsLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:DETAILS_FONT];
+	[self addSubview:detailsLabel];
     	
     [self setNeedsDisplay];
 }
@@ -111,8 +148,8 @@
 }
 
 - (void)dealloc {
-	[boxView release];
 	[coupleLabel release];
+	[dateLabel release];
 	[daysLabel release];
 	[detailsLabel release];
 	[super dealloc];

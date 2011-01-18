@@ -15,9 +15,16 @@ BOOL NotificationFlag = NO;
 
 @synthesize pickerView;
 @synthesize doneButton;
-
 @synthesize dataArray;
+@synthesize pickerDate;
 @synthesize dateFormatter;
+@synthesize dateString;
+@synthesize timeString;
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self setPickerDate:[[Wedding sharedWedding] weddingDate]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,6 +43,12 @@ BOOL NotificationFlag = NO;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+	
+	NSString *formatterString = [NSString stringWithFormat:@"%@ %@", self.dateString, self.timeString];
+	
+	[self setupDateTimeStyle];
+	[[Wedding sharedWedding] setWeddingDate:[dateFormatter dateFromString:formatterString]];
+	
 	[self doneAction:self.doneButton];
 }
 
@@ -43,8 +56,11 @@ BOOL NotificationFlag = NO;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	pickerDate = nil;
 	dataArray = nil;
 	dateFormatter = nil;
+	dateString = nil;
+	timeString = nil;
 }
 
 
@@ -52,7 +68,10 @@ BOOL NotificationFlag = NO;
 	[pickerView release];
 	[doneButton release];
 	[dataArray release];
+	[pickerDate release];
 	[dateFormatter release];
+	[dateString release];
+	[timeString release];
     [super dealloc];
 }
 
@@ -63,15 +82,14 @@ BOOL NotificationFlag = NO;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	self.pickerView.date = [[Wedding sharedWedding] weddingDate];
+	self.pickerView.date = pickerDate;
 	
 	if (indexPath.row == 0) {
 		self.pickerView.datePickerMode = UIDatePickerModeDate;
 	} else {
 		self.pickerView.datePickerMode = UIDatePickerModeTime;
-		self.pickerView.minuteInterval = 1;  // Default should be every 15 minutes
+		self.pickerView.minuteInterval = 15;  // Default should be every 15 minutes
 	}
-
 	
 	// check if our date picker is already on screen
 	if (self.pickerView.superview == nil) {
@@ -125,11 +143,13 @@ BOOL NotificationFlag = NO;
 	
 	if (indexPath.row == 0) {
 		[self setupDateStyle];
+		[self setDateString:[self.dateFormatter stringFromDate:pickerDate]];
 	} else {
 		[self setupTimeStyle];
+		[self setTimeString:[self.dateFormatter stringFromDate:pickerDate]];
 	}
 	
-	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:[[Wedding sharedWedding] weddingDate]];
+	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:pickerDate];
 	
 	return cell;
 }
@@ -143,15 +163,17 @@ BOOL NotificationFlag = NO;
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
 
-	[[Wedding sharedWedding] setWeddingDate:self.pickerView.date];
+	[self setPickerDate:self.pickerView.date];
 	
 	if (indexPath.row == 0) {
 		[self setupDateStyle];
+		[self setDateString:[self.dateFormatter stringFromDate:pickerDate]];
 	} else {
 		[self setupTimeStyle];
-	}	
+		[self setTimeString:[self.dateFormatter stringFromDate:pickerDate]];
+	}
 	
-	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:[[Wedding sharedWedding] weddingDate]];
+	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:pickerDate];
 	
 	NotificationFlag = YES;
 }
@@ -185,21 +207,22 @@ BOOL NotificationFlag = NO;
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
 	// Reset Values for Local Notification because the date has changed
-	
 	if (NotificationFlag == YES) {
-		if ([[Wedding sharedWedding] globalNotification] == YES)
+		if ([[Wedding sharedWedding] globalNotification] == YES) {
 			[[Wedding sharedWedding] scheduleLocalNotificationsIfActive];
-		
+		}
 		NotificationFlag = NO;
-		
-		NSLog(@"Notifications setup");
 	}
 }
 
 #pragma mark Custom Lazy Methods
+- (void)setupDateTimeStyle {
+	[self.dateFormatter setDateStyle:NSDateFormatterLongStyle];
+	[self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+}
 
 - (void)setupDateStyle {
-	[self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+	[self.dateFormatter setDateStyle:NSDateFormatterLongStyle];
 	[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 }
 

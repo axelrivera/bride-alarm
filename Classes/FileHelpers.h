@@ -11,3 +11,4 @@
 
 NSString *pathInDocumentDirectory(NSString *fileName);
 
+NSString *pathInTemporaryDirectory(NSString *fileName);

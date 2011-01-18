@@ -19,3 +19,11 @@ NSString *pathInDocumentDirectory(NSString *fileName) {
 	// Append passed in file name to that directory, return it
 	return [documentDirectory stringByAppendingPathComponent:fileName];
 }
+
+NSString *pathInTemporaryDirectory(NSString *fileName) {
+	// Get one and only tmp directory from that list
+	NSString *temporaryDirectory = NSTemporaryDirectory();
+	
+	// Append passed in file name to that directory, return it
+	return [temporaryDirectory stringByAppendingPathComponent:fileName];
+}

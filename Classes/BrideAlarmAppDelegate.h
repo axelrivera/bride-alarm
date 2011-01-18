@@ -6,8 +6,8 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 @class WeddingViewController;
+@class WeddingBoxView;
 
 @interface BrideAlarmAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
@@ -18,8 +18,10 @@
 @property (nonatomic, retain) IBOutlet WeddingViewController *weddingViewController;
 
 - (NSString *)weddingFilePath;
+- (NSString *)weddingBoxFilePath;
 
 - (void)archiveWedding;
+- (void)archiveWeddingBox;
 
 @end
 

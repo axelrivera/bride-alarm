@@ -8,6 +8,7 @@
 
 #import "BrideAlarmAppDelegate.h"
 #import "WeddingViewController.h"
+#import "WeddingBoxView.h"
 #import "Wedding.h"
 
 @implementation BrideAlarmAppDelegate
@@ -19,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	NSString *weddingPath = [self weddingFilePath];
+	NSString *weddingBoxPath = [self weddingBoxFilePath];
 	
 	Wedding *wedding = [NSKeyedUnarchiver unarchiveObjectWithFile:weddingPath];
 	
@@ -28,6 +30,16 @@
     weddingViewController = [[WeddingViewController alloc] init];
 	
 	[weddingViewController setWedding:wedding];
+	
+	weddingViewController.boxView = [NSKeyedUnarchiver unarchiveObjectWithFile:weddingBoxPath];
+	
+	NSLog(@"Box View: %@", weddingViewController.boxView);
+	
+	if (!weddingViewController.boxView) {
+		CGFloat originX = ([UIScreen mainScreen].bounds.size.width - BOX_WIDTH) / 2.0;
+		CGFloat originY = 40.0;
+		weddingViewController.boxView = [[WeddingBoxView alloc] initWithStartX:originX startY:originY];
+	}
 	
 	[[self window] setRootViewController:weddingViewController];
 	[[self window] makeKeyAndVisible];
@@ -50,6 +62,7 @@
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
 	[self archiveWedding];
+	[self archiveWeddingBox];
 }
 
 
@@ -73,6 +86,7 @@
      See also applicationDidEnterBackground:.
      */
 	[self archiveWedding];
+	[self archiveWeddingBox];
 }
 
 #pragma mark Header Methods
@@ -81,9 +95,20 @@
 	return pathInDocumentDirectory(@"Wedding.data");
 }
 
+- (NSString *)weddingBoxFilePath {
+	return pathInDocumentDirectory(@"WeddingBox.data");
+}
+
 - (void)archiveWedding {
 	NSString *weddingPath = [self weddingFilePath];
 	[NSKeyedArchiver archiveRootObject:[Wedding sharedWedding] toFile:weddingPath];
+}
+
+- (void)archiveWeddingBox {
+	NSString *weddingBoxPath = [self weddingBoxFilePath];
+	weddingViewController.boxView.originX = weddingViewController.boxView.frame.origin.x;
+	weddingViewController.boxView.originY = weddingViewController.boxView.frame.origin.y;
+	[NSKeyedArchiver archiveRootObject:weddingViewController.boxView toFile:weddingBoxPath];
 }
 
 #pragma mark -

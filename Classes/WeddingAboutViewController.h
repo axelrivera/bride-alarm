@@ -6,10 +6,17 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface WeddingAboutViewController : UIViewController {
-
+@interface WeddingAboutViewController : UIViewController <MFMailComposeViewControllerDelegate> {
+	UILabel *versionLabel;
 }
+
+@property (nonatomic, retain) IBOutlet UILabel *versionLabel;
+
+- (IBAction)websiteAction:(id)sender;
+- (IBAction)feedbackAction:(id)sender;
+- (void)displayComposerSheet;
 
 @end
