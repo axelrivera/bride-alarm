@@ -2,8 +2,7 @@
 //  WeddingDateViewController.h
 //  BrideAlarm
 //
-//  Created by arn on 12/1/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
 @interface WeddingDateViewController : UITableViewController {

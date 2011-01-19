@@ -2,160 +2,430 @@
 {
 	160C0C5F12A69C8700DC0636 /* Wedding.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 1378}}";
-			sepNavSelRange = "{2900, 0}";
-			sepNavVisRange = "{179, 908}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1248}}";
+			sepNavSelRange = "{90, 0}";
+			sepNavVisRange = "{0, 773}";
 		};
 	};
 	160C0C6012A69C8700DC0636 /* Wedding.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 6604}}";
-			sepNavSelRange = "{3474, 2932}";
-			sepNavVisRange = "{2404, 979}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 7267}}";
+			sepNavSelRange = "{90, 0}";
+			sepNavVisRange = "{0, 628}";
 		};
 	};
 	160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 389}}";
-			sepNavSelRange = "{615, 0}";
-			sepNavVisRange = "{0, 696}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{110, 0}";
+			sepNavVisRange = "{0, 659}";
 		};
 	};
 	160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 2041}}";
-			sepNavSelRange = "{3253, 0}";
-			sepNavVisRange = "{2866, 940}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2054}}";
+			sepNavSelRange = "{110, 0}";
+			sepNavVisRange = "{0, 642}";
 			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
 		};
 	};
 	160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 546}}";
-			sepNavSelRange = "{859, 0}";
-			sepNavVisRange = "{210, 804}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 520}}";
+			sepNavSelRange = "{108, 0}";
+			sepNavVisRange = "{0, 723}";
 		};
 	};
 	160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 3029}}";
-			sepNavSelRange = "{5464, 0}";
-			sepNavVisRange = "{4170, 540}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 3172}}";
+			sepNavSelRange = "{108, 0}";
+			sepNavVisRange = "{0, 597}";
 		};
 	};
 	160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 624}}";
-			sepNavSelRange = "{249, 0}";
-			sepNavVisRange = "{250, 896}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 884}}";
+			sepNavSelRange = "{37, 55}";
+			sepNavVisRange = "{0, 552}";
 			sepNavWindowFrame = "{{107, 149}, {794, 640}}";
 		};
 	};
+	1627E65B12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16BBAFD612B12A0C00218CE6 /* FileHelpers.h */;
+		name = "FileHelpers.h: 9";
+		rLen = 0;
+		rLoc = 95;
+		rType = 0;
+		vrLen = 248;
+		vrLoc = 0;
+	};
+	1627E65C12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16BBAFD712B12A0C00218CE6 /* FileHelpers.m */;
+		name = "FileHelpers.m: 23";
+		rLen = 54;
+		rLoc = 600;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 0;
+	};
+	1627E65D12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */;
+		name = "UIImage+Resize.h: 8";
+		rLen = 0;
+		rLoc = 267;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	1627E65E12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */;
+		name = "UIImage+Resize.m: 17";
+		rLen = 0;
+		rLoc = 891;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 0;
+	};
+	1627E65F12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C5F12A69C8700DC0636 /* Wedding.h */;
+		name = "Wedding.h: 7";
+		rLen = 0;
+		rLoc = 90;
+		rType = 0;
+		vrLen = 1010;
+		vrLoc = 0;
+	};
+	1627E66012E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C6012A69C8700DC0636 /* Wedding.m */;
+		name = "Wedding.m: 473";
+		rLen = 24;
+		rLoc = 14406;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 128;
+	};
+	1627E66112E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711C312A877670067AD93 /* WeddingAboutViewController.h */;
+		name = "WeddingAboutViewController.h: 16";
+		rLen = 0;
+		rLoc = 357;
+		rType = 0;
+		vrLen = 531;
+		vrLoc = 0;
+	};
+	1627E66212E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711C412A877670067AD93 /* WeddingAboutViewController.m */;
+		name = "WeddingAboutViewController.m: 9";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 0;
+	};
+	1627E66312E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */;
+		name = "WeddingBackgroundViewController.h: 31";
+		rLen = 0;
+		rLoc = 769;
+		rType = 0;
+		vrLen = 855;
+		vrLoc = 0;
+	};
+	1627E66412E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */;
+		name = "WeddingBackgroundViewController.m: 184";
+		rLen = 0;
+		rLoc = 4832;
+		rType = 0;
+		vrLen = 1037;
+		vrLoc = 0;
+	};
+	1627E66512E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */;
+		name = "WeddingBoxView.h: 14";
+		rLen = 0;
+		rLoc = 239;
+		rType = 0;
+		vrLen = 801;
+		vrLoc = 0;
+	};
+	1627E66612E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
+		name = "WeddingBoxView.m: 67";
+		rLen = 0;
+		rLoc = 1694;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 0;
+	};
+	1627E66712E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */;
+		name = "WeddingCoupleViewController.h: 23";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 696;
+		vrLoc = 0;
+	};
+	1627E66812E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0ED312A7196300DC0636 /* WeddingDateViewController.h */;
+		name = "WeddingDateViewController.h: 32";
+		rLen = 0;
+		rLoc = 822;
+		rType = 0;
+		vrLen = 964;
+		vrLoc = 50;
+	};
+	1627E66912E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */;
+		name = "WeddingDateViewController.m: 47";
+		rLen = 0;
+		rLoc = 1140;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 0;
+	};
+	1627E66A12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 165839D612A3EE47009365AB /* WeddingDetailViewController.h */;
+		name = "WeddingDetailViewController.h: 12";
+		rLen = 0;
+		rLoc = 227;
+		rType = 0;
+		vrLen = 573;
+		vrLoc = 0;
+	};
+	1627E66B12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711BC12A877250067AD93 /* WeddingNotificationViewController.h */;
+		name = "WeddingNotificationViewController.h: 28";
+		rLen = 0;
+		rLoc = 613;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 0;
+	};
+	1627E66C12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0FEC12A7F8EE00DC0636 /* Constants.h */;
+		name = "Constants.h: 26";
+		rLen = 0;
+		rLoc = 449;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 379;
+	};
+	1627E66D12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */;
+		name = "WeddingCoupleViewController.m: 12";
+		rLen = 0;
+		rLoc = 173;
+		rType = 0;
+		vrLen = 628;
+		vrLoc = 0;
+	};
+	1627E66E12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 165839D712A3EE47009365AB /* WeddingDetailViewController.m */;
+		name = "WeddingDetailViewController.m: 17";
+		rLen = 0;
+		rLoc = 380;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 0;
+	};
+	1627E66F12E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711BD12A877250067AD93 /* WeddingNotificationViewController.m */;
+		name = "WeddingNotificationViewController.m: 18";
+		rLen = 0;
+		rLoc = 350;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	1627E67012E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */;
+		name = "WeddingViewController.h: 22";
+		rLen = 0;
+		rLoc = 482;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 31;
+	};
+	1627E67112E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
+		name = "WeddingViewController.m: 77";
+		rLen = 0;
+		rLoc = 2198;
+		rType = 0;
+		vrLen = 722;
+		vrLoc = 4706;
+	};
+	1627E67212E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 151";
+		rLen = 7;
+		rLoc = 4757;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 4445;
+	};
+	1627E67312E7623C00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 157";
+		rLen = 0;
+		rLoc = 4957;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 4671;
+	};
+	1627E68312E762AE00853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 160";
+		rLen = 0;
+		rLoc = 5177;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 4671;
+	};
+	1627E68412E762C900853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 159";
+		rLen = 0;
+		rLoc = 5094;
+		rType = 0;
+		vrLen = 900;
+		vrLoc = 4671;
+	};
+	1627E68712E762D700853B3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 149";
+		rLen = 0;
+		rLoc = 4719;
+		rType = 0;
+		vrLen = 900;
+		vrLoc = 4671;
+	};
 	165839D612A3EE47009365AB /* WeddingDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 404}}";
-			sepNavSelRange = "{265, 0}";
-			sepNavVisRange = "{0, 573}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{110, 0}";
+			sepNavVisRange = "{0, 535}";
 			sepNavWindowFrame = "{{38, 212}, {794, 640}}";
 		};
 	};
 	165839D712A3EE47009365AB /* WeddingDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 2704}}";
-			sepNavSelRange = "{3432, 23}";
-			sepNavVisRange = "{2880, 1245}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2912}}";
+			sepNavSelRange = "{110, 0}";
+			sepNavVisRange = "{0, 755}";
 			sepNavWindowFrame = "{{84, 170}, {794, 640}}";
 		};
 	};
 	166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 490}}";
-			sepNavSelRange = "{806, 0}";
-			sepNavVisRange = "{0, 855}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 468}}";
+			sepNavSelRange = "{114, 0}";
+			sepNavVisRange = "{0, 751}";
 		};
 	};
 	166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 2834}}";
-			sepNavSelRange = "{2319, 0}";
-			sepNavVisRange = "{1802, 757}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2717}}";
+			sepNavSelRange = "{114, 0}";
+			sepNavVisRange = "{0, 716}";
 			sepNavWindowFrame = "{{38, 212}, {794, 640}}";
 		};
 	};
 	166711BC12A877250067AD93 /* WeddingNotificationViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 923}}";
-			sepNavSelRange = "{650, 0}";
-			sepNavVisRange = "{243, 1217}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1014}}";
+			sepNavSelRange = "{116, 0}";
+			sepNavVisRange = "{0, 635}";
 		};
 	};
 	166711BD12A877250067AD93 /* WeddingNotificationViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 6487}}";
-			sepNavSelRange = "{3500, 85}";
-			sepNavVisRange = "{222, 720}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 6409}}";
+			sepNavSelRange = "{116, 0}";
+			sepNavVisRange = "{0, 602}";
 		};
 	};
 	166711C312A877670067AD93 /* WeddingAboutViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 398}}";
-			sepNavSelRange = "{394, 0}";
-			sepNavVisRange = "{0, 531}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{109, 0}";
+			sepNavVisRange = "{0, 494}";
 		};
 	};
 	166711C412A877670067AD93 /* WeddingAboutViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 1339}}";
-			sepNavSelRange = "{1001, 0}";
-			sepNavVisRange = "{2063, 692}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 1326}}";
+			sepNavSelRange = "{109, 0}";
+			sepNavVisRange = "{0, 777}";
 		};
 	};
 	166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 442}}";
-			sepNavSelRange = "{276, 0}";
-			sepNavVisRange = "{0, 707}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 416}}";
+			sepNavSelRange = "{97, 0}";
+			sepNavVisRange = "{0, 704}";
 		};
 	};
 	166D0E3012ADADD8001749F2 /* WeddingBoxView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 2301}}";
-			sepNavSelRange = "{1731, 0}";
-			sepNavVisRange = "{1244, 903}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2223}}";
+			sepNavSelRange = "{97, 0}";
+			sepNavVisRange = "{0, 591}";
 		};
 	};
 	1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 522}}";
-			sepNavSelRange = "{171, 0}";
-			sepNavVisRange = "{0, 246}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{23, 0}";
+			sepNavVisRange = "{0, 342}";
 			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
 		};
 	};
 	1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 741}}";
-			sepNavSelRange = "{792, 0}";
-			sepNavVisRange = "{0, 1546}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 845}}";
+			sepNavSelRange = "{21, 0}";
+			sepNavVisRange = "{0, 1074}";
 			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
 		};
-	};
-	16AAD28212E4A00B00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 160C0C6012A69C8700DC0636 /* Wedding.m */;
-		name = "Wedding.m: 492";
-		rLen = 0;
-		rLoc = 14979;
-		rType = 0;
-		vrLen = 686;
-		vrLoc = 14716;
 	};
 	16AAD28312E4A00B00871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 165839D612A3EE47009365AB /* WeddingDetailViewController.h */;
 		name = "WeddingDetailViewController.h: 12";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 227;
 		rType = 0;
 		vrLen = 573;
 		vrLoc = 0;
@@ -165,7 +435,7 @@
 		fRef = 160C0ED312A7196300DC0636 /* WeddingDateViewController.h */;
 		name = "WeddingDateViewController.h: 32";
 		rLen = 0;
-		rLoc = 859;
+		rLoc = 822;
 		rType = 0;
 		vrLen = 804;
 		vrLoc = 210;
@@ -175,7 +445,7 @@
 		fRef = 160C0ED412A7196300DC0636 /* WeddingDateViewController.m */;
 		name = "WeddingDateViewController.m: 47";
 		rLen = 0;
-		rLoc = 1177;
+		rLoc = 1140;
 		rType = 0;
 		vrLen = 735;
 		vrLoc = 897;
@@ -204,49 +474,12 @@
 		isa = PBXBookmark;
 		fRef = 1624ECDA12BFB6F300FC0E3A /* preferences@2x.png */;
 	};
-	16AAD2A512E4B6F900871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 14";
-		rLen = 0;
-		rLoc = 289;
-		rType = 0;
-		vrLen = 846;
-		vrLoc = 3;
-	};
-	16AAD2A612E4B6F900871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166711C312A877670067AD93 /* WeddingAboutViewController.h */;
-		name = "WeddingAboutViewController.h: 17";
-		rLen = 0;
-		rLoc = 443;
-		rType = 0;
-		vrLen = 405;
-		vrLoc = 0;
-	};
-	16AAD2A712E4B6F900871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166711C412A877670067AD93 /* WeddingAboutViewController.m */;
-		rLen = 0;
-		rLoc = 2755;
-		rType = 0;
-	};
-	16AAD2A812E4B6F900871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166711C412A877670067AD93 /* WeddingAboutViewController.m */;
-		name = "WeddingAboutViewController.m: 24";
-		rLen = 0;
-		rLoc = 627;
-		rType = 0;
-		vrLen = 772;
-		vrLoc = 148;
-	};
 	16AAD35612E4F8BA00871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 166711C312A877670067AD93 /* WeddingAboutViewController.h */;
 		name = "WeddingAboutViewController.h: 16";
 		rLen = 0;
-		rLoc = 394;
+		rLoc = 357;
 		rType = 0;
 		vrLen = 531;
 		vrLoc = 0;
@@ -256,57 +489,17 @@
 		fRef = 166711C412A877670067AD93 /* WeddingAboutViewController.m */;
 		name = "WeddingAboutViewController.m: 37";
 		rLen = 0;
-		rLoc = 1001;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 692;
 		vrLoc = 2063;
-	};
-	16AAD35812E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 160C0C5F12A69C8700DC0636 /* Wedding.h */;
-		name = "Wedding.h: 103";
-		rLen = 0;
-		rLoc = 2900;
-		rType = 0;
-		vrLen = 908;
-		vrLoc = 179;
-	};
-	16AAD35912E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 160C0C6012A69C8700DC0636 /* Wedding.m */;
-		name = "Wedding.m: 135";
-		rLen = 2932;
-		rLoc = 3474;
-		rType = 0;
-		vrLen = 979;
-		vrLoc = 2404;
-	};
-	16AAD35A12E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */;
-		name = "WeddingViewController.h: 30";
-		rLen = 0;
-		rLoc = 760;
-		rType = 0;
-		vrLen = 696;
-		vrLoc = 260;
-	};
-	16AAD35B12E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 69";
-		rLen = 0;
-		rLoc = 2088;
-		rType = 0;
-		vrLen = 791;
-		vrLoc = 0;
 	};
 	16AAD35C12E4F8BA00871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */;
 		name = "BrideAlarm_Prefix.pch: 9";
 		rLen = 0;
-		rLoc = 208;
+		rLoc = 313;
 		rType = 0;
 		vrLen = 237;
 		vrLoc = 0;
@@ -316,523 +509,178 @@
 		fRef = 160C0FEC12A7F8EE00DC0636 /* Constants.h */;
 		name = "Constants.h: 12";
 		rLen = 0;
-		rLoc = 249;
+		rLoc = 449;
 		rType = 0;
 		vrLen = 896;
 		vrLoc = 250;
-	};
-	16AAD35E12E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */;
-		name = "BrideAlarmAppDelegate.h: 25";
-		rLen = 0;
-		rLoc = 599;
-		rType = 0;
-		vrLen = 631;
-		vrLoc = 0;
-	};
-	16AAD35F12E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */;
-		name = "WeddingBoxView.h: 11";
-		rLen = 36;
-		rLoc = 238;
-		rType = 0;
-		vrLen = 762;
-		vrLoc = 39;
-	};
-	16AAD36012E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 63";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 853;
-		vrLoc = 1157;
-	};
-	16AAD36112E4F8BA00871383 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "'weddingBoxViewController' undeclared (first use in this function)";
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 33;
-		rType = 1;
-	};
-	16AAD36212E4F8BA00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 36";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 1200;
-		vrLoc = 688;
-	};
-	16AAD36A12E4F91F00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 36";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 661;
-		vrLoc = 705;
-	};
-	16AAD37712E5089800871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 34";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 996;
-		vrLoc = 554;
-	};
-	16AAD37812E5089800871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */;
-		name = "BrideAlarmAppDelegate.h: 25";
-		rLen = 0;
-		rLoc = 599;
-		rType = 0;
-		vrLen = 631;
-		vrLoc = 0;
-	};
-	16AAD37912E5089800871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 63";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 678;
-		vrLoc = 1157;
-	};
-	16AAD37A12E5089800871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 66";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 878;
-		vrLoc = 1225;
-	};
-	16AAD37B12E508CB00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 34";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 621;
-		vrLoc = 705;
-	};
-	16AAD37C12E508CB00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 66";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 587;
-		vrLoc = 1341;
-	};
-	16AAD37F12E5097A00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 66";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 855;
-		vrLoc = 466;
-	};
-	16AAD38012E5097A00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 34";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 996;
-		vrLoc = 554;
-	};
-	16AAD38112E5097A00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 54";
-		rLen = 0;
-		rLoc = 1895;
-		rType = 0;
-		vrLen = 1268;
-		vrLoc = 1303;
-	};
-	16AAD38212E5098A00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 66";
-		rLen = 0;
-		rLoc = 1680;
-		rType = 0;
-		vrLen = 587;
-		vrLoc = 1341;
-	};
-	16AAD38312E5098A00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 54";
-		rLen = 0;
-		rLoc = 1895;
-		rType = 0;
-		vrLen = 943;
-		vrLoc = 1402;
-	};
-	16AAD38812E50C5300871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 53";
-		rLen = 0;
-		rLoc = 1895;
-		rType = 0;
-		vrLen = 1295;
-		vrLoc = 1327;
-	};
-	16AAD38912E50C5300871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */;
-		name = "BrideAlarmAppDelegate.h: 25";
-		rLen = 0;
-		rLoc = 599;
-		rType = 0;
-		vrLen = 631;
-		vrLoc = 0;
 	};
 	16AAD38A12E50C5300871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 166711BD12A877250067AD93 /* WeddingNotificationViewController.m */;
 		name = "WeddingNotificationViewController.m: 124";
 		rLen = 85;
-		rLoc = 3500;
+		rLoc = 3443;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 222;
-	};
-	16AAD38B12E50C5300871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 78";
-		rLen = 0;
-		rLoc = 2417;
-		rType = 0;
-		vrLen = 865;
-		vrLoc = 1838;
-	};
-	16AAD38C12E50C5300871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */;
-		name = "WeddingBoxView.h: 14";
-		rLen = 0;
-		rLoc = 276;
-		rType = 0;
-		vrLen = 757;
-		vrLoc = 39;
-	};
-	16AAD38D12E50C5300871383 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "Expected ';' before '}' token";
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 133;
-		rType = 1;
-	};
-	16AAD38E12E50C5300871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 133";
-		rLen = 0;
-		rLoc = 4944;
-		rType = 0;
-		vrLen = 1228;
-		vrLoc = 4541;
-	};
-	16AAD38F12E50C7100871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 53";
-		rLen = 0;
-		rLoc = 1895;
-		rType = 0;
-		vrLen = 986;
-		vrLoc = 1402;
-	};
-	16AAD39012E50C7100871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 133";
-		rLen = 0;
-		rLoc = 4944;
-		rType = 0;
-		vrLen = 1040;
-		vrLoc = 4589;
-	};
-	16AAD39B12E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */;
-		name = "WeddingViewController.h: 30";
-		rLen = 0;
-		rLoc = 760;
-		rType = 0;
-		vrLen = 696;
-		vrLoc = 260;
-	};
-	16AAD39C12E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 109";
-		rLen = 0;
-		rLoc = 3764;
-		rType = 0;
-		vrLen = 976;
-		vrLoc = 3065;
-	};
-	16AAD39D12E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */;
-		name = "WeddingBoxView.h: 14";
-		rLen = 0;
-		rLoc = 276;
-		rType = 0;
-		vrLen = 762;
-		vrLoc = 39;
-	};
-	16AAD39E12E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 132";
-		rLen = 0;
-		rLoc = 4944;
-		rType = 0;
-		vrLen = 1114;
-		vrLoc = 4589;
 	};
 	16AAD39F12E50F0600871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 165839D712A3EE47009365AB /* WeddingDetailViewController.m */;
 		name = "WeddingDetailViewController.m: 98";
 		rLen = 23;
-		rLoc = 3432;
+		rLoc = 3280;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2880;
-	};
-	16AAD3A012E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 78";
-		rLen = 0;
-		rLoc = 2417;
-		rType = 0;
-		vrLen = 948;
-		vrLoc = 1834;
-	};
-	16AAD3A112E50F0600871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 159";
-		rLen = 0;
-		rLoc = 4837;
-		rType = 0;
-		vrLen = 1263;
-		vrLoc = 5264;
-	};
-	16AAD3AF12E5118700871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 35";
-		rLen = 0;
-		rLoc = 1259;
-		rType = 0;
-		vrLen = 1232;
-		vrLoc = 358;
-	};
-	16AAD3B012E5118700871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 159";
-		rLen = 0;
-		rLoc = 4837;
-		rType = 0;
-		vrLen = 1246;
-		vrLoc = 5311;
-	};
-	16AAD3B112E5118700871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 132";
-		rLen = 0;
-		rLoc = 4944;
-		rType = 0;
-		vrLen = 1162;
-		vrLoc = 4541;
-	};
-	16AAD3B212E5118700871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 61";
-		rLen = 0;
-		rLoc = 1501;
-		rType = 0;
-		vrLen = 754;
-		vrLoc = 1242;
-	};
-	16AAD3B612E511E000871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 61";
-		rLen = 0;
-		rLoc = 1501;
-		rType = 0;
-		vrLen = 532;
-		vrLoc = 1242;
-	};
-	16AAD3BB12E5133400871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */;
-		name = "BrideAlarmAppDelegate.h: 9";
-		rLen = 0;
-		rLoc = 144;
-		rType = 0;
-		vrLen = 607;
-		vrLoc = 0;
-	};
-	16AAD3BC12E5133400871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 159";
-		rLen = 0;
-		rLoc = 4837;
-		rType = 0;
-		vrLen = 1216;
-		vrLoc = 5311;
-	};
-	16AAD3BD12E5133400871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 67";
-		rLen = 0;
-		rLoc = 1731;
-		rType = 0;
-		vrLen = 903;
-		vrLoc = 1244;
 	};
 	16AAD3BE12E5133400871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */;
 		name = "WeddingBoxView.h: 14";
 		rLen = 0;
-		rLoc = 276;
+		rLoc = 239;
 		rType = 0;
 		vrLen = 707;
 		vrLoc = 0;
 	};
-	16AAD3BF12E5133400871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 37";
-		rLen = 105;
-		rLoc = 1053;
-		rType = 0;
-		vrLen = 1001;
-		vrLoc = 394;
-	};
-	16AAD3C012E5133400871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 36";
-		rLen = 0;
-		rLoc = 1009;
-		rType = 0;
-		vrLen = 899;
-		vrLoc = 554;
-	};
-	16AAD3C112E5135900871383 /* PBXTextBookmark */ = {
+	16AAD3F412E51D8900871383 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 166D0E3012ADADD8001749F2 /* WeddingBoxView.m */;
-		name = "WeddingBoxView.m: 61";
+		name = "WeddingBoxView.m: 67";
 		rLen = 0;
-		rLoc = 1501;
+		rLoc = 1694;
 		rType = 0;
-		vrLen = 569;
-		vrLoc = 1443;
+		vrLen = 903;
+		vrLoc = 1244;
 	};
-	16AAD3C212E5135900871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 36";
+	16AAD3F612E51D8900871383 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/arn/Dropbox/iOS Projects/BrideAlarm/BrideAlarm-Info.plist";
 		rLen = 0;
-		rLoc = 1009;
-		rType = 0;
-		vrLen = 652;
-		vrLoc = 611;
-	};
-	16AAD3DD12E519DD00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
-		name = "BrideAlarmAppDelegate.m: 39";
-		rLen = 0;
-		rLoc = 1094;
-		rType = 0;
-		vrLen = 811;
-		vrLoc = 46;
-	};
-	16AAD3DE12E519DD00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 159";
-		rLen = 0;
-		rLoc = 4837;
-		rType = 0;
-		vrLen = 1216;
-		vrLoc = 5311;
-	};
-	16AAD3DF12E519DD00871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 25";
-		rLen = 0;
-		rLoc = 668;
-		rType = 0;
-		vrLen = 991;
-		vrLoc = 328;
-	};
-	16AAD3E412E51AA700871383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
-		name = "WeddingViewController.m: 70";
-		rLen = 0;
-		rLoc = 2088;
-		rType = 0;
-		vrLen = 1012;
-		vrLoc = 1392;
+		rLoc = 9223372036854775808;
 	};
 	16BBAFD612B12A0C00218CE6 /* FileHelpers.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 397}}";
-			sepNavSelRange = "{161, 0}";
-			sepNavVisRange = "{0, 273}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{20, 0}";
+			sepNavVisRange = "{0, 207}";
 		};
 	};
 	16BBAFD712B12A0C00218CE6 /* FileHelpers.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 397}}";
-			sepNavSelRange = "{641, 54}";
-			sepNavVisRange = "{0, 937}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{18, 0}";
+			sepNavVisRange = "{0, 896}";
 			sepNavWindowFrame = "{{38, 212}, {794, 640}}";
 		};
+	};
+	16F477A712E5E5DA00C9E898 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 16AAD28912E4AB9700871383 /* about_icon@2x.png */;
+	};
+	16F477F212E60AD500C9E898 /* Root.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Root.plist;
+		path = "/Users/arn/Dropbox/iOS Projects/BrideAlarm/Settings.bundle/Root.plist";
+		sourceTree = "<absolute>";
+	};
+	16F4789012E6635A00C9E898 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 16F477F212E60AD500C9E898 /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/arn/Dropbox/iOS Projects/BrideAlarm/Settings.bundle/Root.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	16F74E7512E7372E007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */;
+		name = "WeddingBackgroundViewController.m: 184";
+		rLen = 0;
+		rLoc = 4832;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 2559;
+	};
+	16F74E8012E739E7007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C6012A69C8700DC0636 /* Wedding.m */;
+		name = "Wedding.m: 473";
+		rLen = 24;
+		rLoc = 14406;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 17;
+	};
+	16F74E8112E739E7007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 160C0C5F12A69C8700DC0636 /* Wedding.h */;
+		name = "Wedding.h: 90";
+		rLen = 0;
+		rLoc = 2146;
+		rType = 0;
+		vrLen = 950;
+		vrLoc = 288;
+	};
+	16F74EAB12E74D01007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */;
+		name = "BrideAlarmAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 803;
+		vrLoc = 0;
+	};
+	16F74EAC12E74D01007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */;
+		name = "WeddingViewController.h: 22";
+		rLen = 0;
+		rLoc = 482;
+		rType = 0;
+		vrLen = 876;
+		vrLoc = 81;
+	};
+	16F74EAD12E74D01007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */;
+		name = "WeddingViewController.m: 77";
+		rLen = 0;
+		rLoc = 2198;
+		rType = 0;
+		vrLen = 1115;
+		vrLoc = 1416;
+	};
+	16F74EAE12E74D01007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 146";
+		rLen = 0;
+		rLoc = 4632;
+		rType = 0;
+		vrLen = 1061;
+		vrLoc = 4378;
+	};
+	16F74EAF12E74D01007E4E70 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */;
+		name = "BrideAlarmAppDelegate.m: 151";
+		rLen = 7;
+		rLoc = 4757;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 4445;
 	};
 	16F81B7512A2F72F00A1A863 /* BrideAlarm */ = {
 		isa = PBXExecutable;
@@ -898,31 +746,31 @@
 	};
 	16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 546}}";
-			sepNavSelRange = "{760, 0}";
-			sepNavVisRange = "{260, 696}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 520}}";
+			sepNavSelRange = "{104, 0}";
+			sepNavVisRange = "{0, 724}";
 		};
 	};
 	16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 3081}}";
-			sepNavSelRange = "{2049, 0}";
-			sepNavVisRange = "{1518, 956}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 3159}}";
+			sepNavSelRange = "{104, 0}";
+			sepNavVisRange = "{0, 695}";
 			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
 		};
 	};
 	1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 373}}";
-			sepNavSelRange = "{144, 0}";
-			sepNavVisRange = "{0, 607}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 429}}";
+			sepNavSelRange = "{105, 0}";
+			sepNavVisRange = "{0, 717}";
 		};
 	};
 	1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 1703}}";
-			sepNavSelRange = "{1094, 0}";
-			sepNavVisRange = "{46, 811}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 2678}}";
+			sepNavSelRange = "{0, 48}";
+			sepNavVisRange = "{0, 774}";
 			sepNavWindowFrame = "{{15, 233}, {794, 640}}";
 		};
 	};
@@ -1015,11 +863,38 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 316983146;
-			PBXWorkspaceStateSaveDate = 316983146;
+			PBXPerProjectTemplateStateSaveDate = 317153189;
+			PBXWorkspaceStateSaveDate = 317153189;
 		};
 		perUserProjectItems = {
-			16AAD28212E4A00B00871383 = 16AAD28212E4A00B00871383 /* PBXTextBookmark */;
+			1627E65B12E7623C00853B3D /* PBXTextBookmark */ = 1627E65B12E7623C00853B3D /* PBXTextBookmark */;
+			1627E65C12E7623C00853B3D /* PBXTextBookmark */ = 1627E65C12E7623C00853B3D /* PBXTextBookmark */;
+			1627E65D12E7623C00853B3D /* PBXTextBookmark */ = 1627E65D12E7623C00853B3D /* PBXTextBookmark */;
+			1627E65E12E7623C00853B3D /* PBXTextBookmark */ = 1627E65E12E7623C00853B3D /* PBXTextBookmark */;
+			1627E65F12E7623C00853B3D /* PBXTextBookmark */ = 1627E65F12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66012E7623C00853B3D /* PBXTextBookmark */ = 1627E66012E7623C00853B3D /* PBXTextBookmark */;
+			1627E66112E7623C00853B3D /* PBXTextBookmark */ = 1627E66112E7623C00853B3D /* PBXTextBookmark */;
+			1627E66212E7623C00853B3D /* PBXTextBookmark */ = 1627E66212E7623C00853B3D /* PBXTextBookmark */;
+			1627E66312E7623C00853B3D /* PBXTextBookmark */ = 1627E66312E7623C00853B3D /* PBXTextBookmark */;
+			1627E66412E7623C00853B3D /* PBXTextBookmark */ = 1627E66412E7623C00853B3D /* PBXTextBookmark */;
+			1627E66512E7623C00853B3D /* PBXTextBookmark */ = 1627E66512E7623C00853B3D /* PBXTextBookmark */;
+			1627E66612E7623C00853B3D /* PBXTextBookmark */ = 1627E66612E7623C00853B3D /* PBXTextBookmark */;
+			1627E66712E7623C00853B3D /* PBXTextBookmark */ = 1627E66712E7623C00853B3D /* PBXTextBookmark */;
+			1627E66812E7623C00853B3D /* PBXTextBookmark */ = 1627E66812E7623C00853B3D /* PBXTextBookmark */;
+			1627E66912E7623C00853B3D /* PBXTextBookmark */ = 1627E66912E7623C00853B3D /* PBXTextBookmark */;
+			1627E66A12E7623C00853B3D /* PBXTextBookmark */ = 1627E66A12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66B12E7623C00853B3D /* PBXTextBookmark */ = 1627E66B12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66C12E7623C00853B3D /* PBXTextBookmark */ = 1627E66C12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66D12E7623C00853B3D /* PBXTextBookmark */ = 1627E66D12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66E12E7623C00853B3D /* PBXTextBookmark */ = 1627E66E12E7623C00853B3D /* PBXTextBookmark */;
+			1627E66F12E7623C00853B3D /* PBXTextBookmark */ = 1627E66F12E7623C00853B3D /* PBXTextBookmark */;
+			1627E67012E7623C00853B3D /* PBXTextBookmark */ = 1627E67012E7623C00853B3D /* PBXTextBookmark */;
+			1627E67112E7623C00853B3D /* PBXTextBookmark */ = 1627E67112E7623C00853B3D /* PBXTextBookmark */;
+			1627E67212E7623C00853B3D /* PBXTextBookmark */ = 1627E67212E7623C00853B3D /* PBXTextBookmark */;
+			1627E67312E7623C00853B3D /* PBXTextBookmark */ = 1627E67312E7623C00853B3D /* PBXTextBookmark */;
+			1627E68312E762AE00853B3D /* PBXTextBookmark */ = 1627E68312E762AE00853B3D /* PBXTextBookmark */;
+			1627E68412E762C900853B3D /* PBXTextBookmark */ = 1627E68412E762C900853B3D /* PBXTextBookmark */;
+			1627E68712E762D700853B3D /* PBXTextBookmark */ = 1627E68712E762D700853B3D /* PBXTextBookmark */;
 			16AAD28312E4A00B00871383 = 16AAD28312E4A00B00871383 /* PBXTextBookmark */;
 			16AAD28412E4A00B00871383 = 16AAD28412E4A00B00871383 /* PBXTextBookmark */;
 			16AAD29E12E4B6F900871383 = 16AAD29E12E4B6F900871383 /* PBXTextBookmark */;
@@ -1029,78 +904,42 @@
 			16AAD2A212E4B6F900871383 = 16AAD2A212E4B6F900871383 /* PBXBookmark */;
 			16AAD2A312E4B6F900871383 = 16AAD2A312E4B6F900871383 /* PBXBookmark */;
 			16AAD2A412E4B6F900871383 = 16AAD2A412E4B6F900871383 /* PBXBookmark */;
-			16AAD2A512E4B6F900871383 = 16AAD2A512E4B6F900871383 /* PBXTextBookmark */;
-			16AAD2A612E4B6F900871383 = 16AAD2A612E4B6F900871383 /* PBXTextBookmark */;
-			16AAD2A712E4B6F900871383 = 16AAD2A712E4B6F900871383 /* PBXTextBookmark */;
-			16AAD2A812E4B6F900871383 = 16AAD2A812E4B6F900871383 /* PBXTextBookmark */;
-			16AAD35612E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35612E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35712E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35712E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35812E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35812E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35912E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35912E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35A12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35A12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35B12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35B12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35C12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35C12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35D12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35D12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35E12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35E12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD35F12E4F8BA00871383 /* PBXTextBookmark */ = 16AAD35F12E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD36012E4F8BA00871383 /* PBXTextBookmark */ = 16AAD36012E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD36112E4F8BA00871383 /* XCBuildMessageTextBookmark */ = 16AAD36112E4F8BA00871383 /* XCBuildMessageTextBookmark */;
-			16AAD36212E4F8BA00871383 /* PBXTextBookmark */ = 16AAD36212E4F8BA00871383 /* PBXTextBookmark */;
-			16AAD36A12E4F91F00871383 /* PBXTextBookmark */ = 16AAD36A12E4F91F00871383 /* PBXTextBookmark */;
-			16AAD37712E5089800871383 /* PBXTextBookmark */ = 16AAD37712E5089800871383 /* PBXTextBookmark */;
-			16AAD37812E5089800871383 /* PBXTextBookmark */ = 16AAD37812E5089800871383 /* PBXTextBookmark */;
-			16AAD37912E5089800871383 /* PBXTextBookmark */ = 16AAD37912E5089800871383 /* PBXTextBookmark */;
-			16AAD37A12E5089800871383 /* PBXTextBookmark */ = 16AAD37A12E5089800871383 /* PBXTextBookmark */;
-			16AAD37B12E508CB00871383 /* PBXTextBookmark */ = 16AAD37B12E508CB00871383 /* PBXTextBookmark */;
-			16AAD37C12E508CB00871383 /* PBXTextBookmark */ = 16AAD37C12E508CB00871383 /* PBXTextBookmark */;
-			16AAD37F12E5097A00871383 /* PBXTextBookmark */ = 16AAD37F12E5097A00871383 /* PBXTextBookmark */;
-			16AAD38012E5097A00871383 /* PBXTextBookmark */ = 16AAD38012E5097A00871383 /* PBXTextBookmark */;
-			16AAD38112E5097A00871383 /* PBXTextBookmark */ = 16AAD38112E5097A00871383 /* PBXTextBookmark */;
-			16AAD38212E5098A00871383 /* PBXTextBookmark */ = 16AAD38212E5098A00871383 /* PBXTextBookmark */;
-			16AAD38312E5098A00871383 /* PBXTextBookmark */ = 16AAD38312E5098A00871383 /* PBXTextBookmark */;
-			16AAD38812E50C5300871383 /* PBXTextBookmark */ = 16AAD38812E50C5300871383 /* PBXTextBookmark */;
-			16AAD38912E50C5300871383 /* PBXTextBookmark */ = 16AAD38912E50C5300871383 /* PBXTextBookmark */;
-			16AAD38A12E50C5300871383 /* PBXTextBookmark */ = 16AAD38A12E50C5300871383 /* PBXTextBookmark */;
-			16AAD38B12E50C5300871383 /* PBXTextBookmark */ = 16AAD38B12E50C5300871383 /* PBXTextBookmark */;
-			16AAD38C12E50C5300871383 /* PBXTextBookmark */ = 16AAD38C12E50C5300871383 /* PBXTextBookmark */;
-			16AAD38D12E50C5300871383 /* XCBuildMessageTextBookmark */ = 16AAD38D12E50C5300871383 /* XCBuildMessageTextBookmark */;
-			16AAD38E12E50C5300871383 /* PBXTextBookmark */ = 16AAD38E12E50C5300871383 /* PBXTextBookmark */;
-			16AAD38F12E50C7100871383 /* PBXTextBookmark */ = 16AAD38F12E50C7100871383 /* PBXTextBookmark */;
-			16AAD39012E50C7100871383 /* PBXTextBookmark */ = 16AAD39012E50C7100871383 /* PBXTextBookmark */;
-			16AAD39B12E50F0600871383 /* PBXTextBookmark */ = 16AAD39B12E50F0600871383 /* PBXTextBookmark */;
-			16AAD39C12E50F0600871383 /* PBXTextBookmark */ = 16AAD39C12E50F0600871383 /* PBXTextBookmark */;
-			16AAD39D12E50F0600871383 /* PBXTextBookmark */ = 16AAD39D12E50F0600871383 /* PBXTextBookmark */;
-			16AAD39E12E50F0600871383 /* PBXTextBookmark */ = 16AAD39E12E50F0600871383 /* PBXTextBookmark */;
-			16AAD39F12E50F0600871383 /* PBXTextBookmark */ = 16AAD39F12E50F0600871383 /* PBXTextBookmark */;
-			16AAD3A012E50F0600871383 /* PBXTextBookmark */ = 16AAD3A012E50F0600871383 /* PBXTextBookmark */;
-			16AAD3A112E50F0600871383 /* PBXTextBookmark */ = 16AAD3A112E50F0600871383 /* PBXTextBookmark */;
-			16AAD3AF12E5118700871383 /* PBXTextBookmark */ = 16AAD3AF12E5118700871383 /* PBXTextBookmark */;
-			16AAD3B012E5118700871383 /* PBXTextBookmark */ = 16AAD3B012E5118700871383 /* PBXTextBookmark */;
-			16AAD3B112E5118700871383 /* PBXTextBookmark */ = 16AAD3B112E5118700871383 /* PBXTextBookmark */;
-			16AAD3B212E5118700871383 /* PBXTextBookmark */ = 16AAD3B212E5118700871383 /* PBXTextBookmark */;
-			16AAD3B612E511E000871383 /* PBXTextBookmark */ = 16AAD3B612E511E000871383 /* PBXTextBookmark */;
-			16AAD3BB12E5133400871383 /* PBXTextBookmark */ = 16AAD3BB12E5133400871383 /* PBXTextBookmark */;
-			16AAD3BC12E5133400871383 /* PBXTextBookmark */ = 16AAD3BC12E5133400871383 /* PBXTextBookmark */;
-			16AAD3BD12E5133400871383 /* PBXTextBookmark */ = 16AAD3BD12E5133400871383 /* PBXTextBookmark */;
-			16AAD3BE12E5133400871383 /* PBXTextBookmark */ = 16AAD3BE12E5133400871383 /* PBXTextBookmark */;
-			16AAD3BF12E5133400871383 /* PBXTextBookmark */ = 16AAD3BF12E5133400871383 /* PBXTextBookmark */;
-			16AAD3C012E5133400871383 /* PBXTextBookmark */ = 16AAD3C012E5133400871383 /* PBXTextBookmark */;
-			16AAD3C112E5135900871383 /* PBXTextBookmark */ = 16AAD3C112E5135900871383 /* PBXTextBookmark */;
-			16AAD3C212E5135900871383 /* PBXTextBookmark */ = 16AAD3C212E5135900871383 /* PBXTextBookmark */;
-			16AAD3DD12E519DD00871383 /* PBXTextBookmark */ = 16AAD3DD12E519DD00871383 /* PBXTextBookmark */;
-			16AAD3DE12E519DD00871383 /* PBXTextBookmark */ = 16AAD3DE12E519DD00871383 /* PBXTextBookmark */;
-			16AAD3DF12E519DD00871383 /* PBXTextBookmark */ = 16AAD3DF12E519DD00871383 /* PBXTextBookmark */;
-			16AAD3E412E51AA700871383 /* PBXTextBookmark */ = 16AAD3E412E51AA700871383 /* PBXTextBookmark */;
+			16AAD35612E4F8BA00871383 = 16AAD35612E4F8BA00871383 /* PBXTextBookmark */;
+			16AAD35712E4F8BA00871383 = 16AAD35712E4F8BA00871383 /* PBXTextBookmark */;
+			16AAD35C12E4F8BA00871383 = 16AAD35C12E4F8BA00871383 /* PBXTextBookmark */;
+			16AAD35D12E4F8BA00871383 = 16AAD35D12E4F8BA00871383 /* PBXTextBookmark */;
+			16AAD38A12E50C5300871383 = 16AAD38A12E50C5300871383 /* PBXTextBookmark */;
+			16AAD39F12E50F0600871383 = 16AAD39F12E50F0600871383 /* PBXTextBookmark */;
+			16AAD3BE12E5133400871383 = 16AAD3BE12E5133400871383 /* PBXTextBookmark */;
+			16AAD3F412E51D8900871383 = 16AAD3F412E51D8900871383 /* PBXTextBookmark */;
+			16AAD3F612E51D8900871383 = 16AAD3F612E51D8900871383 /* PlistBookmark */;
+			16F477A712E5E5DA00C9E898 = 16F477A712E5E5DA00C9E898 /* PBXBookmark */;
+			16F4789012E6635A00C9E898 = 16F4789012E6635A00C9E898 /* PlistBookmark */;
+			16F74E7512E7372E007E4E70 = 16F74E7512E7372E007E4E70 /* PBXTextBookmark */;
+			16F74E8012E739E7007E4E70 = 16F74E8012E739E7007E4E70 /* PBXTextBookmark */;
+			16F74E8112E739E7007E4E70 = 16F74E8112E739E7007E4E70 /* PBXTextBookmark */;
+			16F74EAB12E74D01007E4E70 = 16F74EAB12E74D01007E4E70 /* PBXTextBookmark */;
+			16F74EAC12E74D01007E4E70 = 16F74EAC12E74D01007E4E70 /* PBXTextBookmark */;
+			16F74EAD12E74D01007E4E70 = 16F74EAD12E74D01007E4E70 /* PBXTextBookmark */;
+			16F74EAE12E74D01007E4E70 = 16F74EAE12E74D01007E4E70 /* PBXTextBookmark */;
+			16F74EAF12E74D01007E4E70 = 16F74EAF12E74D01007E4E70 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 16F81B7B12A2F74D00A1A863 /* Source Control */;
 		userBuildSettings = {
 		};
 	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{87, 0}";
+			sepNavVisRange = "{0, 318}";
+		};
+	};
 	32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 396}}";
-			sepNavSelRange = "{208, 0}";
-			sepNavVisRange = "{0, 237}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 369}}";
+			sepNavSelRange = "{30, 0}";
+			sepNavVisRange = "{0, 342}";
 		};
 	};
 	8D1107310486CEB800E47090 /* BrideAlarm-Info.plist */ = {

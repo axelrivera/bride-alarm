@@ -2,24 +2,8 @@
 //  Wedding.h
 //  BrideAlarm
 //
-//  Created by arn on 12/1/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
-
-#define D_YEAR 31556926
-
-#define TWELVE_MONTHS 12
-#define TEN_MONTHS 10
-#define EIGHT_MONTHS 8
-#define SIX_MONTHS 6
-#define FOUR_MONTHS 4
-#define TWO_MONTHS 2
-#define ONE_MONTH 1
-#define TWO_WEEKS 2
-#define ONE_WEEK 1
-#define THREE_DAYS 3
-#define TWO_DAYS 2
-#define ONE_DAY 1
 
 typedef enum { TwelveMonthType, TenMonthType, EightMonthType, SixMonthType, FourMonthType, TwoMonthType, OneMonthType,
 	TwoWeekType, OneWeekType, ThreeDayType, TwoDayType, OneDayType} IntervalNotificationType;
@@ -101,5 +85,7 @@ typedef enum { TwelveMonthType, TenMonthType, EightMonthType, SixMonthType, Four
 - (NSString *)toStringFromNotification:(IntervalNotificationType)interval;
 
 - (NSString *)weddingDateToString;
+
+- (void)setupDefaultData;
 
 @end

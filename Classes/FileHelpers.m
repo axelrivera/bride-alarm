@@ -1,11 +1,9 @@
-/*
- *  FileHelpers.m
- *  Homepwner
- *
- *  Created by arn on 11/24/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
- */
+//
+//  FileHelpers.m
+//  BrideAlarm
+//
+//  Copyright 2011 Axel Rivera. All rights reserved.
+//
 
 #include "FileHelpers.h"
 

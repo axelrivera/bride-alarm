@@ -1,25 +1,36 @@
-/*
- *  Constants.h
- *  BrideAlarm
- *
- *  Created by arn on 12/2/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
- */
+//
+//  Constants.h
+//  BrideAlarm
+//
+//  Copyright 2011 Axel Rivera. All rights reserved.
+//
 
-// these are the various screen placement constants used across most the UIViewControllers
+// Wedding Model Constants
+#define D_YEAR 31556926
+#define TWELVE_MONTHS 12
+#define TEN_MONTHS 10
+#define EIGHT_MONTHS 8
+#define SIX_MONTHS 6
+#define FOUR_MONTHS 4
+#define TWO_MONTHS 2
+#define ONE_MONTH 1
+#define TWO_WEEKS 2
+#define ONE_WEEK 1
+#define THREE_DAYS 3
+#define TWO_DAYS 2
+#define ONE_DAY 1
 
-// padding for margins
+// Table Cell Placement Constants
+#define kViewTag 1
+#define kLeftMargin	20.0
+#define kTopMargin 20.0
+#define kRightMargin 20.0
+#define kTweenMargin 10.0
 
-// for general screen
-#define kLeftMargin				20.0
-#define kTopMargin				20.0
-#define kRightMargin			20.0
-#define kTweenMargin			10.0
+#define kTextFieldHeight 30.0
+#define kLabelHeight 30.0
 
-#define kTextFieldHeight		30.0
-#define kLabelHeight			30.0
-
+// Wedding Box View Constants
 #define BOX_WIDTH 250.0
 #define BOX_HEIGHT 115.0
 #define BOX_ALPHA 0.4

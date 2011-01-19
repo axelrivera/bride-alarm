@@ -2,8 +2,7 @@
 //  Wedding.m
 //  BrideAlarm
 //
-//  Created by arn on 12/1/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
 #import "Wedding.h"
@@ -41,32 +40,7 @@ static Wedding *sharedWedding;
 	if (!self)
 		return nil;
 	
-	[self setGroomName:@""];
-	[self setBrideName:@""];
-	[self setWeddingDate];
-	
-	[self setDefaultImage];
-	
-	// Notifications
-	[self setGlobalNotification:YES];
-	[self setTwelveMonthNotification:YES];
-	[self setTenMonthNotification:NO];
-	[self setEightMonthNotification:NO];
-	[self setSixMonthNotification:NO];
-	[self setFourMonthNotification:NO];
-	[self setTwoMonthNotification:NO];
-	[self setOneMonthNotification:NO];
-	[self setTwoWeekNotification:NO];
-	[self setOneWeekNotification:NO];
-	[self setThreeDayNotification:NO];
-	[self setTwoDayNotification:NO];
-	[self setOneDayNotification:YES];
-	
-	// Local Notifications
-	[self setLocalNotifications:[NSMutableDictionary dictionaryWithCapacity:0]];
-	
-	// Activate Default Local Notifications
-	[self scheduleLocalNotificationsIfActive];
+	[self setupDefaultData];
 	
 	return self;
 }
@@ -493,6 +467,35 @@ static Wedding *sharedWedding;
 	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 	return [dateFormatter stringFromDate:weddingDate];
+}
+
+- (void)setupDefaultData {
+	[self setGroomName:@""];
+	[self setBrideName:@""];
+	[self setWeddingDate];
+	
+	[self setDefaultImage];
+	
+	// Notifications
+	[self setGlobalNotification:YES];
+	[self setTwelveMonthNotification:YES];
+	[self setTenMonthNotification:NO];
+	[self setEightMonthNotification:NO];
+	[self setSixMonthNotification:NO];
+	[self setFourMonthNotification:NO];
+	[self setTwoMonthNotification:NO];
+	[self setOneMonthNotification:NO];
+	[self setTwoWeekNotification:NO];
+	[self setOneWeekNotification:NO];
+	[self setThreeDayNotification:NO];
+	[self setTwoDayNotification:NO];
+	[self setOneDayNotification:YES];
+	
+	// Local Notifications
+	[self setLocalNotifications:[NSMutableDictionary dictionaryWithCapacity:0]];
+	
+	// Activate Default Local Notifications
+	[self scheduleLocalNotificationsIfActive];
 }
 
 #pragma mark Singleton stuff

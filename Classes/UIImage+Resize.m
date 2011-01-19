@@ -1,3 +1,10 @@
+//
+//  UIImage+Resize.m
+//  BrideAlarm
+//
+//  Copyright 2011 Axel Rivera. All rights reserved.
+//
+
 @implementation UIImage (UIImageFunctions)
 
 - (UIImage *)scaleToSize:(CGSize)size {

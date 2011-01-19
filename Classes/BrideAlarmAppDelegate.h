@@ -2,8 +2,7 @@
 //  BrideAlarmAppDelegate.h
 //  BrideAlarm
 //
-//  Created by arn on 11/28/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
 @class WeddingViewController;
@@ -12,16 +11,24 @@
 @interface BrideAlarmAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	WeddingViewController *weddingViewController;
+	BOOL tipFlag;
+	BOOL resetFlag;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet WeddingViewController *weddingViewController;
+@property (nonatomic) BOOL tipFlag;
+@property (nonatomic) BOOL resetFlag;
 
 - (NSString *)weddingFilePath;
 - (NSString *)weddingBoxFilePath;
 
 - (void)archiveWedding;
 - (void)archiveWeddingBox;
+- (void)setupRootController;
+- (void)checkPrefs;
+- (void)showTipAlert;
+- (void)resetData;
 
 @end
 

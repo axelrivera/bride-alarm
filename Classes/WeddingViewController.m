@@ -2,8 +2,7 @@
 //  WeddingViewController.m
 //  BrideAlarm
 //
-//  Created by arn on 11/28/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
 #import "FileHelpers.h"
@@ -14,7 +13,9 @@
 
 @implementation WeddingViewController
 
-@synthesize boxView, backgroundImageView, toolBar;
+@synthesize boxView;
+@synthesize backgroundImageView;
+@synthesize toolBar;
 @synthesize wedding;
 
 - (void)viewWillAppear:(BOOL)animated {

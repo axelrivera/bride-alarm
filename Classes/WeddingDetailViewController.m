@@ -2,11 +2,9 @@
 //  WeddingDetailViewController.m
 //  BrideAlarm
 //
-//  Created by arn on 11/29/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
-#import "Constants.h"
 #import "WeddingDetailViewController.h"
 #import "WeddingCoupleViewController.h"
 #import "WeddingDateViewController.h"
@@ -15,8 +13,7 @@
 #import "WeddingAboutViewController.h"
 #import "Wedding.h"
 
-#define kViewTag		1		// for tagging our embedded controls for removal at cell recycle time
-#define kLabelWidth		260.0
+#define kLabelWidth 260.0
 
 // Cell Types
 static NSString *cellDefault = @"defaultCell";

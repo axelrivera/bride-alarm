@@ -2,8 +2,7 @@
 //  WeddingViewController.h
 //  BrideAlarm
 //
-//  Created by arn on 11/28/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>
@@ -19,7 +18,7 @@
 	UIImageView *backgroundImageView;
 	UIToolbar *toolBar;
 	
-	Wedding *wedding;
+	Wedding *wedding;	
 }
 
 @property (nonatomic, retain) WeddingBoxView *boxView;

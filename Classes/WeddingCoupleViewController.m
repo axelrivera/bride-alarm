@@ -2,17 +2,13 @@
 //  WeddingCoupleViewController.m
 //  BrideAlarm
 //
-//  Created by arn on 12/1/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Axel Rivera. All rights reserved.
 //
 
-#import "Constants.h"
 #import "WeddingCoupleViewController.h"
 #import "Wedding.h"
 
-#define kViewTag		1		// for tagging our embedded controls for removal at cell recycle time
-
-#define kTextFieldWidth		185.0
+#define kTextFieldWidth 185.0
 
 static NSString *kLabelKey = @"labelKey";
 static NSString *kPlaceholderKey = @"placeholderKey";
