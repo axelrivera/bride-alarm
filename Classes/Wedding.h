@@ -58,34 +58,25 @@ typedef enum { TwelveMonthType, TenMonthType, EightMonthType, SixMonthType, Four
 // Local Notifications
 @property (nonatomic, retain) NSMutableDictionary *localNotifications;
 
+// Singleton Methods
 + (Wedding *)sharedWedding;
 
+// Custom Methods
+- (void)setupDefaultData;
 - (void)setWeddingDate;
-
-- (NSString *)displayCoupleNames;
-
-- (NSInteger)countDaysUntilWeddingDate;
-
+- (void)setDefaultImage;
 - (void)setBackgroundImageDataFromImage:(UIImage *)image;
 
-- (void)setDefaultImage;
-
+- (NSString *)displayCoupleNames;
+- (NSString *)weddingDateToString;
+- (NSInteger)countDaysUntilWeddingDate;
 - (NSDate *)dateForInterval:(IntervalNotificationType)interval;
 
-- (void)localNotificationForInterval:(IntervalNotificationType)interval;
-
-- (NSDictionary *)valuesInLocalNotificationForInterval:(IntervalNotificationType)interval;
-
-- (void)cancelLocalNotificationForInterval:(IntervalNotificationType)interval;
-
 - (void)scheduleLocalNotificationsIfActive;
-
-- (void)cancelAllLocalNotifications;
-
+- (void)localNotificationForInterval:(IntervalNotificationType)interval;
+- (NSDictionary *)valuesInLocalNotificationForInterval:(IntervalNotificationType)interval;
 - (NSString *)toStringFromNotification:(IntervalNotificationType)interval;
-
-- (NSString *)weddingDateToString;
-
-- (void)setupDefaultData;
+- (void)cancelAllLocalNotifications;
+- (void)cancelLocalNotificationForInterval:(IntervalNotificationType)interval;
 
 @end

@@ -131,21 +131,45 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1603C05E12E9C32400CE58F3 /* View Controllers */,
+				1603C05D12E9C31300CE58F3 /* Models */,
+				1603C05B12E9C2EB00CE58F3 /* Helpers */,
 				1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */,
 				1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */,
 				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1603C05B12E9C2EB00CE58F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */,
+				166D0E3012ADADD8001749F2 /* WeddingBoxView.m */,
 				16BBAFD612B12A0C00218CE6 /* FileHelpers.h */,
 				16BBAFD712B12A0C00218CE6 /* FileHelpers.m */,
 				1676AE3A12BADF9700C4EF30 /* UIImage+Resize.h */,
 				1676AE3B12BADF9700C4EF30 /* UIImage+Resize.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		1603C05D12E9C31300CE58F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				160C0C5F12A69C8700DC0636 /* Wedding.h */,
 				160C0C6012A69C8700DC0636 /* Wedding.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1603C05E12E9C32400CE58F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				166711C312A877670067AD93 /* WeddingAboutViewController.h */,
 				166711C412A877670067AD93 /* WeddingAboutViewController.m */,
 				166711B712A8770D0067AD93 /* WeddingBackgroundViewController.h */,
 				166711B812A8770D0067AD93 /* WeddingBackgroundViewController.m */,
-				166D0E2F12ADADD8001749F2 /* WeddingBoxView.h */,
-				166D0E3012ADADD8001749F2 /* WeddingBoxView.m */,
 				160C0C8E12A6A4F600DC0636 /* WeddingCoupleViewController.h */,
 				160C0C8F12A6A4F600DC0636 /* WeddingCoupleViewController.m */,
 				160C0ED312A7196300DC0636 /* WeddingDateViewController.h */,
@@ -157,7 +181,7 @@
 				16F81B7D12A2F77B00A1A863 /* WeddingViewController.h */,
 				16F81B7E12A2F77B00A1A863 /* WeddingViewController.m */,
 			);
-			path = Classes;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		16F30EAF12B690E6003E7946 /* images */ = {

@@ -8,12 +8,23 @@
 #import "WeddingBackgroundViewController.h"
 #import "Wedding.h";
 
+// Define Local Variable for Showing and Hiding Bars
 BOOL barsHidden = NO;
+BOOL isNewImagePicker = NO;
 
 @implementation WeddingBackgroundViewController
 
 @synthesize backgroundImageView;
 @synthesize toolBar;
+
+#pragma mark -
+#pragma mark UIViewController Methods
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	[self setWantsFullScreenLayout:YES];
+	self.title = @"Background Image";
+}
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
@@ -25,88 +36,26 @@ BOOL barsHidden = NO;
 	
 	[self.backgroundImageView setImage:[[Wedding sharedWedding] backgroundImage]];
 	
-	[self showBarsWithTimer];	
+	barTimer = nil;
+	[self showBarsWithTimer];
+	isNewImagePicker = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	if ([barTimer isValid]) {
-		[barTimer invalidate];
-	}
-	[self showBars];
-	self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-	self.navigationController.navigationBar.translucent = NO;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-    if ([touch tapCount] == 1) {
-		[self showHideBars];
+	[self resetTimer];
+	if (!isNewImagePicker) {
+		[self showBars];
 	}
 }
 
-- (void)showHideBars {
-	if (barsHidden == YES) {
-		[self showBarsWithTimer];
-	} else {
-		[self hideBars];
-	}
-}
-
-- (void)showBars {
-	self.navigationController.navigationBar.alpha = 1.0;
-	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-	toolBar.alpha = 1.0;
-	barsHidden = NO;
-}
-
-- (void)showBarsWithTimer {
-	[self showBars];
-	if ([barTimer isValid]) {
-		[barTimer invalidate];
-		barTimer = nil;
-	}
-	barTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(triggerTimer:) userInfo:nil repeats:NO];
-	[barTimer retain];
-}
-
-- (void)hideBars {
-	[UIView animateWithDuration:0.5
-	animations:^{
-		[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-		[UIView setAnimationDelegate:self];
-		self.navigationController.navigationBar.alpha = 0.0;
-		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-		toolBar.alpha = 0.0;
-		barsHidden = YES;
-	}];
-}
-
-- (void)triggerTimer:(NSTimer*)theTimer {
-	[self hideBars];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	[self setWantsFullScreenLayout:YES];
-	self.title = @"Background Image";
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
+#pragma mark Memory Management
 
 - (void)viewDidUnload {
-	[backgroundImageView release];
 	backgroundImageView = nil;
-	[toolBar release];
 	toolBar = nil;
     [super viewDidUnload];
 }
-
 
 - (void)dealloc {
 	[backgroundImageView release];
@@ -115,18 +64,14 @@ BOOL barsHidden = NO;
     [super dealloc];
 }
 
-#pragma mark Actions
+#pragma mark -
+#pragma mark Action Methods
 
 - (IBAction)showActions:(id)sender {
-	if ([barTimer isValid]) {
-		[barTimer invalidate];
-		barTimer = nil;
-	}
-	
+	[self resetTimer];
 	[self showBars];
 	
 	// open a dialog with two custom buttons	
-	
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
 	
 	actionSheet.title = @"Choose Background From:";
@@ -148,9 +93,77 @@ BOOL barsHidden = NO;
 	[actionSheet release];
 }
 
-#pragma mark Action Sheet
+#pragma mark -
+#pragma mark Custom Methods
 
-#pragma mark Action Sheet Delegate
+- (void)showBars {
+	self.navigationController.navigationBar.alpha = 1.0;
+	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+	toolBar.alpha = 1.0;
+	barsHidden = NO;
+}
+
+- (void)showBarsWithTimer {
+	[self showBars];
+	[self resetTimer];
+	barTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(triggerTimer:) userInfo:nil repeats:NO];
+	//[barTimer retain];
+}
+
+- (void)showHideBars {
+	if (barsHidden == YES) {
+		[self showBarsWithTimer];
+	} else {
+		[self hideBars];
+	}
+}
+
+- (void)hideBars {
+	[UIView animateWithDuration:0.5
+	animations:^{
+		[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+		[UIView setAnimationDelegate:self];
+		self.navigationController.navigationBar.alpha = 0.0;
+		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+		toolBar.alpha = 0.0;
+	}];
+	barsHidden = YES;
+}
+
+- (void)triggerTimer:(NSTimer *)theTimer {
+	[self hideBars];
+	barTimer = nil;
+}
+
+- (void)resetTimer {
+	if (barTimer != nil) {
+		[barTimer invalidate];
+		barTimer = nil;
+	}
+}
+
+- (void)choosePicture:(PhotoChooseType)chooseType {
+	[[self view] endEditing:YES];
+	
+	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	
+	if (chooseType == CameraPhotoChoose) {
+		isNewImagePicker = YES;
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+	} else if (chooseType == RollPhotoChoose) {
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+	} else {
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+	}
+	
+	imagePicker.delegate = self;
+	
+	[self presentModalViewController:imagePicker animated:YES];
+	[imagePicker release];
+}
+
+#pragma mark -
+#pragma mark UIActionSheet Delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	NSString *currentTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
@@ -172,31 +185,23 @@ BOOL barsHidden = NO;
 	}
 }
 
-#pragma mark Image Pickers
-
-- (void)choosePicture:(PhotoChooseType)chooseType {
-	[[self view] endEditing:YES];
-	
-	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-	
-	if (chooseType == CameraPhotoChoose) {
-		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-	} else if (chooseType == RollPhotoChoose) {
-		[imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-	} else {
-		[imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-	}
-	
-	imagePicker.delegate = self;
-	
-	[self presentModalViewController:imagePicker animated:YES];
-	[imagePicker release];
-}
+#pragma mark -
+#pragma mark UIImagePickerController Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[[Wedding sharedWedding] setBackgroundImageDataFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
 	[self dismissModalViewControllerAnimated:YES];
 	[self showBarsWithTimer];
+}
+
+#pragma mark -
+#pragma mark UIGestureRecognizer Delegate
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+    if ([touch tapCount] == 1) {
+		[self showHideBars];
+	}
 }
 
 @end

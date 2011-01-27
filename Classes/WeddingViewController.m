@@ -18,6 +18,17 @@
 @synthesize toolBar;
 @synthesize wedding;
 
+#pragma mark -
+#pragma mark UIViewController Methods
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self setWantsFullScreenLayout:YES];
+	[self.view addSubview:boxView];
+	[self.view bringSubviewToFront:toolBar];
+	[boxView addGestureRecognizersToPiece:boxView];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
@@ -50,7 +61,7 @@
 	
 	// Set Days Label
 	if (weddingDays == 0) {
-		boxView.daysLabel.text = [NSString stringWithFormat:@"We are Getting Married"];
+		boxView.daysLabel.text = [NSString stringWithFormat:@"Getting Married"];
 	} else if (weddingDays == -1) {
 		boxView.daysLabel.text = [NSString stringWithFormat:@"Happily Married"];
 	} else {
@@ -67,53 +78,27 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation: YES];
 }
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self setWantsFullScreenLayout:YES];
-	[self.view addSubview:boxView];
-	[self.view bringSubviewToFront:toolBar];
-	[boxView addGestureRecognizersToPiece:boxView];
+#pragma mark Memory Management
+
+- (void)viewDidUnload {
+	[backgroundImageView release];
+	backgroundImageView = nil;
+	[toolBar release];
+	toolBar = nil;
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-    if ([touch tapCount] == 1 && [touch view] == backgroundImageView){
-		[UIView animateWithDuration:0.5
-						 animations:^{[self animatedElements];}];
-	}
+- (void)dealloc {
+	[boxView release];
+	[backgroundImageView release];
+	[toolBar release];
+    [super dealloc];
 }
 
-- (void)animatedElements {
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[UIView setAnimationDelegate:self];
-	
-	if ([[UIApplication sharedApplication] isStatusBarHidden] == YES) {
-		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation: NO];
-	} else {
-		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
-	}
-
-	if (toolBar.alpha == 0.0) {
-		[toolBar setAlpha:1.0];
-	} else {
-		[toolBar setAlpha:0.0];
-	}
-}
-
-- (UIImage *)viewToImage {
-	toolBar.alpha = 0.0;
-	CGSize size = self.view.bounds.size;
-	UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	toolBar.alpha = 1.0;
-	return viewImage;
-}
-
-- (void)saveScreenshotToAlbums {
-	UIImageWriteToSavedPhotosAlbum([self viewToImage], self, nil, nil);
-}
+#pragma mark -
+#pragma mark Custom Action Methods
 
 - (void)showDetails:(id)sender {
 	WeddingDetailViewController *detailViewController = [[WeddingDetailViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -141,38 +126,39 @@
 	[actionSheet release];	
 }
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
+#pragma mark -
+#pragma mark Custom Methods
 
-- (void)viewDidUnload {
-	[backgroundImageView release];
-	backgroundImageView = nil;
-	[toolBar release];
-	toolBar = nil;
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)dealloc {
-	[boxView release];
-	[backgroundImageView release];
-	[toolBar release];
-    [super dealloc];
-}
-
-#pragma mark Action Sheet Delegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
-		[self displayComposerSheet];
-	} else if (buttonIndex == 1) {
-		[self saveScreenshotToAlbums];
+- (void)animatedElements {
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[UIView setAnimationDelegate:self];
+	
+	if ([[UIApplication sharedApplication] isStatusBarHidden] == YES) {
+		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation: NO];
+	} else {
+		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
 	}
+	
+	if (toolBar.alpha == 0.0) {
+		[toolBar setAlpha:1.0];
+	} else {
+		[toolBar setAlpha:0.0];
+	}
+}
+
+- (UIImage *)viewToImage {
+	toolBar.alpha = 0.0;
+	CGSize size = self.view.bounds.size;
+	UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	toolBar.alpha = 1.0;
+	return viewImage;
+}
+
+- (void)saveScreenshotToAlbums {
+	UIImageWriteToSavedPhotosAlbum([self viewToImage], self, nil, nil);
 }
 
 - (void)displayComposerSheet {
@@ -193,6 +179,9 @@
 	[self presentModalViewController:picker animated:YES];
     [picker release];
 }
+
+#pragma mark -
+#pragma mark MFMailComposeViewController Delegate
 
 // Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {	
@@ -229,6 +218,28 @@
 											  otherButtonTitles: nil];
 		[alert show];
 		[alert release];
+	}
+}
+
+#pragma mark -
+#pragma mark UIActionSheet Delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		[self displayComposerSheet];
+	} else if (buttonIndex == 1) {
+		[self saveScreenshotToAlbums];
+	}
+}
+
+#pragma mark -
+#pragma mark UIGestureRecognizer Delegate
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+    if ([touch tapCount] == 1 && [touch view] == backgroundImageView){
+		[UIView animateWithDuration:0.5
+						 animations:^{[self animatedElements];}];
 	}
 }
 

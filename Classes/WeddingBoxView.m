@@ -67,12 +67,22 @@
 	return self;
 }
 
+#pragma mark -
+#pragma mark Memory Management
+
+- (void)dealloc {
+	[coupleLabel release];
+	[dateLabel release];
+	[daysLabel release];
+	[detailsLabel release];
+	[super dealloc];
+}
+
+#pragma mark -
+#pragma mark Custom Methods
+
 - (void)setupSubviewsWithContent {
-    // add view in proper order and location
-    //[self addSubview:boxView];
-	
 	// Add Label Subviews
-	
 	coupleLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOX_PADDING_HORIZONTAL, COUPLE_TOP, LABEL_WIDTH, COUPLE_HEIGHT)];
 	coupleLabel.textAlignment = UITextAlignmentCenter;
 	coupleLabel.adjustsFontSizeToFitWidth = YES;
@@ -112,6 +122,9 @@
     [self setNeedsDisplay];
 }
 
+#pragma mark -
+#pragma mark UIGestureRecognizer Delegate
+
 - (void)addGestureRecognizersToPiece:(UIView *)piece {    
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panPiece:)];
     [panGesture setMaximumNumberOfTouches:1];
@@ -144,14 +157,6 @@
         [piece setCenter:CGPointMake([piece center].x + translation.x, [piece center].y + translation.y)];
         [gestureRecognizer setTranslation:CGPointZero inView:[piece superview]];
     }
-}
-
-- (void)dealloc {
-	[coupleLabel release];
-	[dateLabel release];
-	[daysLabel release];
-	[detailsLabel release];
-	[super dealloc];
 }
 
 @end

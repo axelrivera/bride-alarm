@@ -19,16 +19,12 @@ typedef enum { CameraPhotoChoose, RollPhotoChoose, LibraryPhotoChoose, DefaultPh
 
 - (IBAction)showActions:(id)sender;
 
-- (void)choosePicture:(PhotoChooseType)chooseType;
-
-- (void)showHideBars;
-
 - (void)showBars;
-
 - (void)showBarsWithTimer;
-
+- (void)showHideBars;
 - (void)hideBars;
-
 - (void)triggerTimer:(NSTimer*)theTimer;
+- (void)resetTimer;
+- (void)choosePicture:(PhotoChooseType)chooseType;
 
 @end

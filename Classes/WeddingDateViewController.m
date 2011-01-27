@@ -20,10 +20,8 @@ BOOL NotificationFlag = NO;
 @synthesize dateString;
 @synthesize timeString;
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self setPickerDate:[[Wedding sharedWedding] weddingDate]];
-}
+#pragma mark -
+#pragma mark UIViewController Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,23 +31,18 @@ BOOL NotificationFlag = NO;
 	self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 }
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self setPickerDate:[[Wedding sharedWedding] weddingDate]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	
-	NSString *formatterString = [NSString stringWithFormat:@"%@ %@", self.dateString, self.timeString];
-	
-	[self setupDateTimeStyle];
-	[[Wedding sharedWedding] setWeddingDate:[dateFormatter dateFromString:formatterString]];
-	
 	[self doneAction:self.doneButton];
 }
+
+#pragma mark Memory Management
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -62,7 +55,6 @@ BOOL NotificationFlag = NO;
 	timeString = nil;
 }
 
-
 - (void)dealloc {
 	[pickerView release];
 	[doneButton release];
@@ -74,20 +66,49 @@ BOOL NotificationFlag = NO;
     [super dealloc];
 }
 
-#pragma mark Table View Delegate Methods
+#pragma mark -
+#pragma mark UITableView Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.dataArray count];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *kCustomCellID = @"CustomCellID";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCustomCellID];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCustomCellID] autorelease];
+	}
+	
+	cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+	
+	if (indexPath.row == 0) {
+		[self setupDateStyle];
+		[self setDateString:[self.dateFormatter stringFromDate:pickerDate]];
+	} else {
+		[self setupTimeStyle];
+		[self setTimeString:[self.dateFormatter stringFromDate:pickerDate]];
+	}
+	
+	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:pickerDate];
+	
+	return cell;
+}
+
+#pragma mark UITableView Delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSString *formatterString = [NSString stringWithFormat:@"%@ %@", self.dateString, self.timeString];
+	[self setupDateTimeStyle];
+	[self setPickerDate:[dateFormatter dateFromString:formatterString]];
 	self.pickerView.date = pickerDate;
 	
 	if (indexPath.row == 0) {
 		self.pickerView.datePickerMode = UIDatePickerModeDate;
 	} else {
 		self.pickerView.datePickerMode = UIDatePickerModeTime;
-		self.pickerView.minuteInterval = 15;  // Default should be every 15 minutes
+		self.pickerView.minuteInterval = 1;  // Default should be every 15 minutes
 	}
 	
 	// check if our date picker is already on screen
@@ -95,7 +116,6 @@ BOOL NotificationFlag = NO;
 		[self.view.window addSubview: self.pickerView];
 		
 		// size up the picker view to our screen and compute the start/end frame origin for our slide up animation
-		//
 		// compute the start frame
 		CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
 		CGSize pickerSize = [self.pickerView sizeThatFits:CGSizeZero];
@@ -130,33 +150,8 @@ BOOL NotificationFlag = NO;
 	}
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *kCustomCellID = @"CustomCellID";
-	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCustomCellID];
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCustomCellID] autorelease];
-	}
-	
-	cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
-	
-	if (indexPath.row == 0) {
-		[self setupDateStyle];
-		[self setDateString:[self.dateFormatter stringFromDate:pickerDate]];
-	} else {
-		[self setupTimeStyle];
-		[self setTimeString:[self.dateFormatter stringFromDate:pickerDate]];
-	}
-	
-	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:pickerDate];
-	
-	return cell;
-}
-
-- (void)slideDownDidStop {
-	// the date picker has finished sliding downwards, so remove it
-	[self.pickerView removeFromSuperview];
-}
+#pragma mark -
+#pragma mark Custom Actions
 
 - (IBAction)dateAction:(id)sender {
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -205,6 +200,11 @@ BOOL NotificationFlag = NO;
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
+	// Set Value for Wedding Date
+	NSString *formatterString = [NSString stringWithFormat:@"%@ %@", self.dateString, self.timeString];
+	[self setupDateTimeStyle];
+	[[Wedding sharedWedding] setWeddingDate:[dateFormatter dateFromString:formatterString]];
+	
 	// Reset Values for Local Notification because the date has changed
 	if (NotificationFlag == YES) {
 		if ([[Wedding sharedWedding] globalNotification] == YES) {
@@ -214,7 +214,16 @@ BOOL NotificationFlag = NO;
 	}
 }
 
-#pragma mark Custom Lazy Methods
+#pragma mark Custom Selectors
+
+- (void)slideDownDidStop {
+	// the date picker has finished sliding downwards, so remove it
+	[self.pickerView removeFromSuperview];
+}
+
+#pragma mark -
+#pragma mark Custom Methods
+
 - (void)setupDateTimeStyle {
 	[self.dateFormatter setDateStyle:NSDateFormatterLongStyle];
 	[self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];

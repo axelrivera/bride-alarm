@@ -45,7 +45,133 @@ static Wedding *sharedWedding;
 	return self;
 }
 
-#pragma mark Custom Class Methods
+- (void)encodeWithCoder:(NSCoder *)encoder {
+	[encoder encodeObject:groomName forKey:@"groomName"];
+	[encoder encodeObject:brideName forKey:@"brideName"];
+	[encoder encodeObject:weddingDate forKey:@"weddingDate"];
+	[encoder encodeObject:backgroundImageData forKey:@"backgroundImageData"];
+	
+	// Notifications
+	[encoder encodeBool:globalNotification forKey:@"globalNotification"];
+	[encoder encodeBool:twelveMonthNotification forKey:@"twelveMonthNotification"];
+	[encoder encodeBool:tenMonthNotification forKey:@"tenMonthNotification"];
+	[encoder encodeBool:eightMonthNotification forKey:@"eightMonthNotification"];
+	[encoder encodeBool:sixMonthNotification forKey:@"sixMonthNotification"];
+	[encoder encodeBool:fourMonthNotification forKey:@"fourMonthNotification"];
+	[encoder encodeBool:twoMonthNotification forKey:@"twoMonthNotification"];
+	[encoder encodeBool:oneMonthNotification forKey:@"oneMonthNotification"];
+	[encoder encodeBool:twoWeekNotification forKey:@"twoWeekNotification"];
+	[encoder encodeBool:oneWeekNotification forKey:@"oneWeekNotification"];
+	[encoder encodeBool:threeDayNotification forKey:@"threeDayNotification"];
+	[encoder encodeBool:twoDayNotification forKey:@"twoDayNotification"];
+	[encoder encodeBool:oneDayNotification forKey:@"oneDayNotification"];
+	
+	// Local Notifications
+	[encoder encodeObject:localNotifications forKey:@"localNotifications"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+	[super init];
+	
+	[self setGroomName:[decoder decodeObjectForKey:@"groomName"]];
+	[self setBrideName:[decoder decodeObjectForKey:@"brideName"]];
+	[self setWeddingDate:[decoder decodeObjectForKey:@"weddingDate"]];
+	
+	backgroundImageData = [[decoder decodeObjectForKey:@"backgroundImageData"] retain];
+	
+	// Notifications
+	[self setGlobalNotification:[decoder decodeBoolForKey:@"globalNotification"]];
+	[self setTwelveMonthNotification:[decoder decodeBoolForKey:@"twelveMonthNotification"]];
+	[self setTenMonthNotification:[decoder decodeBoolForKey:@"tenMonthNotification"]];
+	[self setEightMonthNotification:[decoder decodeBoolForKey:@"eightMonthNotification"]];
+	[self setSixMonthNotification:[decoder decodeBoolForKey:@"sixMonthNotification"]];
+	[self setFourMonthNotification:[decoder decodeBoolForKey:@"fourMonthNotification"]];
+	[self setTwoMonthNotification:[decoder decodeBoolForKey:@"twoMonthNotification"]];
+	[self setOneMonthNotification:[decoder decodeBoolForKey:@"oneMonthNotification"]];
+	[self setTwoWeekNotification:[decoder decodeBoolForKey:@"twoWeekNotification"]];
+	[self setOneWeekNotification:[decoder decodeBoolForKey:@"oneWeekNotification"]];
+	[self setThreeDayNotification:[decoder decodeBoolForKey:@"threeDayNotification"]];
+	[self setTwoDayNotification:[decoder decodeBoolForKey:@"twoDayNotification"]];
+	[self setOneDayNotification:[decoder decodeBoolForKey:@"oneDayNotification"]];
+	
+	[self setLocalNotifications:[decoder decodeObjectForKey:@"localNotifications"]];
+	
+	return self;
+}
+
+#pragma mark -
+#pragma mark Singleton Methods
+
++ (Wedding *)sharedWedding {
+    if (!sharedWedding) {
+        sharedWedding = [[Wedding alloc] init];
+	}
+    return sharedWedding;
+}
+
++ (id)allocWithZone:(NSZone *)zone {
+    if (!sharedWedding) {
+        sharedWedding = [super allocWithZone:zone];
+        return sharedWedding;
+    } else {
+        return nil;
+    }
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
+- (void)release {
+    // No op
+}
+
+#pragma mark -
+#pragma mark Memory Management
+
+- (void)dealloc {
+	[groomName release];
+	[brideName release];
+	[weddingDate release];
+	[backgroundImage release];
+	[backgroundImageData release];
+	[localNotifications release];
+	[super dealloc];
+}
+
+#pragma mark -
+#pragma mark Custom Methods
+
+- (void)setupDefaultData {
+	[self setGroomName:@""];
+	[self setBrideName:@""];
+	[self setWeddingDate];
+	
+	[self setDefaultImage];
+	
+	// Notifications
+	[self setGlobalNotification:YES];
+	[self setTwelveMonthNotification:YES];
+	[self setTenMonthNotification:NO];
+	[self setEightMonthNotification:NO];
+	[self setSixMonthNotification:NO];
+	[self setFourMonthNotification:NO];
+	[self setTwoMonthNotification:NO];
+	[self setOneMonthNotification:NO];
+	[self setTwoWeekNotification:NO];
+	[self setOneWeekNotification:NO];
+	[self setThreeDayNotification:NO];
+	[self setTwoDayNotification:NO];
+	[self setOneDayNotification:YES];
+	
+	// Local Notifications
+	[self setLocalNotifications:[NSMutableDictionary dictionaryWithCapacity:0]];
+	
+	// Activate Default Local Notifications
+	[self scheduleLocalNotificationsIfActive];
+}
+
+#pragma mark Custom Setters and Getters
 
 // Sets up the initial date to the Current Year + 1 at Noon
 - (void)setWeddingDate {
@@ -79,97 +205,6 @@ static Wedding *sharedWedding;
 	[gregorian release];
 }
 
-- (NSString *)displayCoupleNames {
-	if ([groomName length] == 0 || [brideName length] == 0) {
-		return @"Our Wedding";
-	}
-	return [NSString stringWithFormat:@"%@ & %@", groomName, brideName];
-}
-
-- (NSInteger)countDaysUntilWeddingDate{
-	NSDate *today = [[NSDate alloc] init];
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSUInteger unitFlags = NSDayCalendarUnit;
-	NSDateComponents *components = [gregorian components:unitFlags fromDate:today toDate:weddingDate options:0];
-	NSInteger days = [components day];
-	
-	// Check if Date is was within the past 24 hours
-	if ([today compare:weddingDate] == NSOrderedDescending && days == 0) {
-		days = -1;
-	}
-	
-	[today release];
-	[gregorian release];
-	
-	return days;	
-}
-
-#pragma mark NSCoding Methods
-
-- (void)encodeWithCoder:(NSCoder *)encoder {
-	[encoder encodeObject:groomName forKey:@"groomName"];
-	[encoder encodeObject:brideName forKey:@"brideName"];
-	[encoder encodeObject:weddingDate forKey:@"weddingDate"];
-	[encoder encodeObject:backgroundImageData forKey:@"backgroundImageData"];
-	
-	// Notifications
-	[encoder encodeBool:globalNotification forKey:@"globalNotification"];
-	[encoder encodeBool:twelveMonthNotification forKey:@"twelveMonthNotification"];
-	[encoder encodeBool:tenMonthNotification forKey:@"tenMonthNotification"];
-	[encoder encodeBool:eightMonthNotification forKey:@"eightMonthNotification"];
-	[encoder encodeBool:sixMonthNotification forKey:@"sixMonthNotification"];
-	[encoder encodeBool:fourMonthNotification forKey:@"fourMonthNotification"];
-	[encoder encodeBool:twoMonthNotification forKey:@"twoMonthNotification"];
-	[encoder encodeBool:oneMonthNotification forKey:@"oneMonthNotification"];
-	[encoder encodeBool:twoWeekNotification forKey:@"twoWeekNotification"];
-	[encoder encodeBool:oneWeekNotification forKey:@"oneWeekNotification"];
-	[encoder encodeBool:threeDayNotification forKey:@"threeDayNotification"];
-	[encoder encodeBool:twoDayNotification forKey:@"twoDayNotification"];
-	[encoder encodeBool:oneDayNotification forKey:@"oneDayNotification"];
-	
-	// Local Notifications
-	[encoder encodeObject:localNotifications forKey:@"localNotifications"];
-}
-
-- (id)initWithCoder:(NSCoder *)decoder {
-	[super init];
-
-	[self setGroomName:[decoder decodeObjectForKey:@"groomName"]];
-	[self setBrideName:[decoder decodeObjectForKey:@"brideName"]];
-	[self setWeddingDate:[decoder decodeObjectForKey:@"weddingDate"]];
-	
-	backgroundImageData = [[decoder decodeObjectForKey:@"backgroundImageData"] retain];
-	
-	// Notifications
-	[self setGlobalNotification:[decoder decodeBoolForKey:@"globalNotification"]];
-	[self setTwelveMonthNotification:[decoder decodeBoolForKey:@"twelveMonthNotification"]];
-	[self setTenMonthNotification:[decoder decodeBoolForKey:@"tenMonthNotification"]];
-	[self setEightMonthNotification:[decoder decodeBoolForKey:@"eightMonthNotification"]];
-	[self setSixMonthNotification:[decoder decodeBoolForKey:@"sixMonthNotification"]];
-	[self setFourMonthNotification:[decoder decodeBoolForKey:@"fourMonthNotification"]];
-	[self setTwoMonthNotification:[decoder decodeBoolForKey:@"twoMonthNotification"]];
-	[self setOneMonthNotification:[decoder decodeBoolForKey:@"oneMonthNotification"]];
-	[self setTwoWeekNotification:[decoder decodeBoolForKey:@"twoWeekNotification"]];
-	[self setOneWeekNotification:[decoder decodeBoolForKey:@"oneWeekNotification"]];
-	[self setThreeDayNotification:[decoder decodeBoolForKey:@"threeDayNotification"]];
-	[self setTwoDayNotification:[decoder decodeBoolForKey:@"twoDayNotification"]];
-	[self setOneDayNotification:[decoder decodeBoolForKey:@"oneDayNotification"]];
-	
-	[self setLocalNotifications:[decoder decodeObjectForKey:@"localNotifications"]];
-		
-	return self;
-}
-
-- (UIImage *)backgroundImage {
-	if (!backgroundImageData)
-		return nil;
-	
-	if (!backgroundImage)
-		backgroundImage = [[UIImage imageWithData:backgroundImageData] retain];
-	
-	return backgroundImage;
-}
-
 - (void)setBackgroundImageDataFromImage:(UIImage *)image {
 	[backgroundImageData release];
 	[backgroundImage release];
@@ -179,7 +214,7 @@ static Wedding *sharedWedding;
 	
 	CGFloat maxWidth = [[UIScreen mainScreen] bounds].size.width * 1.5;
 	CGFloat maxHeight = [[UIScreen mainScreen] bounds].size.height * 1.5;
-		
+	
 	if (currentWidth > currentHeight) {
 		// Image is Landscape
 		backgroundImage = [image scaleProportionalToSize:CGSizeMake(maxWidth, maxHeight)];
@@ -215,19 +250,63 @@ static Wedding *sharedWedding;
 			currentWidth  = currentWidth;
 			currentHeight = round(newHeight / ratioX);
 		}
-				
+		
 		backgroundImage = [image cropToRect:CGRectMake(startX, startY, currentWidth, currentHeight)
 							 andScaleToSize:CGSizeMake(newWidth, newHeight)];
 	}
 	
 	[backgroundImage retain];
-		
+	
 	backgroundImageData = UIImageJPEGRepresentation(backgroundImage, 0.75);
 	[backgroundImageData retain];
 }
 
 - (void)setDefaultImage {
 	[self setBackgroundImageDataFromImage:[UIImage imageNamed:@"background.jpg"]];
+}
+
+- (UIImage *)backgroundImage {
+	if (!backgroundImageData)
+		return nil;
+	
+	if (!backgroundImage)
+		backgroundImage = [[UIImage imageWithData:backgroundImageData] retain];
+	
+	return backgroundImage;
+}
+
+#pragma mark Data Displaying Methods
+
+- (NSString *)displayCoupleNames {
+	if ([groomName length] == 0 || [brideName length] == 0) {
+		return @"Our Wedding";
+	}
+	return [NSString stringWithFormat:@"%@ & %@", groomName, brideName];
+}
+
+- (NSInteger)countDaysUntilWeddingDate{
+	NSDate *today = [[NSDate alloc] init];
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSUInteger unitFlags = NSDayCalendarUnit;
+	NSDateComponents *components = [gregorian components:unitFlags fromDate:today toDate:weddingDate options:0];
+	NSInteger days = [components day];
+	
+	// Check if Date is was within the past 24 hours
+	if ([today compare:weddingDate] == NSOrderedDescending && days == 0) {
+		days = -1;
+	}
+	
+	[today release];
+	[gregorian release];
+	
+	return days;	
+}
+
+- (NSString *)weddingDateToString {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	return [dateFormatter stringFromDate:weddingDate];
 }
 
 - (NSDate *)dateForInterval:(IntervalNotificationType)interval {
@@ -287,92 +366,7 @@ static Wedding *sharedWedding;
 	return [gregorian dateFromComponents:comps];	
 }
 
-- (void)localNotificationForInterval:(IntervalNotificationType)interval {		
-	UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-	if (localNotif == nil)
-        return;
-	
-	NSDictionary *dictionary = [self valuesInLocalNotificationForInterval:interval];
-	
-    localNotif.fireDate = [dictionary objectForKey:@"fireDateKey"];
-    localNotif.timeZone = [dictionary objectForKey:@"timeZoneKey"];
-	// Notification details
-    localNotif.alertBody = [dictionary objectForKey:@"alertBodyKey"];
-	// Set the action button
-    localNotif.alertAction = [dictionary objectForKey:@"alertActionKey"];
-    localNotif.soundName = [dictionary objectForKey:@"soundNameKey"];
-	
-	// Schedule the notification
-	[[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-	[localNotifications setObject:localNotif forKey:[self toStringFromNotification:interval]];
-	[localNotif release];
-}
-
-- (NSDictionary *)valuesInLocalNotificationForInterval:(IntervalNotificationType)interval {
-	NSDate *fireDate = [self dateForInterval:interval];
-	NSString *alertBody;
-	NSTimeZone *timeZone = [NSTimeZone defaultTimeZone];
-	NSString *alertAction = @"View";
-	NSString *soundName = UILocalNotificationDefaultSoundName;
-	
-	switch (interval) {
-		case TwelveMonthType:
-			alertBody = @"Twelve Months Before Your Wedding";
-			break;
-		case TenMonthType:
-			alertBody = @"Ten Months Before Your Wedding";
-			break;
-		case EightMonthType:
-			alertBody = @"Eight Months Before Your Wedding";
-			break;
-		case SixMonthType:
-			alertBody = @"Six Months Before Your Wedding";
-			break;
-		case FourMonthType:
-			alertBody = @"Four Months Before Your Wedding";
-			break;
-		case TwoMonthType:
-			alertBody = @"Two Months Before Your Wedding";
-			break;
-		case OneMonthType:
-			alertBody = @"One Month Before Your Wedding";
-			break;
-		case TwoWeekType:
-			alertBody = @"Two Weeks Before Your Wedding";
-			break;
-		case OneWeekType:
-			alertBody = @"One Week Before Your Wedding";
-			break;
-		case ThreeDayType:
-			alertBody = @"Three Days Before Your Wedding";
-			break;
-		case TwoDayType:
-			alertBody = @"Two Days Before Your Wedding";
-			break;
-		default:
-			alertBody = @"One Day Before Your Wedding";
-			break;
-	}
-	
-	NSDictionary *dictionary = [[[NSDictionary  alloc] initWithObjectsAndKeys:
-								fireDate, @"fireDateKey",
-								alertBody, @"alertBodyKey",
-								timeZone, @"timeZoneKey",
-								alertAction, @"alertActionKey",
-								soundName, @"soundNameKey",
-								 nil] autorelease];
-		
-	return dictionary;
-}
-
-- (void)cancelLocalNotificationForInterval:(IntervalNotificationType)interval {
-	UILocalNotification *localNotif = [localNotifications objectForKey:[self toStringFromNotification:interval]];
-	if (localNotif == nil)
-		return;
-	
-	[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
-	[localNotifications removeObjectForKey:[self toStringFromNotification:interval]];
-}
+#pragma mark Local Notification Methods
 
 - (void)scheduleLocalNotificationsIfActive {
 	[self cancelAllLocalNotifications];
@@ -415,8 +409,84 @@ static Wedding *sharedWedding;
 	}
 }
 
-- (void)cancelAllLocalNotifications {
-	[[UIApplication sharedApplication] cancelAllLocalNotifications];
+- (void)localNotificationForInterval:(IntervalNotificationType)interval {		
+	UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+	if (localNotif == nil)
+        return;
+	
+	NSDictionary *dictionary = [self valuesInLocalNotificationForInterval:interval];
+	
+    localNotif.fireDate = [dictionary objectForKey:@"fireDateKey"];
+    localNotif.timeZone = [dictionary objectForKey:@"timeZoneKey"];
+	// Notification details
+    localNotif.alertBody = [dictionary objectForKey:@"alertBodyKey"];
+	// Set the action button
+    localNotif.alertAction = [dictionary objectForKey:@"alertActionKey"];
+    localNotif.soundName = [dictionary objectForKey:@"soundNameKey"];
+	
+	// Schedule the notification
+	[[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+	[localNotifications setObject:localNotif forKey:[self toStringFromNotification:interval]];
+	[localNotif release];
+}
+
+- (NSDictionary *)valuesInLocalNotificationForInterval:(IntervalNotificationType)interval {
+	NSDate *fireDate = [self dateForInterval:interval];
+	NSString *datePeriod;
+	NSTimeZone *timeZone = [NSTimeZone defaultTimeZone];
+	NSString *alertAction = @"View";
+	NSString *soundName = UILocalNotificationDefaultSoundName;
+	
+	switch (interval) {
+		case TwelveMonthType:
+			datePeriod = @"Twelve Months";
+			break;
+		case TenMonthType:
+			datePeriod = @"Ten Months";
+			break;
+		case EightMonthType:
+			datePeriod = @"Eight Months";
+			break;
+		case SixMonthType:
+			datePeriod = @"Six Months";
+			break;
+		case FourMonthType:
+			datePeriod = @"Four Months";
+			break;
+		case TwoMonthType:
+			datePeriod = @"Two Months";
+			break;
+		case OneMonthType:
+			datePeriod = @"One Month";
+			break;
+		case TwoWeekType:
+			datePeriod = @"Two Weeks";
+			break;
+		case OneWeekType:
+			datePeriod = @"One Week";
+			break;
+		case ThreeDayType:
+			datePeriod = @"Three Days";
+			break;
+		case TwoDayType:
+			datePeriod = @"Two Days";
+			break;
+		default:
+			datePeriod = @"One Day";
+			break;
+	}
+	
+	NSString *alertBody = [NSString stringWithFormat:@"You are getting married in\n%@", datePeriod];
+	
+	NSDictionary *dictionary = [[[NSDictionary  alloc] initWithObjectsAndKeys:
+								fireDate, @"fireDateKey",
+								alertBody, @"alertBodyKey",
+								timeZone, @"timeZoneKey",
+								alertAction, @"alertActionKey",
+								soundName, @"soundNameKey",
+								 nil] autorelease];
+		
+	return dictionary;
 }
 
 - (NSString *)toStringFromNotification:(IntervalNotificationType)interval {
@@ -462,78 +532,17 @@ static Wedding *sharedWedding;
 	return value;
 }
 
-- (NSString *)weddingDateToString {
-	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
-	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-	return [dateFormatter stringFromDate:weddingDate];
-}
-
-- (void)setupDefaultData {
-	[self setGroomName:@""];
-	[self setBrideName:@""];
-	[self setWeddingDate];
+- (void)cancelLocalNotificationForInterval:(IntervalNotificationType)interval {
+	UILocalNotification *localNotif = [localNotifications objectForKey:[self toStringFromNotification:interval]];
+	if (localNotif == nil)
+		return;
 	
-	[self setDefaultImage];
-	
-	// Notifications
-	[self setGlobalNotification:YES];
-	[self setTwelveMonthNotification:YES];
-	[self setTenMonthNotification:NO];
-	[self setEightMonthNotification:NO];
-	[self setSixMonthNotification:NO];
-	[self setFourMonthNotification:NO];
-	[self setTwoMonthNotification:NO];
-	[self setOneMonthNotification:NO];
-	[self setTwoWeekNotification:NO];
-	[self setOneWeekNotification:NO];
-	[self setThreeDayNotification:NO];
-	[self setTwoDayNotification:NO];
-	[self setOneDayNotification:YES];
-	
-	// Local Notifications
-	[self setLocalNotifications:[NSMutableDictionary dictionaryWithCapacity:0]];
-	
-	// Activate Default Local Notifications
-	[self scheduleLocalNotificationsIfActive];
+	[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
+	[localNotifications removeObjectForKey:[self toStringFromNotification:interval]];
 }
 
-#pragma mark Singleton stuff
-
-+ (Wedding *)sharedWedding {
-    if (!sharedWedding) {
-        sharedWedding = [[Wedding alloc] init];
-	}
-    return sharedWedding;
-}
-
-+ (id)allocWithZone:(NSZone *)zone {
-    if (!sharedWedding) {
-        sharedWedding = [super allocWithZone:zone];
-        return sharedWedding;
-    } else {
-        return nil;
-    }
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-    return self;
-}
-
-- (void)release {
-    // No op
-}
-
-#pragma mark Memory Dealloc
-
-- (void)dealloc {
-	[groomName release];
-	[brideName release];
-	[weddingDate release];
-	[backgroundImage release];
-	[backgroundImageData release];
-	[localNotifications release];
-	[super dealloc];
+- (void)cancelAllLocalNotifications {
+	[[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 @end

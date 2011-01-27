@@ -11,11 +11,31 @@
 
 @synthesize versionLabel;
 
+#pragma mark -
+#pragma mark UIViewController Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.title = @"About";
 	versionLabel.text = [NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
 }
+
+#pragma mark Memory Management
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+	versionLabel = nil;
+}
+
+- (void)dealloc {
+    [super dealloc];
+	[versionLabel release];
+}
+
+#pragma mark -
+#pragma mark Custom Actions
 
 - (IBAction)websiteAction:(id)sender {
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.riveralabs.com/apps/bride-alarm"]];
@@ -24,6 +44,9 @@
 - (IBAction)feedbackAction:(id)sender {
 	[self displayComposerSheet];
 }
+
+#pragma mark -
+#pragma mark Custom Methods
 
 - (void)displayComposerSheet {
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
@@ -37,6 +60,9 @@
 	[self presentModalViewController:picker animated:YES];
     [picker release];
 }
+
+#pragma mark -
+#pragma mark MFMailComposeViewController Delegate
 
 // Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {	
@@ -75,26 +101,5 @@
 		[alert release];
 	}
 }
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	versionLabel = nil;
-}
-
-
-- (void)dealloc {
-    [super dealloc];
-	[versionLabel release];
-}
-
 
 @end

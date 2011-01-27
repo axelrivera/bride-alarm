@@ -134,18 +134,13 @@ NSString *ResetOnStartKey = @"ResetOnStart";
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults synchronize];
 	
-	tipFlag = [defaults boolForKey:ShowTipsKey];
-	NSLog(@"Tip: %d", tipFlag);
-	
+	tipFlag = [defaults boolForKey:ShowTipsKey];	
 	if (tipFlag == YES) {
 		[defaults setBool:NO forKey:ShowTipsKey];
 		[self showTipAlert];
-		NSLog(@"Resetting Tip");
 	}
 	
-	resetFlag = [defaults boolForKey:ResetOnStartKey];
-	NSLog(@"Reset: %d", resetFlag);
-	
+	resetFlag = [defaults boolForKey:ResetOnStartKey];	
 	if (resetFlag == YES) {
 		[defaults setBool:NO forKey:ResetOnStartKey];
 		[self resetData];
@@ -167,7 +162,6 @@ NSString *ResetOnStartKey = @"ResetOnStart";
 }
 
 - (void)resetData {
-	NSLog(@"Resetting Data");
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
 	NSString *weddingPath = [self weddingFilePath];

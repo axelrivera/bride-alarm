@@ -20,6 +20,9 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 @synthesize dataSourceArray;
 @synthesize editingWedding;
 
+#pragma mark -
+#pragma mark UIViewController Methods
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
@@ -45,7 +48,29 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 	[[Wedding sharedWedding] setBrideName:[[self brideTextField] text]];
 }
 
-#pragma mark Table View Data Source
+#pragma mark Memory Management
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+	[groomTextField release];
+	groomTextField = nil;
+	[brideTextField release];
+	brideTextField = nil;
+	
+	self.dataSourceArray = nil;
+}
+
+
+- (void)dealloc {
+	[groomTextField release];
+	[brideTextField release];
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UITableView Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.dataSourceArray count];
@@ -84,28 +109,16 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 	return cell;
 }
 
-#pragma mark Text Field Delegate
+#pragma mark -
+#pragma mark UITextField Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	return YES;
 }
 
-#pragma mark Custom Controls
-
-- (UITextField *)groomTextField {
-	if (groomTextField == nil) {
-		groomTextField = [self setupViewForTextField];
-	}
-	return groomTextField;
-}
-
-- (UITextField *)brideTextField {
-	if (brideTextField == nil) {
-		brideTextField = [self setupViewForTextField];
-	}
-	return brideTextField;
-}
+#pragma mark -
+#pragma mark Custom Methods
 
 - (UITextField *)setupViewForTextField {
 	UITextField *textField = [[[UITextField alloc] initWithFrame:CGRectMake(110, 10, kTextFieldWidth, kTextFieldHeight)] autorelease];
@@ -121,33 +134,20 @@ static NSString *kPlaceholderKey = @"placeholderKey";
 	return textField;
 }
 
-#pragma mark Memory Management
+#pragma mark Custom Setters and Getters
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
+- (UITextField *)groomTextField {
+	if (groomTextField == nil) {
+		groomTextField = [self setupViewForTextField];
+	}
+	return groomTextField;
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	[groomTextField release];
-	groomTextField = nil;
-	[brideTextField release];
-	brideTextField = nil;
-	
-	self.dataSourceArray = nil;
+- (UITextField *)brideTextField {
+	if (brideTextField == nil) {
+		brideTextField = [self setupViewForTextField];
+	}
+	return brideTextField;
 }
-
-
-- (void)dealloc {
-	[groomTextField release];
-	[brideTextField release];
-    [super dealloc];
-}
-
 
 @end

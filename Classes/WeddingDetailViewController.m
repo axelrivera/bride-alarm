@@ -29,7 +29,8 @@ static NSString *kViewControllerKey = @"viewControllerKey";
 @synthesize wedding;
 @synthesize menuList;
 
-#pragma mark View Lifecycle
+#pragma mark -
+#pragma mark UIViewController Methods
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -92,6 +93,9 @@ static NSString *kViewControllerKey = @"viewControllerKey";
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+	self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+	self.navigationController.navigationBar.translucent = NO;
+	
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 
 	UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
@@ -106,15 +110,46 @@ static NSString *kViewControllerKey = @"viewControllerKey";
 	[self.tableView reloadData];
 }
 
+#pragma mark Memory Management
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+	[bannerLabel release];
+	self.bannerLabel = nil;
+	self.menuList = nil;
 }
-*/
 
-#pragma mark Table View Data Source
+- (void)dealloc {
+	[bannerLabel release];
+	[menuList release];
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Custom Action Methods
+
+- (IBAction)done:(id)sender {
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+# pragma mark Custom Methods
+
+- (UILabel *)labelCtl:(UILabel *)label {
+	if (label == nil) {
+		CGRect frame = CGRectMake(kLeftMargin, 7.0, kLabelWidth, kLabelHeight);
+		label = [[[UILabel alloc] initWithFrame:frame] autorelease];
+		label.font = [UIFont boldSystemFontOfSize:17.0];
+		label.textColor = [UIColor blackColor];
+		label.textAlignment = UITextAlignmentCenter; 
+		label.tag = kViewTag;
+	}
+	return label;
+}
+
+#pragma mark UITableView Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return 1;
@@ -156,57 +191,12 @@ static NSString *kViewControllerKey = @"viewControllerKey";
 	return cell;
 }
 
-#pragma mark Table View Delegates
+#pragma mark UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 	UIViewController *targetViewController = [[self.menuList objectAtIndex:indexPath.section] objectForKey:kViewControllerKey];
 	[[self navigationController] pushViewController:targetViewController animated:YES];
 }
-
-#pragma mark Action Methods
-
-- (IBAction)done:(id)sender {
-	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-}
-
-# pragma mark Custom Controls
-
-- (UILabel *)labelCtl:(UILabel *)label {
-	if (label == nil) {
-		CGRect frame = CGRectMake(kLeftMargin, 7.0, kLabelWidth, kLabelHeight);
-		label = [[[UILabel alloc] initWithFrame:frame] autorelease];
-		label.font = [UIFont boldSystemFontOfSize:17.0];
-		label.textColor = [UIColor blackColor];
-		label.textAlignment = UITextAlignmentCenter; 
-		label.tag = kViewTag;
-	}
-	return label;
-}
-
-#pragma mark Memory Management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	[bannerLabel release];
-	self.bannerLabel = nil;
-	self.menuList = nil;
-}
-
-- (void)dealloc {
-	[bannerLabel release];
-	[menuList release];
-    [super dealloc];
-}
-
 
 @end
