@@ -108,7 +108,7 @@ BOOL NotificationFlag = NO;
 		self.pickerView.datePickerMode = UIDatePickerModeDate;
 	} else {
 		self.pickerView.datePickerMode = UIDatePickerModeTime;
-		self.pickerView.minuteInterval = 1;  // Default should be every 15 minutes
+		self.pickerView.minuteInterval = 15;  // Default should be every 15 minutes
 	}
 	
 	// check if our date picker is already on screen

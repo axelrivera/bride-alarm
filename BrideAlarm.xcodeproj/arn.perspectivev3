@@ -232,8 +232,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -316,6 +314,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>16BABC0012F2487300E601BE</string>
+										<string>16BABC0612F273B100E601BE</string>
 										<key>history</key>
 										<array>
 											<string>16AAD29F12E4B6F900871383</string>
@@ -461,7 +461,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1111, 126}}</string>
+										<string>{{10, 27}, {1111, 199}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 112 1440 766 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXCVSModule</string>
@@ -482,8 +484,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1111, 199}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 112 1440 766 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -705,7 +705,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>16BABC0112F2487300E601BE</string>
 		<string>16BABB5E12F20EC700E601BE</string>
 		<string>16BABB5F12F20EC700E601BE</string>
 		<string>/Users/arn/Dropbox/iOS Projects/BrideAlarm/BrideAlarm.xcodeproj</string>

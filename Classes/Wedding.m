@@ -154,7 +154,7 @@ static Wedding *sharedWedding;
 	[self setTwelveMonthNotification:YES];
 	[self setTenMonthNotification:NO];
 	[self setEightMonthNotification:NO];
-	[self setSixMonthNotification:NO];
+	[self setSixMonthNotification:YES];
 	[self setFourMonthNotification:NO];
 	[self setTwoMonthNotification:NO];
 	[self setOneMonthNotification:NO];
@@ -300,8 +300,6 @@ static Wedding *sharedWedding;
 	[weddingTemporaryComponents setMinute:59];
 	[weddingTemporaryComponents setSecond:59];
 	NSDate *weddingTemporaryDate = [calendar dateFromComponents:weddingTemporaryComponents];
-		
-	NSLog(@"Today: %@, Wedding Date: %@", today, weddingTemporaryDate);
 	
 	unsigned weddingUnitFlags = NSDayCalendarUnit;
 	NSDateComponents *weddingDateComponents = [calendar components:weddingUnitFlags fromDate:today toDate:weddingTemporaryDate options:0];
