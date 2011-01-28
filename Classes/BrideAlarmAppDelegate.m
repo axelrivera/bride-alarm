@@ -21,7 +21,7 @@ NSString *ResetOnStartKey = @"ResetOnStart";
 @synthesize resetFlag;
 
 #pragma mark -
-#pragma mark Application lifecycle
+#pragma mark Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Set Default Preferences
@@ -69,8 +69,8 @@ NSString *ResetOnStartKey = @"ResetOnStart";
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
 	[self checkPrefs];
+	[weddingViewController setupBoxView];
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     /*
@@ -81,7 +81,8 @@ NSString *ResetOnStartKey = @"ResetOnStart";
 	[self archiveWeddingBox];
 }
 
-#pragma mark Header Methods
+#pragma mark -
+#pragma mark Custom Methods
 
 - (NSString *)weddingFilePath {
 	return pathInDocumentDirectory(@"Wedding.data");

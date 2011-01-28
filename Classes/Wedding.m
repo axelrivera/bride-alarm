@@ -178,13 +178,13 @@ static Wedding *sharedWedding;
 	[weddingDate release];
 	
 	NSDate *today = [[NSDate alloc] init];
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *calendar = [NSCalendar currentCalendar];
 	
 	// Set Next Year to Current Year + 1
 	NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
 	[offsetComponents setYear:1];
 	
-	NSDate *newYear = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
+	NSDate *newYear = [calendar dateByAddingComponents:offsetComponents toDate:today options:0];
 	
 	[today release];
 	[offsetComponents release];
@@ -192,17 +192,15 @@ static Wedding *sharedWedding;
 	unsigned unitFlags = NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit
 		| NSMinuteCalendarUnit |NSSecondCalendarUnit;
 	
-	NSDateComponents *comps = [gregorian components:unitFlags fromDate:newYear];
+	NSDateComponents *comps = [calendar components:unitFlags fromDate:newYear];
 	
 	// Set Current Time to Noon
 	[comps setHour:12];
 	[comps setMinute:0];
 	[comps setSecond:0];
 	
-	weddingDate = [gregorian dateFromComponents:comps];
+	weddingDate = [calendar dateFromComponents:comps];
 	[weddingDate retain];
-	
-	[gregorian release];
 }
 
 - (void)setBackgroundImageDataFromImage:(UIImage *)image {
@@ -285,20 +283,37 @@ static Wedding *sharedWedding;
 }
 
 - (NSInteger)countDaysUntilWeddingDate{
-	NSDate *today = [[NSDate alloc] init];
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSUInteger unitFlags = NSDayCalendarUnit;
-	NSDateComponents *components = [gregorian components:unitFlags fromDate:today toDate:weddingDate options:0];
-	NSInteger days = [components day];
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	unsigned unitFlags = NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit
+	| NSMinuteCalendarUnit | NSSecondCalendarUnit;
 	
-	// Check if Date is was within the past 24 hours
-	if ([today compare:weddingDate] == NSOrderedDescending && days == 0) {
-		days = -1;
-	}
+	// Start at the beginning of today
+	NSDateComponents *todayComponents = [calendar components:unitFlags fromDate:[NSDate date]];
+	[todayComponents setHour:0];
+	[todayComponents setMinute:0];
+	[todayComponents setSecond:0];
+	NSDate *today = [calendar dateFromComponents:todayComponents];
 	
-	[today release];
-	[gregorian release];
+	// End at the end of the wedding date
+	NSDateComponents *weddingTemporaryComponents = [calendar components:unitFlags fromDate:weddingDate];
+	[weddingTemporaryComponents setHour:23];
+	[weddingTemporaryComponents setMinute:59];
+	[weddingTemporaryComponents setSecond:59];
+	NSDate *weddingTemporaryDate = [calendar dateFromComponents:weddingTemporaryComponents];
+		
+	NSLog(@"Today: %@, Wedding Date: %@", today, weddingTemporaryDate);
 	
+	unsigned weddingUnitFlags = NSDayCalendarUnit;
+	NSDateComponents *weddingDateComponents = [calendar components:weddingUnitFlags fromDate:today toDate:weddingTemporaryDate options:0];
+		
+	NSInteger days = [weddingDateComponents day];
+	
+	// Add a day if Wedding Date is in the past
+	// We are substracting because they "days" is negative
+	if ([today compare:weddingTemporaryDate] == NSOrderedDescending) {
+		days--;
+	}	
+		
 	return days;	
 }
 
@@ -310,7 +325,7 @@ static Wedding *sharedWedding;
 }
 
 - (NSDate *)dateForInterval:(IntervalNotificationType)interval {
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *calendar = [NSCalendar currentCalendar];
 	
 	// Set Next Year to Current Year + 1
 	NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
@@ -354,16 +369,16 @@ static Wedding *sharedWedding;
 			break;
 	}
 	
-	NSDate *newDate = [gregorian dateByAddingComponents:offsetComponents toDate:[self weddingDate] options:0];
+	NSDate *newDate = [calendar dateByAddingComponents:offsetComponents toDate:[self weddingDate] options:0];
 	
 	[offsetComponents release];
 	
 	unsigned unitFlags = NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit
-	| NSMinuteCalendarUnit | NSSecondCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+	| NSMinuteCalendarUnit | NSSecondCalendarUnit;
 	
-	NSDateComponents *comps = [gregorian components:unitFlags fromDate:newDate];
+	NSDateComponents *comps = [calendar components:unitFlags fromDate:newDate];
 	
-	return [gregorian dateFromComponents:comps];	
+	return [calendar dateFromComponents:comps];	
 }
 
 #pragma mark Local Notification Methods

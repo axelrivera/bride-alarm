@@ -40,37 +40,7 @@
 	
 	[backgroundImageView setImage:[wedding backgroundImage]];
 	
-	// Set Couple Label
-	boxView.coupleLabel.text = [wedding displayCoupleNames];
-	
-	// Set Wedding Date Label
-	boxView.dateLabel.text = [wedding weddingDateToString];
-	
-	// Set Details Label
-	NSInteger weddingDays = [wedding countDaysUntilWeddingDate];
-	if (weddingDays == 0) {
-		boxView.detailsLabel.text = @"in less than 24 hours...";
-	} else if (weddingDays == -1) {
-		boxView.detailsLabel.text = @"we just got married...";
-	} else if (weddingDays < -1) {
-		weddingDays = abs(weddingDays);
-		boxView.detailsLabel.text = @"since we got married...";
-	} else {
-		boxView.detailsLabel.text = @"until we get married...";
-	}
-	
-	// Set Days Label
-	if (weddingDays == 0) {
-		boxView.daysLabel.text = [NSString stringWithFormat:@"Getting Married"];
-	} else if (weddingDays == -1) {
-		boxView.daysLabel.text = [NSString stringWithFormat:@"Happily Married"];
-	} else {
-		if (weddingDays == 1) {
-			boxView.daysLabel.text = [NSString stringWithFormat:@"%d day", weddingDays];
-		} else {
-			boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", weddingDays];
-		}
-	}
+	[self setupBoxView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -143,6 +113,30 @@
 		[toolBar setAlpha:1.0];
 	} else {
 		[toolBar setAlpha:0.0];
+	}
+}
+
+- (void)setupBoxView {
+	// Set Couple Label
+	boxView.coupleLabel.text = [wedding displayCoupleNames];
+	
+	// Set Wedding Date Label
+	boxView.dateLabel.text = [wedding weddingDateToString];
+	
+	// Set Details Label
+	NSInteger weddingDays = [wedding countDaysUntilWeddingDate];
+
+	if (weddingDays < 0) {
+		weddingDays = abs(weddingDays);
+		boxView.detailsLabel.text = @"since we got married...";
+	} else {
+		boxView.detailsLabel.text = @"until we get married...";
+	}
+	
+	if (weddingDays == 1) {
+		boxView.daysLabel.text = [NSString stringWithFormat:@"%d day", weddingDays];
+	} else {
+		boxView.daysLabel.text = [NSString stringWithFormat:@"%d days", weddingDays];
 	}
 }
 

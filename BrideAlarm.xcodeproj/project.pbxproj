@@ -59,7 +59,7 @@
 		160C0C9012A6A4F600DC0636 /* WeddingCoupleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeddingCoupleViewController.xib; sourceTree = "<group>"; };
 		160C0ED312A7196300DC0636 /* WeddingDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingDateViewController.h; sourceTree = "<group>"; };
 		160C0ED412A7196300DC0636 /* WeddingDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingDateViewController.m; sourceTree = "<group>"; };
-		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		160C0FEC12A7F8EE00DC0636 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
 		1618AD4D12DE37400011050D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		162242E012BFE8E100558DEF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		162242E112BFE8E100558DEF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 				1603C05B12E9C2EB00CE58F3 /* Helpers */,
 				1D3623240D0F684500981E51 /* BrideAlarmAppDelegate.h */,
 				1D3623250D0F684500981E51 /* BrideAlarmAppDelegate.m */,
-				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -223,6 +222,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				160C0FEC12A7F8EE00DC0636 /* Constants.h */,
 				32CA4F630368D1EE00C91783 /* BrideAlarm_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);

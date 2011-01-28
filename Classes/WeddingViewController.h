@@ -28,6 +28,7 @@
 - (IBAction)showActions:(id)sender;
 
 - (void)animatedElements;
+- (void)setupBoxView;
 - (UIImage *)viewToImage;
 - (void)saveScreenshotToAlbums;
 - (void)displayComposerSheet;
