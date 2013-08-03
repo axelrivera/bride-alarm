@@ -6,7 +6,7 @@
 //
 
 #import "WeddingBackgroundViewController.h"
-#import "Wedding.h";
+#import "Wedding.h"
 
 // Define Local Variable for Showing and Hiding Bars
 BOOL barsHidden = NO;
